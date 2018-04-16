@@ -209,7 +209,7 @@ function Toggle(what)
 
 
 
-new Thing("universe",["supercluster,10-30"]);
+new Thing("universe",["universe",10-30"]);
 
 
 
