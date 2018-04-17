@@ -22,7 +22,12 @@
 	<script>Offline=0;</script></span>
 
 	<script>
-
+	const launchNest = (what) => {
+	if (!Things[what]) what="error";
+	var Seed=make(what);
+	Seed.Grow(0);
+	Seed.List();
+}
 	launchNest(SeedObject.toLowerCase());
 	</script>
 </body>
