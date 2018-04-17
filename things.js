@@ -148,3 +148,6 @@ const launchNest = (what) => {
 	Seed.Grow(0);
 	Seed.List();
 }
+
+let SeedObject="universe";
+let Offline=1;
