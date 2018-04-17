@@ -173,8 +173,19 @@ Instance.prototype.Name=function()
 		this.name=str;
 	}
 
-	nameParts=this.name.split("|");
-	this.name=nameParts[0];
 
-	if (this.name=="*PERSON*" || this.name=="*MAN*" || this.name=="*WOMAN*")
-	{
+CleanThings();
+
+//CheckMissingThings();
+//alert("There are "+ThingsN+" thing archetypes.");
+
+document.getElementById("debug").innerHTML="";
+Debug('<div id="div0" class="thing"></div>');
+
+function LaunchNest(what)
+{
+	if (!Things[what]) what="error";
+	var Seed=Make(what);
+	Seed.Grow(0);
+	Seed.List();
+}
