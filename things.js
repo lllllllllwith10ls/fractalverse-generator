@@ -103,7 +103,7 @@ Instance.prototype.Grow=function()
 				{
 					for (let ii=0;ii<makeAmount;ii++)
 					{
-						let New=Make(Things[toMake[0]].name);
+						let New=make(Things[toMake[0]].name);
 						New.parent=this;
 						this.children.push(New);
 					}
@@ -129,11 +129,11 @@ Instance.prototype.List=function()
 	else document.getElementById("div"+this.n).innerHTML='<span class="emptyThing">'+this.name+'</span>';
 }
 
-const Make = (what) => {
+const make = (what) => {
 	return new Instance(what);
 }
 
-const Debug = (what) => {
+const debug = (what) => {
 	document.getElementById("debug").innerHTML=document.getElementById("debug").innerHTML+'<br>'+what;
 }
 
@@ -142,9 +142,9 @@ New Thing('multiverse',['universe,50'])
 document.getElementById("debug").innerHTML="";
 Debug('<div id="div0" class="thing"></div>');
 
-const LaunchNest = (what) => {
+const launchNest = (what) => {
 	if (!Things[what]) what="error";
-	var Seed=Make(what);
+	var Seed=make(what);
 	Seed.Grow(0);
 	Seed.List();
 }
