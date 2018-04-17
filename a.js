@@ -189,3 +189,4 @@ function LaunchNest(what)
 	Seed.Grow(0);
 	Seed.List();
 }
+new Thing("multiverse",["universe"])
