@@ -145,8 +145,7 @@ New Thing('multiverse',['universe,50'])
 document.getElementById("debug").innerHTML="";
 Debug('<div id="div0" class="thing"></div>');
 
-function LaunchNest(what)
-{
+const LaunchNest = (what) => {
 	if (!Things[what]) what="error";
 	var Seed=Make(what);
 	Seed.Grow(0);
