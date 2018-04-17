@@ -15,8 +15,7 @@ class Thing{
   
 }
 
-function CleanThings()
-{
+const CleanThings = () => {
 	for (let iT in Things)
 	{
 		thisT=Things[iT];
@@ -130,13 +129,11 @@ Instance.prototype.List=function()
 	else document.getElementById("div"+this.n).innerHTML='<span class="emptyThing">'+this.name+'</span>';
 }
 
-function Make(what)
-{
+const Make = (what) => {
 	return new Instance(what);
 }
 
-function Debug(what)
-{
+const Debug = (what) => {
 	document.getElementById("debug").innerHTML=document.getElementById("debug").innerHTML+'<br>'+what;
 }
 
