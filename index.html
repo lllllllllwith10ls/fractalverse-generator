@@ -6,8 +6,9 @@
     width: 100%;
 }
 
-	<script src='things.js'></script>
+	
 </style>
+	<script src='things.js'></script>
 </head>
 <body>
 	<div id='debug'></div>
@@ -21,16 +22,11 @@
 	<script>Offline=0;</script></span>
 
 	<script>
-	let SeedObject="universe";
-let Offline=1;
+		let SeedObject="universe";
+		let Offline=1;
 
-const launchNest = (what) => {
-	if (!Things[what]) what="error";
-	var Seed=make(what);
-	Seed.Grow(0);
-	Seed.List();
-}
-	launchNest(SeedObject.toLowerCase());
+
+		launchNest(SeedObject.toLowerCase());
 	</script>
 </body>
 </html>
