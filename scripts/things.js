@@ -137,7 +137,8 @@ const debug = (what) => {
 	document.getElementById("debug").innerHTML=document.getElementById("debug").innerHTML+'<br>'+what;
 }
 
-New Thing("multiverse",["universe,50"]);
+new Thing("multiverse",["universe,50"]);
+new Thing("universe",[])
 
 document.getElementById("debug").innerHTML="";
 Debug('<div id="div0" class="thing"></div>');
