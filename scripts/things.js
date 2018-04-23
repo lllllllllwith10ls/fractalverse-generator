@@ -268,6 +268,7 @@ new Thing("aaa",["null,2-3"],[["!","@","#","$","%","^","&","*","+","_","?","/"],
 new Thing("up quark",["aaa"]);
 new Thing("down quark",["aaa"]);
 new Thing("strange quark",["aaa"]);
+new Thing("gluon",["aaa"]);
 new Thing("strangelet",["up quark,2-20","down quark,2-20","strange quark,2-20","gluon,2-20"]);
 new Thing("null",["the box"]);
 document.getElementById("debug").innerHTML="";
