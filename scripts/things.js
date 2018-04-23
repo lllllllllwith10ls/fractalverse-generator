@@ -188,7 +188,8 @@ new Thing("hubble volume",["supercluster,30-40","supergalaxy,20-30","galaxy clus
 new Thing("fractalverse",["level " + Math.floor(Math.random()*10) + "turtlie,40-60"]);
 new Thing("supercluster",["galaxy cluster, 40-75","supergalaxy,25%","galaxy,100-250"]);
 new Thing("supergalaxy",["galaxy,50-200","bubble,200-1000"]);
-
+new Thing("galaxy cluster",["galaxy,20-40"]);
+new Thing("galaxy",[]);
 document.getElementById("debug").innerHTML="";
 debug('<div id="div0" class="thing"></div>');
 
