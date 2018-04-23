@@ -141,7 +141,7 @@ new Thing("multiverse",["universe,50"]);
 new Thing("universe",[])
 
 document.getElementById("debug").innerHTML="";
-Debug('<div id="div0" class="thing"></div>');
+debug('<div id="div0" class="thing"></div>');
 
 const launchNest = (what) => {
 	if (!Things[what]) what="error";
