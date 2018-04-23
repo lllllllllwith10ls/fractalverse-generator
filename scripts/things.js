@@ -234,7 +234,7 @@ new Thing("temperate terrestrial planet",["temperate atmosphere,95%","temperate 
 
 
 new Thing("corona",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
-new Thing("jovian atmosphere",["hydrogen cloud,100-200","helium cloud,20-30"],["atmosphere"]);
+new Thing("jovian atmosphere",["hydrogen cloud,100-200","helium cloud,20-30","methane cloud,10-20,10%"],["atmosphere"]);
 new Thing("chromosphere",["plasma cloud,10-20"]);
 new Thing("photosphere",["plasma cloud,100-200"]);
 new Thing("convective zone",["plasma cloud,200-300"]);
@@ -243,6 +243,7 @@ new Thing("star core",["plasma cloud,300-350"],["core"]);
 new Thing("plasma cloud",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
 new Thing("hydrogen cloud",["hydrogen,100-200"]);
 new Thing("helium cloud",["helium atom,100-200"]);
+new Thing("methane cloud",["methane,100-200"]);
 new Thing("rocky core",["rock,100-200"]);
 new Thing("rock",[["silicon dioxide,50-100","magnesium oxide,50-100","iron ii oxide,50-100","aluminum oxide,50-100","calcium oxide,50-100"]]);
 new Thing("neutron star crust",["iron atom,100-500"],["crust"]);
@@ -253,13 +254,14 @@ new Thing("magnesium oxide",["magnesium atom","oxygen atom"]);
 new Thing("iron ii oxide",["iron atom","oxygen atom"]);
 new Thing("aluminum oxide",["aluminum atom,2","oxygen atom,3"]);
 new Thing("calcium oxide",["calcium atom","oxygen atom"]);
+new Thing("methane",["hydrogen atom,4","carbon atom"]);
+new Thing("hydrogen",["hydrogen atom,2"]);
 
 new Thing("silicon atom",["proton,14","neutron,14","neutron,5%","neutron,2%","electron,14","electron,1%"]);
 new Thing("oxygen atom",["proton,8","neutron,8",["neutron,2,2%","neutron,.05%"],"electron,8","electron,50%","electron,50%"]);
 new Thing("aluminum atom",["proton,13","neutron,14","electron,10","electron,1-3,20%"]);
 new Thing("magnesium atom",["proton,12","neutron,12",["neutron,10%","neutron,2,11%"],"electron,10","electron,2,25%"]);
 new Thing("iron atom",["proton,26","neutron,28",["neutron,2,95%","neutron,2,95%","neutron,2,95%","neutron,2,95%","neutron,2-3"],"electron,23",["electron","electron,3"]])
-new Thing("hydrogen",["hydrogen atom,2"]);
 new Thing("hydrogen atom",["proton","electron,80%","electron,10%","neutron,.2%"]);
 new Thing("helium atom",["proton,2","electron,2","neutron","neutron,99.998%"]);
 new Thing("proton",["up quark,2","down quark","gluon,1-5","strange quark,.01%"]);
