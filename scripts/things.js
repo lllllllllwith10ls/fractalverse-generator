@@ -236,7 +236,17 @@ new Thing("convective zone",[".chromosphere"]);
 new Thing("radiative zone",[".chromosphere"]);
 new Thing("star core",[".chromosphere"]);
 new Thing("plasma cloud",[".corona"]);
-
+new Thing("hydrogen cloud",["hydrogen atom,100-200"]);
+new Thing("helium cloud",["helium atom,100-200"]);
+new Thing("hydrogen atom",["proton","electron,80%","electron,20%","neutron,1%"]);
+new Thing("helium atom",["proton,2","electron","electron,99.9%","electron,.1%","neutron","neutron,99%"]);
+new Thing("proton",["up quark,2","down quark","gluon,1-5","strange quark,.01%"]);
+new Thing("neutron",["down quark,2","up quark","gluon,1-5","strange quark,.01%"]);
+new Thing("electron",["aaa"]);
+new Thing("aaa",["null,2-3"],[["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"]]);
+new Thing("up quark",["aaa"]);
+new Thing("down quark",["aaa"]);
+new Thing("null",["the box"]);
 document.getElementById("debug").innerHTML="";
 debug('<div id="div0" class="thing"></div>');
 
