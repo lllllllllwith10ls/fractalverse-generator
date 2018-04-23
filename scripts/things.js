@@ -226,8 +226,11 @@ new Thing("star cloud",["solar system,20-30"],"stellar cloud");
 new Thing("solar system",[["star","star","star","star","star","star","star","star","brown dwarf","brown dwarf","brown dwarf","white dwarf","white dwarf","black hole","neutron star"],["asteroid belt","dwarf planet","terrestrial planet","superterrestrial planet","jovian planet"],["asteroid belt,90%","dwarf planet,90%","terrestrial planet,90%","superterrestrial planet,90%","jovian planet,90%"],["asteroid belt,50%","dwarf planet,50%","terrestrial planet,50%","superterrestrial planet,50%","jovian planet,50%"],["asteroid belt,50%","dwarf planet,50%","terrestrial planet,50%","superterrestrial planet,50%","jovian planet,50%"]]);
 new Thing("star",["corona","chromosphere","photosphere","convective zone","radiative zone","star core"],[["o-type","a-type","b-type","f-type","f-type","g-type","g-type","g-type","k-type","k-type","k-type","k-type","k-type","m-type","m-type","m-type","m-type","m-type","m-type","m-type"],[" star"]]);
 new Thing("black hole",["singularity"]);
-new Thing("brown dwarf",["jovian atmosphere","planet core"]);
+new Thing("singularity",["aaa,1-3","wormhole,1%"]);
+new Thing("wormhole",["universe"]);
+new Thing("brown dwarf",["jovian atmosphere","rocky core"]);
 new Thing("neutron star",["neutron star crust","neutron star core"]);
+
 new Thing("corona",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
 new Thing("jovian atmosphere",["hydrogen cloud,100-200","helium cloud,20-30"]);
 new Thing("chromosphere",["plasma cloud,10-20"]);
@@ -236,10 +239,22 @@ new Thing("convective zone",["plasma cloud,200-300"]);
 new Thing("radiative zone",["plasma cloud,300-350"]);
 new Thing("star core",["plasma cloud,300-350"]);
 new Thing("plasma cloud",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
-new Thing("hydrogen cloud",["hydrogen atom,100-200"]);
+new Thing("hydrogen cloud",["hydrogen,100-200"]);
 new Thing("helium cloud",["helium atom,100-200"]);
-new Thing("hydrogen atom",["proton","electron,80%","electron,20%","neutron,1%"]);
-new Thing("helium atom",["proton,2","electron","electron,99.9%","electron,.1%","neutron","neutron,99%"]);
+new Thing("rocky core",["rock,100-200"]);
+new Thing("rock",[["silicon dioxide,50-100","magnesium oxide,50-100","iron ii oxide,50-100","aluminum oxide,50-100","calcium oxide,50-100"]]);
+
+new Thing("silicon dioxide",["silicon atom","oxygen atom,2"]);
+new Thing("magnesium oxide",["magnesium atom","oxygen atom"]);
+new Thing("iron ii oxide",["iron atom","oxygen atom"]);
+new Thing("aluminum oxide",["aluminum atom,2","oxygen atom,3"]);
+new Thing("calcium oxide",["calcium atom","oxygen atom"]);
+new Thing("silicon atom"["proton,14","neutron,14","neutron,5%","neutron,2%","electron,14","electron,1%"]);
+new Thing("oxygen atom"["proton,8","neutron,8",["neutron,2,.2%","neutron,.05%"],"electron,8","electron,1-2,50%"])
+
+new Thing("hydrogen",["hydrogen atom,2"]);
+new Thing("hydrogen atom",["proton","electron,80%","electron,10%","neutron,.2%"]);
+new Thing("helium atom",["proton,2","electron,2","neutron","neutron,99.998%"]);
 new Thing("proton",["up quark,2","down quark","gluon,1-5","strange quark,.01%"]);
 new Thing("neutron",["down quark,2","up quark","gluon,1-5","strange quark,.01%"]);
 new Thing("electron",["aaa"]);
