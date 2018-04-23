@@ -175,10 +175,10 @@ function toggle(what)
 const debug = (what) => {
 	document.getElementById("debug").innerHTML=document.getElementById("debug").innerHTML+'<br>'+what;
 }
-new Thing("megaverse",["multiverse,90-100"]
+new Thing("megaverse",["multiverse,90-100"]);
 new Thing("multiverse",["universe,40-50","fractalverse,2-4"]);
 new Thing("universe",["hubble volume,40-60"]);
-new Thing("fractalverse",["level " + Math.floor(Math.random()*10) + "turtlie,40-60"
+new Thing("fractalverse",["level " + Math.floor(Math.random()*10) + "turtlie,40-60"]);
 
 
 document.getElementById("debug").innerHTML="";
