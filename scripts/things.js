@@ -188,7 +188,7 @@ new Thing("hubble volume",["supercluster,30-40","supergalaxy,0-3","galaxy cluste
 new Thing("fractalverse",["level " + Math.floor(Math.random()*10) + "turtlie,40-60"]);
 new Thing("level 1 turtlie",[]);
 for(let i=2;i<=100;i++) {
-	new Thing("level " + i + " turtlie",["level " + i-1 + " turtlie]);
+	new Thing("level " + i + " turtlie",["level " + i-1 + " turtlie"]);
 };
 new Thing("supercluster",["galaxy cluster, 40-75","supergalaxy,25%","galaxy,100-250"]);
 new Thing("supergalaxy",["galaxy,50-200","supergalaxy,2%"]);
