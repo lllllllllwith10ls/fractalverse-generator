@@ -194,12 +194,12 @@ new Thing("multiverse",["universe,40-50","fractalverse,2-4"]);
 new Thing("universe",["hubble volume,40-60"]);
 new Thing("hubble volume",["supercluster,30-40","supergalaxy,0-3","galaxy cluster,100-200"]);
 new Thing("fractalverse",[["level 1 turtlie,40-60","level 2 turtlie,40-60","level 3 turtlie,40-60","level 4 turtlie,40-60","level 5 turtlie,40-60","level 6 turtlie,40-60","level 7 turtlie,40-60","level 8 turtlie,40-60","level 9 turtlie,40-60","level 10 turtlie,40-60"]]);
-new Thing("level 1 turtlie",[]);
+new Thing("level 1 turtlie",["islandic,40-60"]);
 for(let i=2;i<=10;i++) {
 	new Thing("level " + i + " turtlie",["level " + (i-1) + " turtlie,40-60"]);
-	console.log(i);
-	console.log(Things["level" + i + "turtlie"]);
 };
+new Thing("islandic",["islandic piece,10-20"]);
+new Thing("islandic piece",["supergalaxy,40-60"]);
 new Thing("supercluster",["galaxy cluster, 40-75","supergalaxy,25%","galaxy,100-250"]);
 new Thing("supergalaxy",["galaxy,50-200","supergalaxy,2%"]);
 new Thing("galaxy cluster",["galaxy,20-40"]);
