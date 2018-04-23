@@ -204,6 +204,11 @@ new Thing("supercluster",["galaxy cluster, 40-75","supergalaxy,25%","galaxy,100-
 new Thing("supergalaxy",["galaxy,50-200","supergalaxy,2%"]);
 new Thing("galaxy cluster",["galaxy,20-40"]);
 new Thing("galaxy",[["spiral arm,3-6","galaxy body"],"galactic core","galactic halo"]);
+new Thing("spiral arm",["belt,10-15","bubble,50-100"]);
+new Thing("galaxy body",["belt,50-150","bubble,500-750"]);
+new Thing("galactic halo",["globular cluster,25-50"]);
+new Thing("belt",["bubble,10-20","cloud,50-100"],"stellar belt");
+new Thing("bubble",["cloud,20-30","solar system,200-300"],"stellar bubble");
 document.getElementById("debug").innerHTML="";
 debug('<div id="div0" class="thing"></div>');
 
