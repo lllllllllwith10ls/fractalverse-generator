@@ -76,7 +76,7 @@ Instance.prototype.Grow=function()
 {
 	if (this.grown===false)
 	{
-		this.Name();
+		
 		for (let i in this.type.contains)
 		{
 			toMake=this.type.contains[i];
