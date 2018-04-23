@@ -189,6 +189,16 @@ function toggle(what)
 const debug = (what) => {
 	document.getElementById("debug").innerHTML=document.getElementById("debug").innerHTML+'<br>'+what;
 }
+new Thing("the box",["altarca,90-110","the box"]);
+new Thing("altarca",["trancendentum continuum,50-60"]);
+new Thing("trancendentum continuum",["trancendentum,100-130"]);
+new Thing("trancendentum",["beyond bubble,70-120"]);
+new Thing("beyond bubble",["monocosm,90-100"]);
+new Thing("monocosm",["omniverse,1-5","godverse,1-2"]);
+new Thing("omniverse",["apeiroverse,100-200"]);
+new Thing("apeiroverse",["ultraverse,100-200"]);
+new Thing("ultraverse",["gigaverse,50-100","megaverse,90-100","multiverse,100-200"]);
+new Thing("gigaverse",["megaverse,90-100"]);
 new Thing("megaverse",["multiverse,90-100"]);
 new Thing("multiverse",["universe,40-50","fractalverse,2-4"]);
 new Thing("universe",["hubble volume,40-60"]);
