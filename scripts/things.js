@@ -261,6 +261,7 @@ new Thing("helium atom",["proton,2","electron,2","neutron","neutron,99.998%"]);
 new Thing("proton",["up quark,2","down quark","gluon,1-5","strange quark,.01%"]);
 new Thing("neutron",["down quark,2","up quark","gluon,1-5","strange quark,.01%"]);
 new Thing("electron",["aaa"]);
+new Thing("gluon",["aaa"]);
 new Thing("aaa",["null,2-3"],[["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"]]);
 new Thing("up quark",["aaa"]);
 new Thing("down quark",["aaa"]);
