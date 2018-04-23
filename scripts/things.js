@@ -124,15 +124,36 @@ Instance.prototype.List=function()
 		str+='<div id="div'+this.children[i].n+'">'+this.children[i].name+'</div>';
 	}
 	
-	//if (this.children.length>0) document.getElementById("div"+this.n).innerHTML='<span onclick="Toggle('+this.n+');"><span class="arrow" id="arrow'+this.n+'">+</span> '+this.name+'</span><div id="container'+this.n+'" class="thing" style="display:none;">'+str+'</div>';
-	if (this.children.length>0) document.getElementById("div"+this.n).innerHTML='<a href="javascript:Toggle('+this.n+');" style="padding-right:8px;" alt="archetype : '+(this.type.name)+'" title="archetype : '+(this.type.name)+'"><span class="arrow" id="arrow'+this.n+'">+</span> '+this.name+'</a><div id="container'+this.n+'" class="thing" style="display:none;'+addStyle+'">'+str+'</div>';
+	//if (this.children.length>0) document.getElementById("div"+this.n).innerHTML='<span onclick="toggle('+this.n+');"><span class="arrow" id="arrow'+this.n+'">+</span> '+this.name+'</span><div id="container'+this.n+'" class="thing" style="display:none;">'+str+'</div>';
+	if (this.children.length>0) document.getElementById("div"+this.n).innerHTML='<a href="javascript:toggle('+this.n+');" style="padding-right:8px;" alt="archetype : '+(this.type.name)+'" title="archetype : '+(this.type.name)+'"><span class="arrow" id="arrow'+this.n+'">+</span> '+this.name+'</a><div id="container'+this.n+'" class="thing" style="display:none;'+addStyle+'">'+str+'</div>';
 	else document.getElementById("div"+this.n).innerHTML='<span class="emptyThing">'+this.name+'</span>';
 }
 
 const make = (what) => {
 	return new Instance(what);
 }
+function toggle(what)
+{
+	if (Instances[what].display==0)
+	{
 
+		for (var i in Instances[what].children)
+		{
+			if (Instances[what].children[i].grown==false) {Instances[what].children[i].Grow(0);Instances[what].children[i].List(0);}
+		}
+
+
+		Instances[what].display=1;
+		document.getElementById("container"+what).style.display="block";
+		document.getElementById("arrow"+what).innerHTML="-";
+	}
+	else if (Instances[what].display==1)
+	{
+		Instances[what].display=0;
+		document.getElementById("container"+what).style.display="none";
+		document.getElementById("arrow"+what).innerHTML="+";
+	}
+}
 const debug = (what) => {
 	document.getElementById("debug").innerHTML=document.getElementById("debug").innerHTML+'<br>'+what;
 }
