@@ -1,6 +1,6 @@
 let Things = {}
 
-thisN = 0;
+ThingsN = 0;
 
 class Thing{
 	constructor(name,contains,namegen){
