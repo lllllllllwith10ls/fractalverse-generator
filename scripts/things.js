@@ -3,7 +3,10 @@ function Rand(min,max)
 	
 	return parseFloat(Math.floor(Math.random()*(max-min+1)))+parseFloat(min);
 }
-
+function Choose(arr)
+{
+	return arr[Math.floor(Math.random()*arr.length)];
+}
 let Things = {}
 
 let ThingsN = 0;
