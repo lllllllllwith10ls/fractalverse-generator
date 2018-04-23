@@ -203,7 +203,7 @@ new Thing("islandic piece",["supergalaxy,40-60"]);
 new Thing("supercluster",["galaxy cluster, 40-75","supergalaxy,25%","galaxy,100-250"]);
 new Thing("supergalaxy",["galaxy,50-200","supergalaxy,2%"]);
 new Thing("galaxy cluster",["galaxy,20-40"]);
-new Thing("galaxy",[[["spiral arm,3-6","galactic core"],"galaxy body"],"galactic halo"]);
+new Thing("galaxy",[["spiral arm,3-6","galaxy body"],"galactic core","galactic halo"]);
 document.getElementById("debug").innerHTML="";
 debug('<div id="div0" class="thing"></div>');
 
