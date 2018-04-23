@@ -153,10 +153,3 @@ const launchNest = (what) => {
 let SeedObject="universe";
 let Offline=1;
 
-const launchNest = (what) => {
-	if (!Things[what]) what="error";
-	var Seed=make(what);
-	Seed.Grow(0);
-	Seed.List();
-}
-	launchNest(SeedObject.toLowerCase());
