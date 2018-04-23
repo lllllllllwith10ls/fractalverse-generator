@@ -204,7 +204,7 @@ new Thing("supercluster",["galaxy cluster, 40-75","supergalaxy,25%","galaxy,100-
 new Thing("supergalaxy",["galaxy,50-200","supergalaxy,2%"]);
 new Thing("galaxy cluster",["galaxy,20-40"]);
 new Thing("galaxy",[["spiral arm,3-6","galaxy body"],"galactic core","galactic halo"]);
-new Thing("galactic core",["belt,10-20","central black hole"]);
+new Thing("galactic core",["central black hole","belt,10-20"]);
 new Thing("central black hole",["black hole","black hole 2%","solar system,2-10"]);
 new Thing("spiral arm",["belt,10-15","bubble,50-100"]);
 new Thing("galaxy body",["belt,50-150","bubble,500-750"]);
