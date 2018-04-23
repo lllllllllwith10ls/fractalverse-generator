@@ -198,7 +198,7 @@ new Thing("level 1 turtlie",[]);
 for(let i=2;i<=10;i++) {
 	new Thing("level " + i + " turtlie",["level " + (i-1) + " turtlie,40-60"]);
 	console.log(i);
-	console.log(things["level" + i + "turtlie"]);
+	console.log(Things["level" + i + "turtlie"]);
 };
 new Thing("supercluster",["galaxy cluster, 40-75","supergalaxy,25%","galaxy,100-250"]);
 new Thing("supergalaxy",["galaxy,50-200","supergalaxy,2%"]);
