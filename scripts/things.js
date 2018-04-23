@@ -204,11 +204,15 @@ new Thing("supercluster",["galaxy cluster, 40-75","supergalaxy,25%","galaxy,100-
 new Thing("supergalaxy",["galaxy,50-200","supergalaxy,2%"]);
 new Thing("galaxy cluster",["galaxy,20-40"]);
 new Thing("galaxy",[["spiral arm,3-6","galaxy body"],"galactic core","galactic halo"]);
+new Thing("galactic core",["belt,10-20","central black hole"]);
 new Thing("spiral arm",["belt,10-15","bubble,50-100"]);
 new Thing("galaxy body",["belt,50-150","bubble,500-750"]);
 new Thing("galactic halo",["globular cluster,25-50"]);
+new Thing("globular cluster",["solar system,500-750"]);
 new Thing("belt",["bubble,10-20","cloud,50-100"],"stellar belt");
 new Thing("bubble",["cloud,20-30","solar system,200-300"],"stellar bubble");
+new Thing("cloud",["solar system,20-30"],"stellar cloud");
+new Thing("solar system",[["o-type star","a-type star","b-type star","f-type star","f-type star","g-type star","g-type star","g-type star","g-type star","k-type star","k-type star","k-type star","k-type star","k-type star","k-type star","m-type star","m-type star","m-type star","m-type star","m-type star","m-type star","m-type star","m-type star","m-type star","m-type star","brown dwarf","brown dwarf","brown dwarf","brown dwarf","brown dwarf","brown dwarf","brown dwarf","brown dwarf","brown dwarf","brown dwarf","black hole","neutron star"],[,"asteroid belt","dwarf planet","terrestrial planet","superterrestrial planet","jovian planet"],[,"asteroid belt","dwarf planet","terrestrial planet","superterrestrial planet","jovian planet"],[,"asteroid belt","dwarf planet","terrestrial planet","superterrestrial planet","jovian planet"],[,"asteroid belt","dwarf planet","terrestrial planet","superterrestrial planet","jovian planet"])
 document.getElementById("debug").innerHTML="";
 debug('<div id="div0" class="thing"></div>');
 
