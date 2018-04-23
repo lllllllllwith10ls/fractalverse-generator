@@ -71,12 +71,31 @@ class Instance{
     return this;
   }
 }
+Instance.prototype.Name=function()
+{
+	this.name=this.type.namegen;
 
+	if (typeof(this.name)!="string")
+	{
+		var str="";
+		if (typeof(this.name[0])=="string") str+=Choose(this.name);
+		else
+		{
+			for (var i in this.name)
+			{
+				str+=Choose(this.name[i]);
+			}
+		}
+		this.name=str;
+	}
+	if (nameParts[1]!=undefined) this.name=this.name+nameParts[1];
+
+}
 Instance.prototype.Grow=function()
 {
 	if (this.grown===false)
 	{
-		
+		this.Name();
 		for (let i in this.type.contains)
 		{
 			toMake=this.type.contains[i];
