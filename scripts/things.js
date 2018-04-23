@@ -223,13 +223,14 @@ new Thing("globular cluster",["solar system,500-750"]);
 new Thing("belt",["bubble,10-20","star cloud,50-100"],"stellar belt");
 new Thing("bubble",["star cloud,20-30","solar system,200-300"],"stellar bubble");
 new Thing("star cloud",["solar system,20-30"],"stellar cloud");
-new Thing("solar system",[["star","star","star","star","star","star","star","star","brown dwarf","brown dwarf","brown dwarf","white dwarf","white dwarf","black hole","neutron star"],["asteroid belt","dwarf planet","terrestrial planet","superterrestrial planet","jovian planet"],["asteroid belt,90%","dwarf planet,90%","terrestrial planet,90%","superterrestrial planet,90%","jovian planet,90%"],["asteroid belt,50%","dwarf planet,50%","terrestrial planet,50%","superterrestrial planet,50%","jovian planet,50%"],["asteroid belt,50%","dwarf planet,50%","terrestrial planet,50%","superterrestrial planet,50%","jovian planet,50%"]]);
+new Thing("solar system",[["star","star","star","star","star","star","star","star","brown dwarf","brown dwarf","brown dwarf","white dwarf","white dwarf","black hole","neutron star"],["scorched asteroid belt","scorched dwarf planet","scorched terrestrial planet","scorched superterrestrial planet","scorched jovian planet"],["hot asteroid belt","hot dwarf planet","hot terrestrial planet","hot superterrestrial planet","hot jovian planet"],["warm asteroid belt","warm dwarf planet","warm terrestrial planet","warm superterrestrial planet","warm jovian planet"],["temperate asteroid belt","temperate dwarf planet","temperate terrestrial planet","temperate superterrestrial planet","temperate jovian planet"],["cool asteroid belt","cool dwarf planet","cool terrestrial planet","cool superterrestrial planet","cool jovian planet"],["cold asteroid belt","cold dwarf planet","cold terrestrial planet","cold superterrestrial planet","cold jovian planet"],["frozen asteroid belt","frozen dwarf planet","frozen terrestrial planet","frozen superterrestrial planet","frozen jovian planet"]]);
 new Thing("star",["corona","chromosphere","photosphere","convective zone","radiative zone","star core"],[["o-type","a-type","b-type","f-type","f-type","g-type","g-type","g-type","k-type","k-type","k-type","k-type","k-type","m-type","m-type","m-type","m-type","m-type","m-type","m-type"],[" star"]]);
 new Thing("black hole",["singularity"]);
 new Thing("singularity",["aaa,1-3","wormhole,1%"]);
 new Thing("wormhole",["universe"]);
 new Thing("brown dwarf",["jovian atmosphere","rocky core"]);
 new Thing("neutron star",["neutron star crust","neutron star core"]);
+new Thing("temperate terrestrial planet",["temperate atmosphere,95%","temperate crust","metallic core"]);
 
 
 new Thing("corona",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
