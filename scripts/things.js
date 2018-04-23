@@ -185,8 +185,9 @@ new Thing("megaverse",["multiverse,90-100"]);
 new Thing("multiverse",["universe,40-50","fractalverse,2-4"]);
 new Thing("universe",["hubble volume,40-60"]);
 new Thing("hubble volume",["supercluster,30-40","supergalaxy,20-30","galaxy cluster,100-200"]);
-//new Thing("fractalverse",["level " + Math.floor(Math.random()*10) + "turtlie,40-60"]);
-
+new Thing("fractalverse",["level " + Math.floor(Math.random()*10) + "turtlie,40-60"]);
+new Thing("supercluster",["galaxy cluster, 40-75","supergalaxy,25%","galaxy,100-250]);
+new Thing("supergalaxy",["galaxy,50-200","bubble,200-1000"]);
 
 document.getElementById("debug").innerHTML="";
 debug('<div id="div0" class="thing"></div>');
