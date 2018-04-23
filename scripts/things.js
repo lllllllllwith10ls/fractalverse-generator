@@ -254,7 +254,7 @@ new Thing("silicon atom",["proton,14","neutron,14","neutron,5%","neutron,2%","el
 new Thing("oxygen atom",["proton,8","neutron,8",["neutron,2,2%","neutron,.05%"],"electron,8","electron,50%","electron,50%"]);
 new Thing("aluminum atom",["proton,13","neutron,14","electron,10","electron,1-3,20%"]);
 new Thing("magnesium atom",["proton,12","neutron,12",["neutron,10%","neutron,2,11%"],"electron,10","electron,2,25%"]);
-new Thing("iron atom",["proton,26","neutron,28",["neutron,2",95%,"neutron,2",95%,"neutron,2",95%,"neutron,2",95%,"neutron,2-3"],"electron,23",["electron","electron,3"]]);
+new Thing("iron atom",["proton,26","neutron,28",["neutron,2,95%","neutron,2,95%","neutron,2,95%","neutron,2,95%","neutron,2-3"],"electron,23",["electron","electron,3"]]);
 new Thing("hydrogen",["hydrogen atom,2"]);
 new Thing("hydrogen atom",["proton","electron,80%","electron,10%","neutron,.2%"]);
 new Thing("helium atom",["proton,2","electron,2","neutron","neutron,99.998%"]);
