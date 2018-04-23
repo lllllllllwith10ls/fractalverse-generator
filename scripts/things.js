@@ -250,7 +250,7 @@ new Thing("iron ii oxide",["iron atom","oxygen atom"]);
 new Thing("aluminum oxide",["aluminum atom,2","oxygen atom,3"]);
 new Thing("calcium oxide",["calcium atom","oxygen atom"]);
 new Thing("silicon atom"["proton,14","neutron,14","neutron,5%","neutron,2%","electron,14","electron,1%"]);
-new Thing("oxygen atom"["proton,8","neutron,8",["neutron,2,.2%","neutron,.05%"],"electron,8","electron,1-2,50%"])
+new Thing("oxygen atom"["proton,8","neutron,8",["neutron,2","neutron,.05%"],"electron,8","electron,50%","electron,50%"])
 
 new Thing("hydrogen",["hydrogen atom,2"]);
 new Thing("hydrogen atom",["proton","electron,80%","electron,10%","neutron,.2%"]);
