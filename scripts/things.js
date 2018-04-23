@@ -88,7 +88,6 @@ Instance.prototype.Name=function()
 		}
 		this.name=str;
 	}
-	if (nameParts[1]!=undefined) this.name=this.name+nameParts[1];
 
 }
 Instance.prototype.Grow=function()
