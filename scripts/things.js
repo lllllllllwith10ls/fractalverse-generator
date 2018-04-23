@@ -193,9 +193,9 @@ new Thing("megaverse",["multiverse,90-100"]);
 new Thing("multiverse",["universe,40-50","fractalverse,2-4"]);
 new Thing("universe",["hubble volume,40-60"]);
 new Thing("hubble volume",["supercluster,30-40","supergalaxy,0-3","galaxy cluster,100-200"]);
-new Thing("fractalverse",["level " + [1,2,3,4,5,6,7,8,9,10] + " turtlie,40-60"]);
+new Thing("fractalverse",["level " + chooseRand(1,100) + " turtlie,40-60"]);
 new Thing("level 1 turtlie",[]);
-for(let i=2;i<=10;i++) {
+for(let i=2;i<=100;i++) {
 	new Thing("level " + i + " turtlie",["level " + i-1 + " turtlie,40-60"]);
 };
 new Thing("supercluster",["galaxy cluster, 40-75","supergalaxy,25%","galaxy,100-250"]);
