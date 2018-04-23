@@ -249,9 +249,11 @@ new Thing("magnesium oxide",["magnesium atom","oxygen atom"]);
 new Thing("iron ii oxide",["iron atom","oxygen atom"]);
 new Thing("aluminum oxide",["aluminum atom,2","oxygen atom,3"]);
 new Thing("calcium oxide",["calcium atom","oxygen atom"]);
+
 new Thing("silicon atom",["proton,14","neutron,14","neutron,5%","neutron,2%","electron,14","electron,1%"]);
 new Thing("oxygen atom",["proton,8","neutron,8",["neutron,2,2%","neutron,.05%"],"electron,8","electron,50%","electron,50%"]);
-
+new Thing("aluminum atom",["proton,13","neutron,14","electron,10","electron,1-3,20%"]);
+new Thing("magnesium atom",[]);
 new Thing("hydrogen",["hydrogen atom,2"]);
 new Thing("hydrogen atom",["proton","electron,80%","electron,10%","neutron,.2%"]);
 new Thing("helium atom",["proton,2","electron,2","neutron","neutron,99.998%"]);
