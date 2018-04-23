@@ -185,7 +185,7 @@ new Thing("megaverse",["multiverse,90-100"]);
 new Thing("multiverse",["universe,40-50","fractalverse,2-4"]);
 new Thing("universe",["hubble volume,40-60"]);
 new Thing("hubble volume",["supercluster,30-40","supergalaxy,0-3","galaxy cluster,100-200"]);
-new Thing("fractalverse",["level " + Math.floor(Math.random()*10) + "turtlie,40-60"]);
+new Thing("fractalverse",["level " + Math.floor(Math.random()*10) + " turtlie,40-60"]);
 new Thing("level 1 turtlie",[]);
 for(let i=2;i<=100;i++) {
 	new Thing("level " + i + " turtlie",["level " + i-1 + " turtlie"]);
