@@ -231,18 +231,21 @@ new Thing("wormhole",["universe"]);
 new Thing("brown dwarf",["jovian atmosphere","rocky core"]);
 new Thing("neutron star",["neutron star crust","neutron star core"]);
 
+
 new Thing("corona",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
 new Thing("jovian atmosphere",["hydrogen cloud,100-200","helium cloud,20-30"],["atmosphere"]);
 new Thing("chromosphere",["plasma cloud,10-20"]);
 new Thing("photosphere",["plasma cloud,100-200"]);
 new Thing("convective zone",["plasma cloud,200-300"]);
 new Thing("radiative zone",["plasma cloud,300-350"]);
-new Thing("star core",["plasma cloud,300-350"]);
+new Thing("star core",["plasma cloud,300-350"],["core"]);
 new Thing("plasma cloud",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
 new Thing("hydrogen cloud",["hydrogen,100-200"]);
 new Thing("helium cloud",["helium atom,100-200"]);
 new Thing("rocky core",["rock,100-200"]);
 new Thing("rock",[["silicon dioxide,50-100","magnesium oxide,50-100","iron ii oxide,50-100","aluminum oxide,50-100","calcium oxide,50-100"]]);
+new Thing("neutron star crust",["iron atom,100-500"],["crust"]);
+new Thing("neutron star core",["neutron,100-500","strangelet,50-100"]);
 
 new Thing("silicon dioxide",["silicon atom","oxygen atom,2"]);
 new Thing("magnesium oxide",["magnesium atom","oxygen atom"]);
@@ -263,6 +266,8 @@ new Thing("electron",["aaa"]);
 new Thing("aaa",["null,2-3"],[["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"]]);
 new Thing("up quark",["aaa"]);
 new Thing("down quark",["aaa"]);
+new Thing("strange quark",["aaa"]);
+new Thing("strangelet",["up quark,2-20","down quark,2-20","strange quark,2-20","gluon,2-20"]);
 new Thing("null",["the box"]);
 document.getElementById("debug").innerHTML="";
 debug('<div id="div0" class="thing"></div>');
