@@ -213,6 +213,8 @@ new Thing("belt",["bubble,10-20","cloud,50-100"],"stellar belt");
 new Thing("bubble",["cloud,20-30","solar system,200-300"],"stellar bubble");
 new Thing("cloud",["solar system,20-30"],"stellar cloud");
 new Thing("solar system",[["star","star","star","star","star","star","star","star","brown dwarf","brown dwarf","brown dwarf","brown dwarf","brown dwarf","brown dwarf","brown dwarf","brown dwarf","brown dwarf","brown dwarf","white dwarf","white dwarf","black hole","neutron star"],["asteroid belt","dwarf planet","terrestrial planet","superterrestrial planet","jovian planet"],["asteroid belt,90%","dwarf planet,90%","terrestrial planet,90%","superterrestrial planet,90%","jovian planet,90%"],["asteroid belt,50%","dwarf planet,50%","terrestrial planet,50%","superterrestrial planet,50%","jovian planet,50%"],["asteroid belt,50%","dwarf planet,50%","terrestrial planet,50%","superterrestrial planet,50%","jovian planet,50%"]]);
+new Thing("star",["corona","chromosphere","photosphere","convective zone","radiative zone","star core"],[["o-type","a-type","b-type","f-type","f-type","g-type","g-type","g-type","k-type","k-type","k-type","k-type","k-type","m-type","m-type","m-type","m-type","m-type","m-type","m-type"]," star"]);
+
 document.getElementById("debug").innerHTML="";
 debug('<div id="div0" class="thing"></div>');
 
