@@ -1,11 +1,16 @@
-function Rand(min,max)
-{
+function Rand(min,max) {
 	
 	return parseFloat(Math.floor(Math.random()*(max-min+1)))+parseFloat(min);
 }
-function Choose(arr)
-{
+function Choose(arr) {
 	return arr[Math.floor(Math.random()*arr.length)];
+}
+function ChooseRand(min,max) {
+	let numbers = []
+	for(let i = min; i<=max; i++) {
+	numbers.push(i)	
+	}
+	return Choose(numbers)
 }
 let Things = {}
 
