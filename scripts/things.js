@@ -178,7 +178,7 @@ const debug = (what) => {
 }
 
 new Thing("multiverse",["universe,50"]);
-new Thing("universe",[])
+new Thing("universe",["hubble volume,50"])
 
 document.getElementById("debug").innerHTML="";
 debug('<div id="div0" class="thing"></div>');
