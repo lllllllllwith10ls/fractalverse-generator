@@ -230,7 +230,7 @@ new Thing("singularity",["aaa,1-3","wormhole,1%"]);
 new Thing("wormhole",["universe"]);
 new Thing("brown dwarf",["jovian atmosphere","rocky core"]);
 new Thing("neutron star",["neutron star crust","neutron star core"]);
-new Thing("temperate terrestrial planet",["temperate atmosphere,95%","temperate crust","metallic core","asteroid moon,0-5","temperate moon,0-2",["sublife,95%","prokaryotic life,75%","eukaryotic life,50%","multicellular life,50%","complex multicellular life,45%","simple ecosystem,40%","complex ecosystem,20%","simple civilization,10%","complex civilization,%.1"]);
+new Thing("temperate terrestrial planet",["temperate atmosphere,95%","temperate crust","metallic core","asteroid moon,0-5","temperate moon,0-2",["sublife,95%","prokaryotic life,75%","eukaryotic life,50%","multicellular life,50%","complex multicellular life,45%","simple ecosystem,40%","complex ecosystem,20%","simple civilization,10%","complex civilization,%.1"]]);
 new Thing("temperate asteroid belt",["asteroid,100-200",["sublife,20%","prokaryotic life,1%","eukaryotic life,.1%"]]);
 
 
