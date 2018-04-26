@@ -117,7 +117,7 @@ Instance.prototype.Name=function()
 	{
 		this.name=this.parent.name;
 	}
-
+	if (nameParts[1]!=undefined) this.name=this.name+nameParts[1];
 }
 Instance.prototype.Grow=function()
 {
