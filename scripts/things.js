@@ -85,10 +85,12 @@ class Instance{
     return this;
   }
 }
-Instance.prototype.GetParentName(){
+Instance.prototype.GetParentName()
+{
 	return this.parent.name
 }
-Instance.prototype.Name=function(){
+Instance.prototype.Name=function()
+{
 	this.name=this.type.namegen;
 
 	if (typeof(this.name)!="string")
