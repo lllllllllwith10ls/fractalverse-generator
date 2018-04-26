@@ -153,7 +153,7 @@ Instance.prototype.Grow=function()
 
 Instance.prototype.List=function()
 {
-	console.log(this.GetParentName);
+	console.log(this.GetParentName());
 	var str="";
 	var addStyle="";
 	for (var i in this.children)
