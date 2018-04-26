@@ -206,7 +206,8 @@ const debug = (what) => {
 	document.getElementById("debug").innerHTML=document.getElementById("debug").innerHTML+'<br>'+what;
 }
 new Thing("the box",["debug","altarca,90-110","the box"]);
-new Thing("debug",[],"*PARENT*");
+new Thing("debug",["debug2"],"aaaaaaaaaaaa");
+new Thing("debug2",[],"*PARENT*");
 new Thing("altarca",["trancendentum continuum,50-60"]);
 new Thing("trancendentum continuum",["trancendentum,100-130"]);
 new Thing("trancendentum",["beyond bubble,70-120"]);
