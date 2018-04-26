@@ -92,10 +92,6 @@ class Instance{
     return this;
   }
 }
-Instance.prototype.GetParentName=function()
-{
-	return this.parent.name
-}
 Instance.prototype.Name=function()
 {
 	this.name=this.type.namegen;
@@ -111,7 +107,15 @@ Instance.prototype.Name=function()
 				str+=Choose(this.name[i]);
 			}
 		}
+		
 		this.name=str;
+	}
+	nameParts=this.name.split("|");
+	this.name=nameParts[0];
+
+	if (this.name=="*PARENT*")
+	{
+		this.name=this.parent.name;
 	}
 
 }
@@ -160,7 +164,6 @@ Instance.prototype.Grow=function()
 
 Instance.prototype.List=function()
 {
-	console.log(this.GetParentName());
 	var str="";
 	var addStyle="";
 	for (var i in this.children)
@@ -203,7 +206,7 @@ const debug = (what) => {
 	document.getElementById("debug").innerHTML=document.getElementById("debug").innerHTML+'<br>'+what;
 }
 new Thing("the box",["debug","altarca,90-110","the box"]);
-new Thing("debug",[],this.GetParentName());
+new Thing("debug",[],"*PARENT*");
 new Thing("altarca",["trancendentum continuum,50-60"]);
 new Thing("trancendentum continuum",["trancendentum,100-130"]);
 new Thing("trancendentum",["beyond bubble,70-120"]);
