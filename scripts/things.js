@@ -48,6 +48,13 @@ const CleanThings = () => {
 					thisT.contains[i]="";
 				}
 			}
+			nameParts=this.name.split("|");
+			this.name=nameParts[0];
+
+			if (this.name=="*PARENT*")
+			{
+				name=this.parent.name
+			}
 		}
 
 		if (toConcat.length>0)
