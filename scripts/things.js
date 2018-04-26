@@ -85,8 +85,10 @@ class Instance{
     return this;
   }
 }
-Instance.prototype.Name=function()
-{
+Instance.prototype.GetParentName(){
+	return this.parent.name
+}
+Instance.prototype.Name=function(){
 	this.name=this.type.namegen;
 
 	if (typeof(this.name)!="string")
@@ -149,6 +151,7 @@ Instance.prototype.Grow=function()
 
 Instance.prototype.List=function()
 {
+	console.log(this.GetParentName);
 	var str="";
 	var addStyle="";
 	for (var i in this.children)
@@ -166,6 +169,7 @@ const make = (what) => {
 }
 function toggle(what)
 {
+	
 	if (Instances[what].display==0)
 	{
 
@@ -253,7 +257,7 @@ new Thing("methane cloud",["methane,100-200"]);
 new Thing("rocky core",["rock,100-200"]);
 new Thing("rock",[["silicon dioxide,50-100","magnesium oxide,50-100","iron ii oxide,50-100","aluminum oxide,50-100","calcium oxide,50-100"]]);
 new Thing("neutron star crust",["iron atom,100-500"],["crust"]);
-new Thing("neutron star core",["neutron,100-500","strangelet,50-100"]);
+new Thing("neutron star core",["neutron,100-500","strangelet,50-100"],["core"]);
 
 new Thing("silicon dioxide",["silicon atom","oxygen atom,2"]);
 new Thing("magnesium oxide",["magnesium atom","oxygen atom"]);
