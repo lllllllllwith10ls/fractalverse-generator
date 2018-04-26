@@ -85,7 +85,7 @@ class Instance{
     return this;
   }
 }
-Instance.prototype.GetParentName()
+Instance.prototype.GetParentName=function()
 {
 	return this.parent.name
 }
