@@ -5,10 +5,11 @@ function Rand(min,max) {
 function Choose(arr) {
 	return arr[Math.floor(Math.random()*arr.length)];
 }
-function ChooseRand(min,max) {
-	let numbers = []
-	for(let i = min; i<=max; i++) {
-	numbers.push(i)	
+function RandName() {
+	let number = Rand(5,15)
+	const letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+	for(number; number>0; i--) {
+		name+=letters[Rand(0,25)];
 	}
 	return Choose(numbers)
 }
@@ -48,15 +49,7 @@ const CleanThings = () => {
 					thisT.contains[i]="";
 				}
 			}
-			nameParts=this.name.split("|");
-			this.name=nameParts[0];
-
-			if (this.name=="*PARENT*")
-			{
-				name=this.parent.name
-			}
-		}
-
+			
 		if (toConcat.length>0)
 		{
 			for (let i in toConcat)
@@ -92,40 +85,35 @@ class Instance{
     return this;
   }
 }
-Instance.prototype.Name=function()
-{
+Instance.prototype.Name=function(){
 	this.name=this.type.namegen;
 
-	if (typeof(this.name)!="string")
-	{
+	if (typeof(this.name)!="string"){
 		var str="";
 		if (typeof(this.name[0])=="string") str+=Choose(this.name);
-		else
-		{
-			for (var i in this.name)
-			{
+		else {
+			for (var i in this.name){
 				str+=Choose(this.name[i]);
 			}
 		}
-		
 		this.name=str;
 	}
 	nameParts=this.name.split("|");
 	this.name=nameParts[0];
-
-	if (this.name=="*PARENT*")
-	{
-		this.name=this.parent.name;
+	for(i=0;i<nameParts.length;i++) {
+		if (nameparts[i]=="*PARENT*") {
+			this.name+=this.parent.name.split("nameparts[i+1]")[0];
+		} else if (nameparts[i]=="*RANDOM*") {
+			this.name+=RandName();
+		} else {
+			this.name+=nameparts[i];
 	}
-	if (nameParts[1]!=undefined) this.name=this.name+nameParts[1];
 }
-Instance.prototype.Grow=function()
-{
-	if (this.grown===false)
-	{
+
+Instance.prototype.Grow=function(){
+	if (this.grown===false){
 		this.Name();
-		for (let i in this.type.contains)
-		{
+		for (let i in this.type.contains){
 			toMake=this.type.contains[i];
 			if (typeof(toMake)!="string")
 			{toMake=Choose(toMake);}
@@ -133,23 +121,19 @@ Instance.prototype.Grow=function()
 			let makeAmount=1;
 			let makeProb=100;
 			if (toMake[1]===undefined) toMake[1]=1;
-			else
-			{
+			else{
 				makeAmount=toMake[1].split("-");
-				if (makeAmount[1]===undefined) makeAmount=makeAmount[0]; else
-				{
+				if (makeAmount[1]===undefined) makeAmount=makeAmount[0]; 
+				else{
 					makeAmount=Rand(makeAmount[0],makeAmount[1]);
 				}
 				makeProb=(toMake[1]+"?").split("%");
 				if (makeProb[1]!=undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
 			}
 
-			if (Things[toMake[0]]!=undefined)
-			{
-				if (Math.random()*100<=makeProb)
-				{
-					for (let ii=0;ii<makeAmount;ii++)
-					{
+			if (Things[toMake[0]]!=undefined){
+				if (Math.random()*100<=makeProb){
+					for (let ii=0;ii<makeAmount;ii++){
 						let New=make(Things[toMake[0]].name);
 						New.parent=this;
 						this.children.push(New);
@@ -162,12 +146,10 @@ Instance.prototype.Grow=function()
 	}
 }
 
-Instance.prototype.List=function()
-{
+Instance.prototype.List=function(){
 	var str="";
 	var addStyle="";
-	for (var i in this.children)
-	{
+	for (var i in this.children){
 		str+='<div id="div'+this.children[i].n+'">'+this.children[i].name+'</div>';
 	}
 	
@@ -176,7 +158,7 @@ Instance.prototype.List=function()
 	else document.getElementById("div"+this.n).innerHTML='<span class="emptyThing">'+this.name+'</span>';
 }
 
-const make = (what) => {
+function make(what){
 	return new Instance(what);
 }
 function toggle(what)
@@ -253,10 +235,10 @@ new Thing("temperate terrestrial planet",["temperate atmosphere,95%","temperate 
 new Thing("temperate asteroid belt",["asteroid,100-200",["sublife,20%","prokaryotic life,1%","eukaryotic life,.1%"]]);
 
 new Thing("sublife",["sublife domain,1-3"]);
-new Thing("sublife domain",["sublife kingdom,1-3"],[["domain "],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]]);
-new Thing("sublife kingdom",["sublife phylum,1-3"],[["kingdom "],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]]);
-new Thing("sublife phylum",["sublife class,1-3"],[["phylum "],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]]);
-new Thing("sublife class",["sublife order,1-3"],[["order "],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]]);
+new Thing("sublife domain",["sublife kingdom,1-3"],"domain |*RANDOM*");
+new Thing("sublife kingdom",["sublife phylum,1-3"],"kingdom |*RANDOM*");
+new Thing("sublife phylum",["sublife class,1-3"],"phylum |*RANDOM*");
+new Thing("sublife class",["sublife order,1-3"],"class |*RANDOM*");
 new Thing("sublife order",["sublife genus,1-3"],[["order "],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]]);
 new Thing("sublife genus",["sublife species,1-3"],[["genus "],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]]);
 new Thing("sublife species",["sublife individual,1-3"],["*PARENT*| ",["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]]);
