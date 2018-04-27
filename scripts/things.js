@@ -26,9 +26,8 @@ class Thing{
 
     Things[name]=this;
     ThingsN++;
-  }
-  
 }
+
 
 const CleanThings = () => {
 	for (let iT in Things)
