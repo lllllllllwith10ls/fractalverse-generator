@@ -96,16 +96,18 @@ Instance.prototype.Name=function(){
 			}
 		}
 		this.name=str;
-	}
-	nameParts=this.name.split("|");
-	this.name=nameParts[0];
-	for(i=0;i<nameParts.length;i++) {
-		if (nameParts[i]=="*PARENT*") {
-			this.name+=this.parent.name.split("nameparts[i+1]")[0];
-		} else if (nameParts[i]=="*RANDOM*") {
-			this.name+=RandName();
-		} else {
-			this.name+=nameParts[i];
+	} else{
+		nameParts=this.name.split("|");
+		this.name=nameParts[0];
+		this.name="";
+		for(i=0;i<nameParts.length;i++) {
+			if (nameParts[i]=="*PARENT*") {
+				this.name+=this.parent.name.split("nameparts[i+1]")[0];
+			} else if (nameParts[i]=="*RANDOM*") {
+				this.name+=RandName();
+			} else {
+				this.name+=nameParts[i];
+			}
 		}
 	}
 }
