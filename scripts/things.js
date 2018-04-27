@@ -102,7 +102,8 @@ Instance.prototype.Name=function(){
 		this.name="";
 		for(let i=0;i<nameParts.length;i++) {
 			if (nameParts[i]=="*PARENT*") {
-				this.name+=this.parent.name.split("nameparts[i+1]")[0];
+				this.name+=this.parent.name.replace(nameparts[i+1],"");
+				nameparts[i+1]="";
 			} else if (nameParts[i]=="*RANDOM*") {
 				this.name+=RandName();
 			} else {
