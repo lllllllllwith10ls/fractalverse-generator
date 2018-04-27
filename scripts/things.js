@@ -100,12 +100,12 @@ Instance.prototype.Name=function(){
 	nameParts=this.name.split("|");
 	this.name=nameParts[0];
 	for(i=0;i<nameParts.length;i++) {
-		if (nameparts[i]=="*PARENT*") {
+		if (nameParts[i]=="*PARENT*") {
 			this.name+=this.parent.name.split("nameparts[i+1]")[0];
-		} else if (nameparts[i]=="*RANDOM*") {
+		} else if (nameParts[i]=="*RANDOM*") {
 			this.name+=RandName();
 		} else {
-			this.name+=nameparts[i];
+			this.name+=nameParts[i];
 		}
 	}
 }
