@@ -107,6 +107,7 @@ Instance.prototype.Name=function(){
 			this.name+=RandName();
 		} else {
 			this.name+=nameparts[i];
+		}
 	}
 }
 
