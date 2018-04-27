@@ -8,9 +8,11 @@ function Choose(arr) {
 function RandName() {
 	let number = Rand(5,15)
 	const letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+	let name=""
 	for(number; number>0; number--) {
 		name+=letters[Rand(0,25)];
 	}
+	return name
 }
 let Things = {}
 
