@@ -246,7 +246,7 @@ new Thing("sublife phylum",["sublife class,1-3"],"phylum |*RANDOM*");
 new Thing("sublife class",["sublife order,1-3"],"class |*RANDOM*");
 new Thing("sublife order",["sublife genus,1-3"],"order  |*RANDOM*");
 new Thing("sublife genus",["sublife species,1-3"],"genus  |*RANDOM*");
-new Thing("sublife species",["sublife individual,1-3"],["*PARENT*|| |*RANDOM*");
+new Thing("sublife species",["sublife individual,1-3"],"*PARENT*|| |*RANDOM*");
 
 new Thing("corona",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
 new Thing("jovian atmosphere",["hydrogen cloud,100-200","helium cloud,20-30","methane cloud,10-20,10%"],["atmosphere"]);
