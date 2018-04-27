@@ -11,7 +11,6 @@ function RandName() {
 	for(number; number>0; number--) {
 		name+=letters[Rand(0,25)];
 	}
-	return Choose(numbers)
 }
 let Things = {}
 
