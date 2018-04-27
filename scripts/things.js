@@ -19,13 +19,14 @@ let ThingsN = 0;
 
 class Thing{
 	constructor(name,contains,namegen){
-    this.name=name;
-    this.contains=contains;
-    this.namegen=namegen;
-    if (this.namegen===undefined) this.namegen=this.name;
+		this.name=name;
+		this.contains=contains;
+		this.namegen=namegen;
+		if (this.namegen===undefined) this.namegen=this.name;
 
-    Things[name]=this;
-    ThingsN++;
+		Things[name]=this;
+		ThingsN++;
+	}
 }
 
 
@@ -48,9 +49,8 @@ const CleanThings = () => {
 					thisT.contains[i]="";
 				}
 			}
-			
-		if (toConcat.length>0)
-		{
+		}	
+		if (toConcat.length>0){
 			for (let i in toConcat)
 			{
 				thisT.contains.push(toConcat[i]);
