@@ -100,7 +100,7 @@ Instance.prototype.Name=function(){
 		nameParts=this.name.split("|");
 		this.name=nameParts[0];
 		this.name="";
-		for(i=0;i<nameParts.length;i++) {
+		for(let i=0;i<nameParts.length;i++) {
 			if (nameParts[i]=="*PARENT*") {
 				this.name+=this.parent.name.split("nameparts[i+1]")[0];
 			} else if (nameParts[i]=="*RANDOM*") {
