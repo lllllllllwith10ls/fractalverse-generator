@@ -255,6 +255,11 @@ new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*| 
 new Thing("cell membrane",["lipid,100-200"],"membrane");
 new Thing("rna",["rna nucleotide,200-400"]);
 new Thing("rna nucleotide",["phosphate","ribose",["adenine","guanine","cytosine","uracil"]]);
+new Thing("phosphate",["phosphorus atom","oxygen atom"]);
+new Thing("adenine",[]);
+new Thing("guanine",[]);
+new Thing("cytosine",[]);
+new Thing("uracil",[]);
 new Thing("protein",["peptide,4-8"]);
 new Thing("peptide",["alanine,0-2","arginine,0-2","asparagine,0-2","aspartic acid,0-2","cysteine,0-2","glutamine,0-2","glutamic acid,0-2","glycine,0-2","histidine,0-2","isoleucine,0-2","leucine,0-2","lysine,0-2","methionine,0-2","phenylalanine,0-2","proline,0-2","serine,0-2","threonine,0-2","tryptophan,0-2","tyrosine,0-2","valine,0-2"]);
 new Thing("alanine",["carbon atom,3","hydrogen atom,7","nitrogen atom","oxygen atom,2"]);
@@ -266,18 +271,17 @@ new Thing("glutamine",["carbon atom,5","hydrogen atom,10","nitrogen atom,2","oxy
 new Thing("glutamic acid",["carbon atom,5","hydrogen atom,9","nitrogen atom","oxygen atom,4"]);
 new Thing("glycine",["carbon atom,2","hydrogen atom,5","nitrogen atom","oxygen atom,2"]);
 new Thing("histidine",["carbon atom,6","hydrogen atom,9","nitrogen atom,3","oxygen atom,2"]);
-//C6H9N3O2
-new Thing("isoleucine",["carbon atom,4","hydrogen atom,8","nitrogen atom,2","oxygen atom,3"]);
-new Thing("leucine",["carbon atom,4","hydrogen atom,8","nitrogen atom,2","oxygen atom,3"]);
-new Thing("lysine",["carbon atom,4","hydrogen atom,8","nitrogen atom,2","oxygen atom,3"]);
-new Thing("methionine",["carbon atom,4","hydrogen atom,8","nitrogen atom,2","oxygen atom,3"]);
-new Thing("phenylalanine",["carbon atom,4","hydrogen atom,8","nitrogen atom,2","oxygen atom,3"]);
-new Thing("proline",["carbon atom,4","hydrogen atom,8","nitrogen atom,2","oxygen atom,3"]);
-new Thing("serine",["carbon atom,4","hydrogen atom,8","nitrogen atom,2","oxygen atom,3"]);
-new Thing("threonine",["carbon atom,4","hydrogen atom,8","nitrogen atom,2","oxygen atom,3"]);
-new Thing("tryptophan",["carbon atom,4","hydrogen atom,8","nitrogen atom,2","oxygen atom,3"]);
-new Thing("tyrosine",["carbon atom,4","hydrogen atom,8","nitrogen atom,2","oxygen atom,3"]);
-new Thing("valine",["carbon atom,4","hydrogen atom,8","nitrogen atom,2","oxygen atom,3"]);
+new Thing("isoleucine",["carbon atom,6","hydrogen atom,13","nitrogen atom","oxygen atom,2"]);
+new Thing("leucine",["carbon atom,6","hydrogen atom,13","nitrogen atom","oxygen atom,2"]);
+new Thing("lysine",["carbon atom,6","hydrogen atom,14","nitrogen atom,2","oxygen atom,2"]);
+new Thing("methionine",["carbon atom,5","hydrogen atom,11","nitrogen atom","oxygen atom,2","sulfur atom"]);
+new Thing("phenylalanine",["carbon atom,9","hydrogen atom,11","nitrogen atom","oxygen atom,2"]);
+new Thing("proline",["carbon atom,5","hydrogen atom,9","nitrogen atom","oxygen atom,2"]);
+new Thing("serine",["carbon atom,3","hydrogen atom,7","nitrogen atom","oxygen atom,3"]);
+new Thing("threonine",["carbon atom,4","hydrogen atom,9","nitrogen atom","oxygen atom,3"]);
+new Thing("tryptophan",["carbon atom,11","hydrogen atom,12","nitrogen atom,2","oxygen atom,2"]);
+new Thing("tyrosine",["carbon atom,9","hydrogen atom,11","nitrogen atom","oxygen atom,3"]);
+new Thing("valine",["carbon atom,5","hydrogen atom,11","nitrogen atom","oxygen atom,2"]);
 
 new Thing("corona",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
 new Thing("jovian atmosphere",["hydrogen cloud,100-200","helium cloud,20-30","methane cloud,10-20,10%"],["atmosphere"]);
