@@ -61,7 +61,7 @@ const CleanThings = () => {
 		newContains=[];
 		for (let i in thisT.contains)
 		{
-			if (thisT.contains[i]!="") newContains.push(thisT.contains[i]);
+			if (thisT.contains[i]!=="") newContains.push(thisT.contains[i]);
 		}
 		thisT.contains=newContains;
 
@@ -104,7 +104,7 @@ Instance.prototype.Name=function(){
 		for(let i=0;i<nameParts.length;i++) {
 			if (nameParts[i]=="*PARENT*") {
 				let j;
-				for(j=i+1;j++;nameParts[j]!="\") {
+				for(j=i+1;j++;nameParts[j]!=="\") {
 					this.name+=this.parent.name.replace(nameParts[j+1],"");
 					nameParts[j+1]="";
 					i=j
