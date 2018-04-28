@@ -104,7 +104,7 @@ Instance.prototype.Name=function(){
 		for(let i=0;i<nameParts.length;i++) {
 			if (nameParts[i]=="*PARENT*") {
 				let j;
-				for(j=i+1;j++;nameParts[j]!=="\") {
+				for(j=i+1;j++;nameParts[j]!="/") {
 					this.name+=this.parent.name.replace(nameParts[j+1],"");
 					nameParts[j+1]="";
 					i=j
@@ -198,7 +198,7 @@ const debug = (what) => {
 }
 new Thing("the box",["debug","altarca,90-110","the box"]);
 new Thing("debug",["debug2"],"aaabacaaaaaaa");
-new Thing("debug2",["debug!!!!"],"*PARENT*|b|c|\|a");
+new Thing("debug2",["debug!!!!"],"*PARENT*|b|c|/|a");
 new Thing("debug!!!!",["sublife"],"*RANDOM*");
 new Thing("altarca",["trancendentum continuum,50-60"]);
 new Thing("trancendentum continuum",["trancendentum,100-130"]);
