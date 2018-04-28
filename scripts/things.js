@@ -313,6 +313,7 @@ new Thing("carbon atom",["proton,6","neutron,6","neutron,1%","electron,6"]);
 new Thing("nitrogen atom",["proton,7","neutron,7","neutron,0.5%","electron,7","electron,1-2,25%"]);
 new Thing("aluminum atom",["proton,13","neutron,14","electron,10","electron,1-3,20%"]);
 new Thing("magnesium atom",["proton,12","neutron,12",["neutron,10%","neutron,2,11%"],"electron,10","electron,1-2,25%"]);
+new Thing("sulfur atom",["proton,16","neutron,16",["neutron,.75%","neutron,2,4%"],"electron,16","electron,1-2,25%"]);
 new Thing("calcium atom",["proton,20","neutron,20",["neutron,1%,2","neutron,.5%,3"],"electron,18","electron,1-2,25%"]);
 new Thing("iron atom",["proton,26","neutron,28",["neutron,2,95%","neutron,2,95%","neutron,2,95%","neutron,2,95%","neutron,2-3"],"electron,23",["electron","electron,3"]])
 new Thing("hydrogen atom",["proton","electron,80%","electron,10%","neutron,.2%"]);
