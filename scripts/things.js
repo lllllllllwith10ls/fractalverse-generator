@@ -104,7 +104,7 @@ Instance.prototype.Name=function(){
 		for(let i=0;i<nameParts.length;i++) {
 			if (nameParts[i]=="*PARENT*") {
 				let j;
-				for(j=i;j++;nameParts!="\") {
+				for(j=i+1;j++;nameParts[j]!="\") {
 					this.name+=this.parent.name.replace(nameParts[j+1],"");
 					nameParts[j+1]="";
 					i=j
