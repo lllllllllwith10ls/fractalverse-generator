@@ -105,7 +105,7 @@ Instance.prototype.Name=function(){
 			if (nameParts[i].includes("*PARENT*")) {
 				let parent=this.parent.name;
 				let parentParts=nameParts[i].split(",");
-				for(let j=1;j++;j<=parentParts) {
+				for(let j=1;j++;j<=parentParts.length) {
 					parent=parent.replace(parentParts[j],"");
 					nameParts[j]="";
 				}
