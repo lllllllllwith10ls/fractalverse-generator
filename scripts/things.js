@@ -107,7 +107,6 @@ Instance.prototype.Name=function(){
 				let parentParts=nameParts[i].split(",");
 				for(let j=1;j<=parentParts.length;j++) {
 					parent=parent.replace(parentParts[j],"");
-					nameParts[j]="";
 				}
 				this.name+=parent;
 			} else if (nameParts[i]=="*RANDOM*") {
@@ -252,7 +251,7 @@ new Thing("sublife class",["sublife order,1-3"],"class |*RANDOM*");
 new Thing("sublife order",["sublife genus,1-3"],"order  |*RANDOM*");
 new Thing("sublife genus",["sublife species,1-3"],"genus  |*RANDOM*");
 new Thing("sublife species",["sublife individual,100-300"],"*PARENT*,genus| |*RANDOM*");
-new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*|,individual");
+new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*|individual");
 new Thing("cell membrane",["lipid,100-200"],"membrane");
 new Thing("rna",["nucleotide,200-400"]);
 new Thing("protein",["peptide,4-8"]);
