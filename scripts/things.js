@@ -103,8 +103,13 @@ Instance.prototype.Name=function(){
 		this.name="";
 		for(let i=0;i<nameParts.length;i++) {
 			if (nameParts[i]=="*PARENT*") {
-				this.name+=this.parent.name.replace(nameParts[i+1],"");
-				nameParts[i+1]="";
+				let j;
+				for(j=i;j++;nameParts!="\") {
+					this.name+=this.parent.name.replace(nameParts[j+1],"");
+					nameParts[j+1]="";
+					i=j
+				};
+				i=j;
 			} else if (nameParts[i]=="*RANDOM*") {
 				this.name+=RandName();
 			} else {
@@ -192,8 +197,8 @@ const debug = (what) => {
 	document.getElementById("debug").innerHTML=document.getElementById("debug").innerHTML+'<br>'+what;
 }
 new Thing("the box",["debug","altarca,90-110","the box"]);
-/*new Thing("debug",["debug2"],"aaabaaaaaaaa");
-new Thing("debug2",["debug!!!!"],"*PARENT*|b");*/
+new Thing("debug",["debug2"],"aaabacaaaaaaa");
+new Thing("debug2",["debug!!!!"],"*PARENT*|b|c|\|a");
 new Thing("debug!!!!",["sublife"],"*RANDOM*");
 new Thing("altarca",["trancendentum continuum,50-60"]);
 new Thing("trancendentum continuum",["trancendentum,100-130"]);
