@@ -98,18 +98,18 @@ Instance.prototype.Name=function(){
 		}
 		this.name=str;
 	} else{
-		nameParts=this.name.split("|");
+		let nameParts=this.name.split("|");
 		this.name=nameParts[0];
 		this.name="";
 		for(let i=0;i<nameParts.length;i++) {
-			if (nameParts[i]=="*PARENT*") {
+			if (nameParts[i].includes("*PARENT*")) {
 				let parent=this.parent.name;
-				for(let j=i+1;j++;nameParts[j]!="/") {
-					parent=parent.replace(nameParts[j],"");
-					nameParts[j+1]="";
-					i=j;
+				let parentParts=nameParts[i].split(",");
+				for(let j=1;j++;j<=parentParts) {
+					parent=parent.replace(parentParts[j],"");
+					nameParts[j]="";
 				}
-				this.name=parent;
+				this.name+=parent;
 			} else if (nameParts[i]=="*RANDOM*") {
 				this.name+=RandName();
 			} else {
