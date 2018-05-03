@@ -208,9 +208,9 @@ const debug = (what) => {
 	document.getElementById("debug").innerHTML=document.getElementById("debug").innerHTML+'<br>'+what;
 }
 new Thing("the box",["debug","altarca,90-110","the box"]);
-/*new Thing("debug",["debug2"],"aaabacaaaaaaa");
+new Thing("debug",["debug2"],"aaabacaaaaaaa");
 new Thing("debug2",["debug!!!!"],"*PARENT*,b,c|a");
-new Thing("debug!!!!",["sublife"],"*RANDOM*");*/
+new Thing("debug!!!!",["sublife","proton"],"*RANDOM*");
 new Thing("altarca",["trancendentum continuum,50-60"]);
 new Thing("trancendentum continuum",["trancendentum,100-130"]);
 new Thing("trancendentum",["beyond bubble,70-120"]);
