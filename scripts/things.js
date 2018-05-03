@@ -1,11 +1,13 @@
-function Rand(min,max) {
+const Rand = (min,max) => {
 	
 	return parseFloat(Math.floor(Math.random()*(max-min+1)))+parseFloat(min);
 }
-function Choose(arr) {
+
+const Choose = (arr) => {
 	return arr[Math.floor(Math.random()*arr.length)];
 }
-function RandName() {
+
+const RandName = () => {
 	let number = Rand(5,15)
 	const letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 	let name=""
@@ -72,13 +74,13 @@ let iN=0;
 let Instances=[];
 class Instance{
   constructor(what) {
-    this.name="thing";
-    this.type=Things[what];
-    this.parent=0;
-    this.children=[];
-    this.n=iN;
-    this.display=0;
-    this.grown=false;
+    this.name = "thing";
+    this.type = Things[what];
+    this.parent = 0;
+    this.children = [];
+    this.n = iN;
+    this.display = 0;
+    this.grown = false;
     iN++;
     Instances.push(this);
 
@@ -86,64 +88,65 @@ class Instance{
   }
 }
 Instance.prototype.Name=function(){
-	this.name=this.type.namegen;
+	this.name = this.type.namegen;
 
-	if (typeof(this.name)!="string"){
-		var str="";
-		if (typeof(this.name[0])=="string") str+=Choose(this.name);
-		else {
+	if (typeof(this.name) != "string"){
+		var str = "";
+		if (typeof(this.name[0]) == "string") {
+			str += Choose(this.name);
+		} else {
 			for (var i in this.name){
-				str+=Choose(this.name[i]);
+				str += Choose(this.name[i]);
 			}
 		}
-		this.name=str;
+		this.name = str;
 	} else{
-		let nameParts=this.name.split("|");
-		this.name=nameParts[0];
-		this.name="";
-		for(let i=0;i<nameParts.length;i++) {
+		let nameParts = this.name.split("|");
+		this.name = nameParts[0];
+		this.name = "";
+		for(let i=0; i<nameParts.length; i++) {
 			if (nameParts[i].includes("*PARENT*")) {
-				let parent=this.parent.name;
-				let parentParts=nameParts[i].split(",");
-				for(let j=1;j<=parentParts.length;j++) {
-					parent=parent.replace(parentParts[j],"");
+				let parent = this.parent.name;
+				let parentParts = nameParts[i].split(",");
+				for(let j = 1; j <= parentParts.length; j++) {
+					parent = parent.replace(parentParts[j],"");
 				}
-				this.name+=parent;
-			} else if (nameParts[i]=="*RANDOM*") {
-				this.name+=RandName();
+				this.name += parent;
+			} else if (nameParts[i] == "*RANDOM*") {
+				this.name += RandName();
 			} else {
-				this.name+=nameParts[i];
+				this.name += nameParts[i];
 			}
 		}
 	}
 }
 
-Instance.prototype.Grow=function(){
-	if (this.grown===false){
+Instance.prototype.Grow = function(){
+	if (this.grown === false){
 		this.Name();
 		for (let i in this.type.contains){
 			toMake=this.type.contains[i];
-			if (typeof(toMake)!="string")
+			if (typeof(toMake) != "string")
 			{toMake=Choose(toMake);}
 			toMake=toMake.split(",");
 			let makeAmount=1;
 			let makeProb=100;
-			if (toMake[1]===undefined) toMake[1]=1;
+			if (toMake[1] === undefined) toMake[1]=1;
 			else{
 				makeAmount=toMake[1].split("-");
-				if (makeAmount[1]===undefined) makeAmount=makeAmount[0]; 
+				if (makeAmount[1] === undefined) makeAmount=makeAmount[0]; 
 				else{
 					makeAmount=Rand(makeAmount[0],makeAmount[1]);
 				}
 				makeProb=(toMake[1]+"?").split("%");
-				if (makeProb[1]!=undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
+				if (makeProb[1] != undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
 			}
 
-			if (Things[toMake[0]]!=undefined){
-				if (Math.random()*100<=makeProb){
-					for (let ii=0;ii<makeAmount;ii++){
-						let New=make(Things[toMake[0]].name);
-						New.parent=this;
+			if (Things[toMake[0]] != undefined){
+				if (Math.random()*100 <= makeProb){
+					for (let ii=0; ii<makeAmount; ii++){
+						let New = make(Things[toMake[0]].name);
+						New.parent = this;
 						this.children.push(New);
 					}
 				}
@@ -154,7 +157,7 @@ Instance.prototype.Grow=function(){
 	}
 }
 
-Instance.prototype.List=function(){
+Instance.prototype.List = function(){
 	var str="";
 	var addStyle="";
 	for (var i in this.children){
@@ -166,11 +169,10 @@ Instance.prototype.List=function(){
 	else document.getElementById("div"+this.n).innerHTML='<span class="emptyThing">'+this.name+'</span>';
 }
 
-function make(what){
+const make = (what) => {
 	return new Instance(what);
 }
-function toggle(what)
-{
+const toggle = (what) => {
 	
 	if (Instances[what].display==0)
 	{
