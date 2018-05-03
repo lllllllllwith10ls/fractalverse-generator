@@ -7,8 +7,8 @@ const Choose = (arr) => {
 	return arr[Math.floor(Math.random()*arr.length)];
 }
 
-const RandName = (a) => {
-	if(a = "symbols") {
+const RandName = (type) => {
+	if(type == "symbols") {
 		let number = Rand(5,10)
 		const letters = ["!","@","#","$","%","^","&","*","+","_","?","/","|","\\","-","="];
 		let name=""
