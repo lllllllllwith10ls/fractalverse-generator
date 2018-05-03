@@ -10,7 +10,7 @@ const Choose = (arr) => {
 const RandName = (a) => {
 	if(a = "symbols") {
 		let number = Rand(5,10)
-		const letters = ["!","@","#","$","%","^","&","*","+","_","?","/","|","\","-","="];
+		const letters = ["!","@","#","$","%","^","&","*","+","_","?","/","|","\\","-","="];
 		let name=""
 		for(number; number>0; number--) {
 			name+=letters[Rand(0,15)];
