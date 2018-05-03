@@ -122,10 +122,12 @@ Instance.prototype.Name=function(){
 				}
 				this.name += parent;
 			} else if (nameParts[i].includes("*RANDOM*")) {
-				let moreParts = nameParts[i].split(",");
-				this.name += RandName(moreParts[1]);
-			} else {
-				this.name += nameParts[i];
+				if(moreParts == "symbols") {
+					let moreParts = nameParts[i].split(",");
+					this.name += RandName(moreParts[1]);
+				} else {
+					this.name += RandName();
+				}
 			}
 		}
 	}
