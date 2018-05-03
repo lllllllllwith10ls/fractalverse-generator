@@ -7,12 +7,21 @@ const Choose = (arr) => {
 	return arr[Math.floor(Math.random()*arr.length)];
 }
 
-const RandName = () => {
-	let number = Rand(5,15)
-	const letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-	let name=""
-	for(number; number>0; number--) {
-		name+=letters[Rand(0,25)];
+const RandName = (a) => {
+	if(a = "symbols") {
+		let number = Rand(5,10)
+		const letters = ["!","@","#","$","%","^","&","*","+","_","?","/","|","\","-","="];
+		let name=""
+		for(number; number>0; number--) {
+			name+=letters[Rand(0,15)];
+		}
+	} else{
+		let number = Rand(5,10)
+		const letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+		let name=""
+		for(number; number>0; number--) {
+			name+=letters[Rand(0,25)];
+		}
 	}
 	return name
 }
@@ -112,8 +121,9 @@ Instance.prototype.Name=function(){
 					parent = parent.replace(parentParts[j],"");
 				}
 				this.name += parent;
-			} else if (nameParts[i] == "*RANDOM*") {
-				this.name += RandName();
+			} else if (nameParts[i].includes("*RANDOM*")) {
+				let moerParts = nameParts[i].split(",");
+				this.name += RandName(moreParts[1]);
 			} else {
 				this.name += nameParts[i];
 			}
@@ -323,7 +333,7 @@ new Thing("helium atom",["proton,2","electron,2","neutron","neutron,99.998%"]);
 new Thing("proton",["up quark,2","down quark","gluon,1-5","strange quark,.01%"]);
 new Thing("neutron",["down quark,2","up quark","gluon,1-5","strange quark,.01%"]);
 new Thing("electron",["aaa"]);
-new Thing("aaa",["null,2-3"],[["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"],["!","@","#","$","%","^","&","*","+","_","?","/"]]);
+new Thing("aaa",["null,2-3"],"*RANDOM*,symbols");
 new Thing("up quark",["aaa"]);
 new Thing("down quark",["aaa"]);
 new Thing("strange quark",["aaa"]);
