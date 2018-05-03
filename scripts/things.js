@@ -124,9 +124,10 @@ Instance.prototype.Name=function(){
 			} else if (nameParts[i].includes("*RANDOM*")) {
 				let moreParts = nameParts[i].split(",");
 				if(moreParts[1] == "symbols") {
-					
+					console.log(moreParts);
 					this.name += RandName(moreParts[1]);
 				} else {
+					console.log(moreParts);
 					this.name += RandName();
 				} 
 			} else {
