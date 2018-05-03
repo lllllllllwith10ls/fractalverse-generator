@@ -122,7 +122,7 @@ Instance.prototype.Name=function(){
 				}
 				this.name += parent;
 			} else if (nameParts[i].includes("*RANDOM*")) {
-				let moerParts = nameParts[i].split(",");
+				let moreParts = nameParts[i].split(",");
 				this.name += RandName(moreParts[1]);
 			} else {
 				this.name += nameParts[i];
