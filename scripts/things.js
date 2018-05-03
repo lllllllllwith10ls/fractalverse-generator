@@ -131,6 +131,7 @@ Instance.prototype.Name=function(){
 				} 
 			} else {
 				this.name += nameParts[i];
+			}
 		}
 	}
 }
