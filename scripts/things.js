@@ -124,6 +124,8 @@ Instance.prototype.Name=function(){
 				this.name += parent;
 			} else if (nameParts[i].includes("*RANDOM*")) {
 				let moreParts = nameParts[i].split(",");
+				console.log(moreParts[1]);
+				
 				if(moreParts[1] == "symbols") {
 					console.log(moreParts);
 					this.name += RandName("symbols");
@@ -263,12 +265,12 @@ new Thing("temperate terrestrial planet",["temperate atmosphere,95%","temperate 
 new Thing("temperate asteroid belt",["asteroid,100-200",["sublife,20%","prokaryotic life,1%","eukaryotic life,.1%"]]);
 
 new Thing("sublife",["sublife domain,1-3"]);
-new Thing("sublife domain",["sublife kingdom,1-3"],"domain |*RANDOM*");
-new Thing("sublife kingdom",["sublife phylum,1-3"],"kingdom |*RANDOM*");
-new Thing("sublife phylum",["sublife class,1-3"],"phylum |*RANDOM*");
-new Thing("sublife class",["sublife order,1-3"],"class |*RANDOM*");
-new Thing("sublife order",["sublife genus,1-3"],"order  |*RANDOM*");
-new Thing("sublife genus",["sublife species,1-3"],"genus  |*RANDOM*");
+new Thing("sublife domain",["sublife kingdom,1-3"],"domain |*RANDOM*,letters");
+new Thing("sublife kingdom",["sublife phylum,1-3"],"kingdom |*RANDOM*,letters");
+new Thing("sublife phylum",["sublife class,1-3"],"phylum |*RANDOM*,letters");
+new Thing("sublife class",["sublife order,1-3"],"class |*RANDOM*,letters");
+new Thing("sublife order",["sublife genus,1-3"],"order  |*RANDOM*,letters");
+new Thing("sublife genus",["sublife species,1-3"],"genus  |*RANDOM*,letters");
 new Thing("sublife species",["sublife individual,100-300"],"*PARENT*,genus| |*RANDOM*");
 new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*| individual");
 new Thing("cell membrane",["lipid,100-200"],"membrane");
