@@ -264,8 +264,10 @@ new Thing("singularity",["aaa,1-3","wormhole,1%"]);
 new Thing("wormhole",["universe"]);
 new Thing("brown dwarf",["jovian atmosphere","rocky core"]);
 new Thing("neutron star",["neutron star crust","neutron star core"]);
+new Thing("white dwarf",["white dwarf crust","white dwarf core"]);
 new Thing("temperate terrestrial planet",["temperate atmosphere,95%","temperate crust","metallic core","asteroid moon,0-5","temperate moon,0-2",["sublife,95%","prokaryotic life,75%","eukaryotic life,50%","multicellular life,50%","complex multicellular life,45%","simple ecosystem,40%","complex ecosystem,20%","simple civilization,10%","complex civilization,%.1"]]);
 new Thing("temperate asteroid belt",["asteroid,100-200",["sublife,20%","prokaryotic life,1%","eukaryotic life,.1%"]]);
+
 
 new Thing("sublife",["sublife domain,1-3"]);
 new Thing("sublife domain",["sublife kingdom,1-3"],"domain |*RANDOM*,letters");
@@ -307,6 +309,7 @@ new Thing("tryptophan",["carbon atom,11","hydrogen atom,12","nitrogen atom,2","o
 new Thing("tyrosine",["carbon atom,9","hydrogen atom,11","nitrogen atom","oxygen atom,3"]);
 new Thing("valine",["carbon atom,5","hydrogen atom,11","nitrogen atom","oxygen atom,2"]);
 
+
 new Thing("corona",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
 new Thing("jovian atmosphere",["hydrogen cloud,100-200","helium cloud,20-30","methane cloud,10-20,10%"],["atmosphere"]);
 new Thing("chromosphere",["plasma cloud,10-20"]);
@@ -322,6 +325,9 @@ new Thing("rocky core",["rock,100-200"]);
 new Thing("rock",[["silicon dioxide,50-100","magnesium oxide,50-100","iron ii oxide,50-100","aluminum oxide,50-100","calcium oxide,50-100"]]);
 new Thing("neutron star crust",["iron atom,100-500"],["crust"]);
 new Thing("neutron star core",["neutron,100-500","strangelet,50-100"],["core"]);
+new Thing("white dwarf crust",["diamond,100-200"],["core"]);
+new Thing("white dwarf core",["proton,100-200","neutron,100-200","electron,100-200"],["core"]);
+
 
 new Thing("silicon dioxide",["silicon atom","oxygen atom,2"]);
 new Thing("magnesium oxide",["magnesium atom","oxygen atom"]);
@@ -330,6 +336,8 @@ new Thing("aluminum oxide",["aluminum atom,2","oxygen atom,3"]);
 new Thing("calcium oxide",["calcium atom","oxygen atom"]);
 new Thing("methane",["hydrogen atom,4","carbon atom"]);
 new Thing("hydrogen",["hydrogen atom,2"]);
+new Thing("diamond",["carbon atom,100-200"]);
+
 
 new Thing("silicon atom",["proton,14","neutron,14","neutron,5%","neutron,2%","electron,14","electron,1%"]);
 new Thing("oxygen atom",["proton,8","neutron,8",["neutron,2,2%","neutron,.05%"],"electron,8","electron,1-2,50%"]);
