@@ -1,11 +1,11 @@
 const Rand = (min,max) => {
 	
 	return parseFloat(Math.floor(Math.random()*(max-min+1)))+parseFloat(min);
-}
+};
 
 const Choose = (arr) => {
 	return arr[Math.floor(Math.random()*arr.length)];
-}
+};
 
 const RandName = (type) => {
 	if (type == "symbols") {
@@ -15,6 +15,7 @@ const RandName = (type) => {
 		for(number; number>0; number--) {
 			name+=letters[Rand(0,15)];
 		}
+		return name;
 	} else if (type == "letters") {
 		let number = Rand(5,10)
 		const letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
@@ -22,10 +23,10 @@ const RandName = (type) => {
 		for(number; number>0; number--) {
 			name+=letters[Rand(0,25)];
 		}
+		return name;
 	}
-	return name
-}
-let Things = {}
+};
+let Things = {};
 
 let ThingsN = 0;
 
@@ -39,7 +40,7 @@ class Thing{
 		Things[name]=this;
 		ThingsN++;
 	}
-}
+};
 
 
 const CleanThings = () => {
@@ -77,7 +78,7 @@ const CleanThings = () => {
 		thisT.contains=newContains;
 
 	}
-}
+};
 
 let iN=0;
 let Instances=[];
