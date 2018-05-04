@@ -8,14 +8,14 @@ const Choose = (arr) => {
 }
 
 const RandName = (type) => {
-	if(type == "symbols") {
+	if (type == "symbols") {
 		let number = Rand(5,10)
 		const letters = ["!","@","#","$","%","^","&","*","+","_","?","/","|","\\","-","="];
 		let name=""
 		for(number; number>0; number--) {
 			name+=letters[Rand(0,15)];
 		}
-	} else{
+	} else if (type == "letters") {
 		let number = Rand(5,10)
 		const letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 		let name=""
@@ -125,10 +125,10 @@ Instance.prototype.Name=function(){
 				let moreParts = nameParts[i].split(",");
 				if(moreParts[1] == "symbols") {
 					console.log(moreParts);
-					this.name += RandName(moreParts[1]);
-				} else {
+					this.name += RandName("symbols");
+				} else if (moreParts[i] == "letters") {
 					console.log(moreParts);
-					this.name += RandName();
+					this.name += RandName("letters");
 				} 
 			} else {
 				this.name += nameParts[i];
@@ -216,7 +216,7 @@ const debug = (what) => {
 new Thing("the box",["debug","altarca,90-110","the box"]);
 new Thing("debug",["debug2"],"aaabacaaaaaaa");
 new Thing("debug2",["debug!!!!"],"*PARENT*,b,c|a");
-new Thing("debug!!!!",["sublife","proton"],"*RANDOM*");
+new Thing("debug!!!!",["sublife","proton"],"*RANDOM*,letters");
 new Thing("altarca",["trancendentum continuum,50-60"]);
 new Thing("trancendentum continuum",["trancendentum,100-130"]);
 new Thing("trancendentum",["beyond bubble,70-120"]);
