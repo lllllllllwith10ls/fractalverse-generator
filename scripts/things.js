@@ -16,6 +16,7 @@ const RandName = (type) => {
 			name+=letters[Rand(0,15)];
 		}
 		return name;
+		
 	} else if (type == "letters") {
 		let number = Rand(5,10)
 		const letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
@@ -24,7 +25,9 @@ const RandName = (type) => {
 			name+=letters[Rand(0,25)];
 		}
 		return name;
+		
 	}
+	console.log(name);
 };
 let Things = {};
 
@@ -129,7 +132,7 @@ Instance.prototype.Name=function(){
 				if(moreParts[1] == "symbols") {
 					console.log(moreParts);
 					this.name += RandName("symbols");
-				} else if (moreParts[i] == "letters") {
+				} else if (moreParts[1] == "letters") {
 					console.log(moreParts);
 					this.name += RandName("letters");
 				} 
