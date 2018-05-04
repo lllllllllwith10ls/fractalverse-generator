@@ -281,11 +281,12 @@ new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*| 
 new Thing("cell membrane",["lipid,100-200"],"membrane");
 new Thing("rna",["rna nucleotide,200-400"]);
 new Thing("rna nucleotide",["phosphate","ribose",["adenine","guanine","cytosine","uracil"]]);
-new Thing("phosphate",["phosphorus atom","oxygen atom"]);
-new Thing("adenine",[]);
-new Thing("guanine",[]);
-new Thing("cytosine",[]);
-new Thing("uracil",[]);
+new Thing("ribose",["carbon atom,5","hydrogen atom,10","oxygen atom,5"]);
+new Thing("phosphate",["phosphorus atom","oxygen atom,4"]);
+new Thing("adenine",["carbon atom,5","hydrogen atom,5","nitrogen atom,5"]);
+new Thing("guanine",["carbon atom,5","hydrogen atom,5","nitrogen atom,5","oxygen atom"]);
+new Thing("cytosine",["carbon atom,4","hydrogen atom,5","nitrogen atom,3","oxygen atom"]);
+new Thing("uracil",["carbon atom,4","hydrogen atom,4","nitrogen atom,2","oxygen atom,2"]);
 new Thing("protein",["peptide,4-8"]);
 new Thing("peptide",["alanine,0-2","arginine,0-2","asparagine,0-2","aspartic acid,0-2","cysteine,0-2","glutamine,0-2","glutamic acid,0-2","glycine,0-2","histidine,0-2","isoleucine,0-2","leucine,0-2","lysine,0-2","methionine,0-2","phenylalanine,0-2","proline,0-2","serine,0-2","threonine,0-2","tryptophan,0-2","tyrosine,0-2","valine,0-2"]);
 new Thing("alanine",["carbon atom,3","hydrogen atom,7","nitrogen atom","oxygen atom,2"]);
@@ -325,7 +326,7 @@ new Thing("rocky core",["rock,100-200"]);
 new Thing("rock",[["silicon dioxide,50-100","magnesium oxide,50-100","iron ii oxide,50-100","aluminum oxide,50-100","calcium oxide,50-100"]]);
 new Thing("neutron star crust",["iron atom,100-500"],["crust"]);
 new Thing("neutron star core",["neutron,100-500","strangelet,50-100"],["core"]);
-new Thing("white dwarf crust",["diamond,100-200"],["core"]);
+new Thing("white dwarf crust",["diamond,100-200"],["crust"]);
 new Thing("white dwarf core",["proton,100-200","neutron,100-200","electron,100-200"],["core"]);
 
 
@@ -343,6 +344,7 @@ new Thing("silicon atom",["proton,14","neutron,14","neutron,5%","neutron,2%","el
 new Thing("oxygen atom",["proton,8","neutron,8",["neutron,2,2%","neutron,.05%"],"electron,8","electron,1-2,50%"]);
 new Thing("carbon atom",["proton,6","neutron,6","neutron,1%","electron,6"]);
 new Thing("nitrogen atom",["proton,7","neutron,7","neutron,0.5%","electron,7","electron,1-2,25%"]);
+new Thing("phosphorus atom",["proton,15","neutron,16","electron,15","electron,1-3,10%"]);
 new Thing("aluminum atom",["proton,13","neutron,14","electron,10","electron,1-3,20%"]);
 new Thing("magnesium atom",["proton,12","neutron,12",["neutron,10%","neutron,2,11%"],"electron,10","electron,1-2,25%"]);
 new Thing("sulfur atom",["proton,16","neutron,16",["neutron,.75%","neutron,2,4%"],"electron,16","electron,1-2,25%"]);
