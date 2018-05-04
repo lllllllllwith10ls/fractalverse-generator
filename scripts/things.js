@@ -1,4 +1,4 @@
-const Rand = (min,max) => {
+const Ran = (min,max) => {
 	
 	return parseFloat(Math.floor(Math.random()*(max-min+1)))+parseFloat(min);
 };
