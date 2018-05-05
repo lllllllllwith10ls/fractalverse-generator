@@ -143,12 +143,10 @@ Instance.prototype.Grow = function(){
 	if (this.grown === false){
 		this.Name();
 		let contains=this.type.contains;
-		for (let i=0; i; i++){
-			
+		for (let i=0;; i++){
 			let toMake;
-			
 			if (typeof(contains[i]) != "string") {
-				if (contains[i] == undefined) {
+				if (contains[i] === undefined) {
 					break;
 				}
 				toMake=Choose(contains[i]);
@@ -159,12 +157,14 @@ Instance.prototype.Grow = function(){
 			} else {
 				toMake=contains[i];
 			}
-			if (typeof(toMake) == "string") {
+			if (typeof(toMake) === "string") {
 				console.log(toMake);
 				toMake=toMake.split(",");
 				let makeAmount=1;
 				let makeProb=100;
-				if (toMake[1] === undefined) toMake[1]=1;
+				if (toMake[1] === undefined) {
+					toMake[1]=1:
+				}
 				else{
 					makeAmount=toMake[1].split("-");
 					if (makeAmount[1] === undefined) makeAmount=makeAmount[0]; 
