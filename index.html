@@ -44,12 +44,14 @@
 		let Offline=1;
 	</script>
 	<script>
-
+		let stop=true;
 		launchNest(SeedObject.toLowerCase());
-		x=0
+		let x=0
 		const looper = () => {
-			toggle(x);
-			x++;
+			if(stop=false) {
+				toggle(x);
+				x++;
+			}
 		}
 		setInterval(looper,10);
 		
