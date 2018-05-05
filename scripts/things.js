@@ -160,7 +160,7 @@ Instance.prototype.Grow = function(){
 			if (typeof(toMake) === "string") {
 				console.log(toMake);
 				toMake=toMake.split("|");
-				for (let j=0; j<toMake.length, j++) {
+				for (let j=0; j<toMake.length; j++) {
 					let toMakePart=toMake[j].split(",");
 					let makeAmount=1;
 					let makeProb=100;
