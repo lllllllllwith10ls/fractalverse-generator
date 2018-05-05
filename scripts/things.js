@@ -187,12 +187,12 @@ Instance.prototype.List = function(){
 	var str="";
 	var addStyle="";
 	for (var i in this.children){
-		str+='<div id="this.children[i].n">'+this.children[i].name+'</div>';
+		str+='<div id="'div'+this.children[i].n">'+this.children[i].name+'</div>';
 	}
 	
-	//if (this.children.length>0) document.getElementById(this.n).innerHTML='<span onclick="toggle('+this.n+');"><span class="arrow" id="arrow'+this.n+'">+</span> '+this.name+'</span><div id="container'+this.n+'" class="thing" style="display:none;">'+str+'</div>';
-	if (this.children.length>0) document.getElementById(this.n).innerHTML='<a href="javascript:toggle('+this.n+');" style="padding-right:8px;" alt="archetype : '+(this.type.name)+'" title="archetype : '+(this.type.name)+'"><span class="arrow" id="arrow'+this.n+'">+</span> '+this.name+'</a><div id="container'+this.n+'" class="thing" style="display:none;'+addStyle+'">'+str+'</div>';
-	else document.getElementById(this.n).innerHTML='<span class="emptyThing">'+this.name+'</span>';
+	//if (this.children.length>0) document.getElementById("div"+this.n).innerHTML='<span onclick="toggle('+this.n+');"><span class="arrow" id="arrow'+this.n+'">+</span> '+this.name+'</span><div id="container'+this.n+'" class="thing" style="display:none;">'+str+'</div>';
+	if (this.children.length>0) document.getElementById("div"+this.n).innerHTML='<a href="javascript:toggle('+this.n+');" style="padding-right:8px;" alt="archetype : '+(this.type.name)+'" title="archetype : '+(this.type.name)+'"><span class="arrow" id="arrow'+this.n+'">+</span> '+this.name+'</a><div id="container'+this.n+'" class="thing" style="display:none;'+addStyle+'">'+str+'</div>';
+	else document.getElementById("div"+this.n).innerHTML='<span class="emptyThing">'+this.name+'</span>';
 }
 
 const make = (what) => {
@@ -371,7 +371,7 @@ new Thing("gluon",["aaa"]);
 new Thing("strangelet",["up quark,2-20","down quark,2-20","strange quark,2-20","gluon,2-20"]);
 new Thing("null",["the box"]);
 document.getElementById("debug").innerHTML="";
-debug('<div id="0" class="thing"></div>');
+debug('<div id="'div'+0" class="thing"></div>');
 
 const launchNest = (what) => {
 	if (!Things[what]) what="error";
