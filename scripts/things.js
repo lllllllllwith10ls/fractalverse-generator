@@ -27,7 +27,6 @@ const RandName = (type) => {
 		return name;
 		
 	}
-	console.log(name);
 };
 let Things = {};
 
@@ -127,13 +126,10 @@ Instance.prototype.Name=function(){
 				this.name += parent;
 			} else if (nameParts[i].includes("*RANDOM*")) {
 				let moreParts = nameParts[i].split(",");
-				console.log(moreParts[1]);
 				
 				if(moreParts[1] == "symbols") {
-					console.log(moreParts);
 					this.name += RandName("symbols");
 				} else if (moreParts[1] == "letters") {
-					console.log(moreParts);
 					this.name += RandName("letters");
 				} 
 			} else {
