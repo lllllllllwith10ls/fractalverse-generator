@@ -143,8 +143,12 @@ Instance.prototype.Grow = function(){
 	if (this.grown === false){
 		this.Name();
 		let contains=this.type.contains;
-		for (let i=0; i < contains.length; i++){
+		for (let i=0; i; i++){
+			
 			let toMake;
+			if (contains[i] == undefined) {
+				break;
+			}
 			if (typeof(contains[i]) != "string") {
 				toMake=Choose(contains[i]);
 				if (Array.isArray("toMake")) {
