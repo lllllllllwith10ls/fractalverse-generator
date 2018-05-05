@@ -150,30 +150,34 @@ Instance.prototype.Grow = function(){
 			toMake=this.type.contains[i];
 			if (typeof(toMake) != "string")
 			{toMake=Choose(toMake);}
-			toMake=toMake.split(",");
-			let makeAmount=1;
-			let makeProb=100;
-			if (toMake[1] === undefined) toMake[1]=1;
-			else{
-				makeAmount=toMake[1].split("-");
-				if (makeAmount[1] === undefined) makeAmount=makeAmount[0]; 
+			if (typeof(toMake[i]) == "array") {
+				this.type.contains = this.type.contains.concat(toMake);
+			} else {
+				toMake=toMake.split(",");
+				let makeAmount=1;
+				let makeProb=100;
+				if (toMake[1] === undefined) toMake[1]=1;
 				else{
-					makeAmount=Rand(makeAmount[0],makeAmount[1]);
+					makeAmount=toMake[1].split("-");
+					if (makeAmount[1] === undefined) makeAmount=makeAmount[0]; 
+					else{
+						makeAmount=Rand(makeAmount[0],makeAmount[1]);
+					}
+					makeProb=(toMake[1]+"?").split("%");
+					if (makeProb[1] != undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
 				}
-				makeProb=(toMake[1]+"?").split("%");
-				if (makeProb[1] != undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
-			}
+				
 
-			if (Things[toMake[0]] != undefined){
-				if (Math.random()*100 <= makeProb){
-					for (let ii=0; ii<makeAmount; ii++){
-						let New = make(Things[toMake[0]].name);
-						New.parent = this;
-						this.children.push(New);
+				if (Things[toMake[0]] != undefined){
+					if (Math.random()*100 <= makeProb){
+						for (let ii=0; ii<makeAmount; ii++){
+							let New = make(Things[toMake[0]].name);
+							New.parent = this;
+							this.children.push(New);
+						}
 					}
 				}
 			}
-
 		}
 		this.grown=true;
 	}
@@ -183,7 +187,7 @@ Instance.prototype.List = function(){
 	var str="";
 	var addStyle="";
 	for (var i in this.children){
-		str+='<div id="div'+this.children[i].n+'">'+this.children[i].name+'</div>';
+		str+='<div id="this.children[i].n">'+this.children[i].name+'</div>';
 	}
 	
 	//if (this.children.length>0) document.getElementById("div"+this.n).innerHTML='<span onclick="toggle('+this.n+');"><span class="arrow" id="arrow'+this.n+'">+</span> '+this.name+'</span><div id="container'+this.n+'" class="thing" style="display:none;">'+str+'</div>';
@@ -201,7 +205,10 @@ const toggle = (what) => {
 
 		for (var i in Instances[what].children)
 		{
-			if (Instances[what].children[i].grown==false) {Instances[what].children[i].Grow(0);Instances[what].children[i].List(0);}
+			if (Instances[what].children[i].grown==false) {
+				Instances[what].children[i].Grow(0);
+				Instances[what].children[i].List(0);
+			}
 		}
 
 
@@ -222,7 +229,7 @@ const debug = (what) => {
 new Thing("the box",["debug","altarca,90-110","the box"]);
 new Thing("debug",["debug2"],"aaabacaaaaaaa");
 new Thing("debug2",["debug!!!!"],"*PARENT*,b,c|a");
-new Thing("debug!!!!",["sublife","proton"],"*RANDOM*,letters");
+new Thing("debug!!!!",["sublife",["proton",["proton","neutron"]]],"*RANDOM*,letters");
 new Thing("altarca",["trancendentum continuum,50-60"]);
 new Thing("trancendentum continuum",["trancendentum,100-130"]);
 new Thing("trancendentum",["beyond bubble,70-120"]);
@@ -278,7 +285,8 @@ new Thing("sublife order",["sublife genus,1-3"],"order  |*RANDOM*,letters");
 new Thing("sublife genus",["sublife species,1-3"],"genus  |*RANDOM*,letters");
 new Thing("sublife species",["sublife individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
 new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*| individual");
-new Thing("cell membrane",["lipid,100-200"],"membrane");
+new Thing("cell membrane",["phospholipid,100-200"],"membrane");
+new Thing("phospholipid",["phosphate","carbon atom,10-20","hydrogen atom, 20-40"]);
 new Thing("rna",["rna nucleotide,200-400"]);
 new Thing("rna nucleotide",["phosphate","ribose",["adenine","guanine","cytosine","uracil"]]);
 new Thing("ribose",["carbon atom,5","hydrogen atom,10","oxygen atom,5"]);
