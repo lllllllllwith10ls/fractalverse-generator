@@ -153,7 +153,6 @@ Instance.prototype.Grow = function(){
 			}
 			if (Array.isArray("toMake")) {
 				this.type.contains = this.type.contains.concat(toMake);
-				toMake=""; 
 			} else {
 				toMake=toMake.split(",");
 				let makeAmount=1;
