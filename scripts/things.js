@@ -148,10 +148,12 @@ Instance.prototype.Grow = function(){
 		this.Name();
 		for (let i in this.type.contains){
 			toMake=this.type.contains[i];
-			if (typeof(toMake) != "string")
-			{toMake=Choose(toMake);}
-			if (typeof(toMake[i]) == "array") {
+			if (typeof(toMake) != "string") {
+				toMake=Choose(toMake);
+			}
+			if (Array.isArray("toMake")) {
 				this.type.contains = this.type.contains.concat(toMake);
+				toMake=""; 
 			} else {
 				toMake=toMake.split(",");
 				let makeAmount=1;
