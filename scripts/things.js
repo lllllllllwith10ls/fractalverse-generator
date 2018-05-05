@@ -163,7 +163,7 @@ Instance.prototype.Grow = function(){
 				let makeAmount=1;
 				let makeProb=100;
 				if (toMake[1] === undefined) {
-					toMake[1]=1:
+					toMake[1]=1;
 				}
 				else{
 					makeAmount=toMake[1].split("-");
