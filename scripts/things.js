@@ -153,31 +153,32 @@ Instance.prototype.Grow = function(){
 				toMake=Choose(contains);
 				if (Array.isArray("toMake")) {
 					contains=contains.concat("toMake");
-					i++;
-				}
-			}
-			console.log(toMake);
-			toMake=toMake.split(",");
-			let makeAmount=1;
-			let makeProb=100;
-			if (toMake[1] === undefined) toMake[1]=1;
-			else{
-				makeAmount=toMake[1].split("-");
-				if (makeAmount[1] === undefined) makeAmount=makeAmount[0]; 
-				else{
-					makeAmount=Rand(makeAmount[0],makeAmount[1]);
-				}
-				makeProb=(toMake[1]+"?").split("%");
-				if (makeProb[1] != undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
-			}
+
+				} else{
+					console.log(toMake);
+					toMake=toMake.split(",");
+					let makeAmount=1;
+					let makeProb=100;
+					if (toMake[1] === undefined) toMake[1]=1;
+					else{
+						makeAmount=toMake[1].split("-");
+						if (makeAmount[1] === undefined) makeAmount=makeAmount[0]; 
+						else{
+							makeAmount=Rand(makeAmount[0],makeAmount[1]);
+						}
+						makeProb=(toMake[1]+"?").split("%");
+						if (makeProb[1] != undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
+					}
 
 
-			if (Things[toMake[0]] != undefined){
-				if (Math.random()*100 <= makeProb){
-					for (let ii=0; ii<makeAmount; ii++){
-						let New = make(Things[toMake[0]].name);
-						New.parent = this;
-						this.children.push(New);
+					if (Things[toMake[0]] != undefined){
+						if (Math.random()*100 <= makeProb){
+							for (let ii=0; ii<makeAmount; ii++){
+								let New = make(Things[toMake[0]].name);
+								New.parent = this;
+								this.children.push(New);
+							}
+						}
 					}
 				}
 			}
