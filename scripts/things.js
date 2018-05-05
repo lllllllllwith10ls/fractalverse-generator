@@ -371,7 +371,7 @@ new Thing("gluon",["aaa"]);
 new Thing("strangelet",["up quark,2-20","down quark,2-20","strange quark,2-20","gluon,2-20"]);
 new Thing("null",["the box"]);
 document.getElementById("debug").innerHTML="";
-debug('<div id="'div'+0" class="thing"></div>');
+debug('<div id="div0" class="thing"></div>');
 
 const launchNest = (what) => {
 	if (!Things[what]) what="error";
