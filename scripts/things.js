@@ -158,7 +158,6 @@ Instance.prototype.Grow = function(){
 				toMake=contains[i];
 			}
 			if (typeof(toMake) === "string") {
-				console.log(toMake);
 				toMake=toMake.split("|");
 				for (let j=0; j<toMake.length; j++) {
 					let toMakePart=toMake[j].split(",");
@@ -282,9 +281,9 @@ new Thing("wormhole",["universe"]);
 new Thing("brown dwarf",["jovian atmosphere","rocky core"]);
 new Thing("neutron star",["neutron star crust","neutron star core"]);
 new Thing("white dwarf",["white dwarf crust","white dwarf core"]);
-new Thing("temperate terrestrial planet",["temperate atmosphere,95%","temperate crust","metallic core","asteroid moon,0-5","temperate moon,0-2",["sublife,95%","prokaryotic life,75%","eukaryotic life,50%","multicellular life,50%","complex multicellular life,45%","simple ecosystem,40%","complex ecosystem,20%","simple civilization,10%","complex civilization,%.1"]]);
+new Thing("temperate terrestrial planet",["temperate crust","metallic core","asteroid moon,0-5","temperate medium moon,0-2",["atmosphere,95%|sublife,95%","atmosphere,95%|prokaryotic life,75%","oxygenated atmosphere,95%|eukaryotic life,50%","oxygenated atmosphere|multicellular life,50%","oxygenated atmosphere|complex multicellular life,45%","oxygenated atmosphere|simple ecosystem,40%","oxygenated atmosphere|complex ecosystem,20%","oxygenated atmosphere|simple civilization,10%","oxygenated atmosphere|complex civilization,1%"]]);
 new Thing("temperate asteroid belt",["asteroid,100-200",["sublife,20%","prokaryotic life,1%","eukaryotic life,.1%"]]);
-
+new Thing("asteroid",[["iron,20-30","rock,30-40","iron,10-20|rock,10-20"]]);
 
 new Thing("sublife",["sublife domain,1-3"]);
 new Thing("sublife domain",["sublife kingdom,1-3"],"domain |*RANDOM*,letters");
@@ -346,7 +345,10 @@ new Thing("neutron star crust",["iron atom,100-500"],["crust"]);
 new Thing("neutron star core",["neutron,100-500","strangelet,50-100"],["core"]);
 new Thing("white dwarf crust",["diamond,100-200"],["crust"]);
 new Thing("white dwarf core",["proton,100-200","neutron,100-200","electron,100-200"],["core"]);
-
+new Thing("temperate crust",["mountain,100-200","ocean,2-7,20%","rock,200-500"]);
+new Thing("mountain",["rock,100-200"]);
+new Thing("metallic core",["iron,100-200","nickel,100-200"]);
+new Thing("iron",["iron atom,100-200"]);
 
 new Thing("silicon dioxide",["silicon atom","oxygen atom,2"]);
 new Thing("magnesium oxide",["magnesium atom","oxygen atom"]);
