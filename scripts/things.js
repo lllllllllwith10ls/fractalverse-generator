@@ -145,14 +145,14 @@ Instance.prototype.Grow = function(){
 		let contains=this.type.contains;
 		for (let i=0; i < contains.length; i++){
 			let toMake;
-			if (typeof(contains) != "string") {
-				toMake=Choose(contains);
+			if (typeof(contains[i]) != "string") {
+				toMake=Choose(contains[i]);
 				if (Array.isArray("toMake")) {
 					contains=contains.concat("toMake");
 
 				}
 			} else {
-				toMake=contains;
+				toMake=contains[i];
 			}
 			if (typeof(toMake) == "string") {
 				console.log(toMake);
