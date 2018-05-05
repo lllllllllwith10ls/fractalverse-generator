@@ -146,10 +146,11 @@ Instance.prototype.Grow = function(){
 		for (let i=0; i; i++){
 			
 			let toMake;
-			if (contains[i] == undefined) {
-				break;
-			}
+			
 			if (typeof(contains[i]) != "string") {
+				if (contains[i] == undefined) {
+					break;
+				}
 				toMake=Choose(contains[i]);
 				if (Array.isArray("toMake")) {
 					contains=contains.concat("toMake");
