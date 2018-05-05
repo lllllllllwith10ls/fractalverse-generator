@@ -187,7 +187,7 @@ Instance.prototype.List = function(){
 	var str="";
 	var addStyle="";
 	for (var i in this.children){
-		str+='<div id="div'+this.children[i].n">'+this.children[i].name+'</div>';
+		str+='<div id="div'+this.children[i].n+'">'+this.children[i].name+'</div>';
 	}
 	
 	//if (this.children.length>0) document.getElementById("div"+this.n).innerHTML='<span onclick="toggle('+this.n+');"><span class="arrow" id="arrow'+this.n+'">+</span> '+this.name+'</span><div id="container'+this.n+'" class="thing" style="display:none;">'+str+'</div>';
