@@ -147,14 +147,16 @@ Instance.prototype.Grow = function(){
 	if (this.grown === false){
 		this.Name();
 		for (let i in this.type.contains){
-			toMake=this.type.contains[i];
-			if (typeof(toMake) != "string") {
-				toMake=Choose(toMake);
+			let contains=this.type.contains[i];
+			let toMake;
+			if (typeof(contains) != "string") {
+				toMake=Choose(contains);
 				if (Array.isArray("toMake")) {
-					this.type.contains = this.type.contains.concat(toMake);
+					contains=contains.concat("toMake");
 					i++;
 				}
 			}
+			console.log(toMake);
 			toMake=toMake.split(",");
 			let makeAmount=1;
 			let makeProb=100;
