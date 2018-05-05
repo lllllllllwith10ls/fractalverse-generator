@@ -142,7 +142,7 @@ Instance.prototype.Name=function(){
 Instance.prototype.Grow = function(){
 	if (this.grown === false){
 		this.Name();
-		let contains=this.type.contains[i]
+		let contains=this.type.contains;
 		for (let i=0; i < contains.length; i++){
 			let toMake;
 			if (typeof(contains) != "string") {
