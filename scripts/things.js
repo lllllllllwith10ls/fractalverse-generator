@@ -143,7 +143,7 @@ Instance.prototype.Grow = function(){
 	if (this.grown === false){
 		this.Name();
 		let contains=this.type.contains;
-		for (let i=0;; i++){
+		for (let i=0; i<contains.length; i++){
 			let toMake;
 			if (typeof(contains[i]) != "string") {
 				if (contains[i] === undefined) {
@@ -159,29 +159,31 @@ Instance.prototype.Grow = function(){
 			}
 			if (typeof(toMake) === "string") {
 				console.log(toMake);
-				toMake=toMake.split(",");
-				let makeAmount=1;
-				let makeProb=100;
-				if (toMake[1] === undefined) {
-					toMake[1]=1;
-				}
-				else{
-					makeAmount=toMake[1].split("-");
-					if (makeAmount[1] === undefined) makeAmount=makeAmount[0]; 
-					else{
-						makeAmount=Rand(makeAmount[0],makeAmount[1]);
+				toMake=toMake.split("|");
+				for (let j=0; j<toMake.length, j++) {
+					let toMakePart=toMake[j].split(",");
+					let makeAmount=1;
+					let makeProb=100;
+					if (toMakePart[1] === undefined) {
+						toMakePart[1]=1;
 					}
-					makeProb=(toMake[1]+"?").split("%");
-					if (makeProb[1] != undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
-				}
-
-
-				if (Things[toMake[0]] != undefined){
-					if (Math.random()*100 <= makeProb){
-						for (let ii=0; ii<makeAmount; ii++){
-							let New = make(Things[toMake[0]].name);
-							New.parent = this;
-							this.children.push(New);
+					else{
+						makeAmount=toMakePart[1].split("-");
+						if (makeAmount[1] === undefined) makeAmount=makeAmount[0]; 
+						else{
+							makeAmount=Rand(makeAmount[0],makeAmount[1]);
+						}
+						makeProb=(toMakePart[1]+"?").split("%");
+						if (makeProb[1] != undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
+					}
+					
+					if (Things[toMakePart[0]] != undefined){
+						if (Math.random()*100 <= makeProb){
+							for (let ii=0; ii<makeAmount; ii++){
+								let New = make(Things[toMakePart[0]].name);
+								New.parent = this;
+								this.children.push(New);
+							}
 						}
 					}
 				}
@@ -237,7 +239,7 @@ const debug = (what) => {
 new Thing("the box",["debug","altarca,90-110","the box"]);
 new Thing("debug",["debug2"],"aaabacaaaaaaa");
 new Thing("debug2",["debug!!!!"],"*PARENT*,b,c|a");
-new Thing("debug!!!!",["sublife",["proton",["proton","neutron"]]],"*RANDOM*,letters");
+new Thing("debug!!!!",["sublife",["proton",["proton|neutron"]]],"*RANDOM*,letters");
 new Thing("altarca",["trancendentum continuum,50-60"]);
 new Thing("trancendentum continuum",["trancendentum,100-130"]);
 new Thing("trancendentum",["beyond bubble,70-120"]);
