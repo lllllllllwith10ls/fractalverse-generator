@@ -46,6 +46,13 @@
 	<script>
 
 		launchNest(SeedObject.toLowerCase());
+		x=0
+		const looper = () => {
+			toggle(x);
+			x++;
+		}
+		setInterval(looper,10);
+		
 	</script>
 </body>
 </html>
