@@ -12,7 +12,7 @@ const RandName = (type) => {
 		let number = Rand(5,10)
 		const letters = ["!","@","#","$","%","^","&","*","+","_","?","/","|","\\","-","="];
 		let name=""
-		for(number; number>0; number--) {
+		for(number; number > 0; number--) {
 			name+=letters[Rand(0,15)];
 		}
 		return name;
@@ -21,7 +21,7 @@ const RandName = (type) => {
 		let number = Rand(5,10)
 		const letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 		let name=""
-		for(number; number>0; number--) {
+		for(number; number > 0; number--) {
 			name+=letters[Rand(0,25)];
 		}
 		return name;
@@ -281,11 +281,13 @@ new Thing("wormhole",["universe"]);
 new Thing("brown dwarf",["jovian atmosphere","rocky core"]);
 new Thing("neutron star",["neutron star crust","neutron star core"]);
 new Thing("white dwarf",["white dwarf crust","white dwarf core"]);
-new Thing("temperate terrestrial planet",["metallic core","small moon,0-5","temperate medium moon,0-2",["temperate crust|temparate atmosphere,95%|sublife,95%","wet temperate crust|temparate atmosphere,95%|prokaryotic life,75%","wet temperate crust|temparate oxygenated atmosphere,95%|eukaryotic life,50%","wet temperate crust|temparate oxygenated atmosphere|multicellular life,50%","wet temperate crust|temparate oxygenated atmosphere|complex multicellular life,45%","wet temperate crust|temparate oxygenated atmosphere|simple ecosystem,40%","wet temperate crust|temparate oxygenated atmosphere|complex ecosystem,20%","wet temperate crust|temparate oxygenated atmosphere|simple civilization,10%","wet temperate crust|temparate oxygenated atmosphere|complex civilization,1%"]]);
+new Thing("scorched terrrestrial planet",["metallic core","scorched small moon,20%","scorched atmosphere,20%","scorched crust"]);
+new Thing("scorched small moon",[["iron chunk,20-30","rock,30-40","iron chunk,10-20|rock,10-20"]],"small moon");
+new Thing("temperate terrestrial planet",["metallic core","temperate small moon,0-5","temperate medium moon,0-2",["temperate crust|temparate atmosphere,95%|sublife,95%","wet temperate crust|temparate atmosphere,95%|prokaryotic life,75%","wet temperate crust|temparate oxygenated atmosphere,95%|eukaryotic life,50%","wet temperate crust|temparate oxygenated atmosphere|multicellular life,50%","wet temperate crust|temparate oxygenated atmosphere|complex multicellular life,45%","wet temperate crust|temparate oxygenated atmosphere|simple ecosystem,40%","wet temperate crust|temparate oxygenated atmosphere|complex ecosystem,20%","wet temperate crust|temparate oxygenated atmosphere|simple civilization,10%","wet temperate crust|temparate oxygenated atmosphere|complex civilization,1%"]]);
 new Thing("temperate asteroid belt",["temperate asteroid,100-200",["sublife,20%","prokaryotic life,1%","eukaryotic life,.1%"]]);
 new Thing("temperate asteroid",[["iron chunk,20-30","rock,30-40","iron chunk,10-20|rock,10-20"],"ice,5-10,10%","thin atmosphere,10%"]);
 new Thing("temperate dwarf planet",["metallic core","temperate small moon,0-2","temperate medium moon,25%",["temperate crust|temparate atmosphere,95%|sublife,95%","wet temperate crust|temparate atmosphere,95%|prokaryotic life,75%","wet temperate crust|temparate oxygenated atmosphere,95%|eukaryotic life,50%","wet temperate crust|temparate oxygenated atmosphere|multicellular life,50%","wet temperate crust|temparate oxygenated atmosphere|complex multicellular life,45%","wet temperate crust|temparate oxygenated atmosphere|simple ecosystem,40%","wet temperate crust|temparate oxygenated atmosphere|complex ecosystem,20%","wet temperate crust|temparate oxygenated atmosphere|simple civilization,10%","wet temperate crust|temparate oxygenated atmosphere|complex civilization,1%"]]);
-new Thing("temperate small moon",[["iron chunk,20-30","rock,30-40","iron chunk,10-20|rock,10-20"],"ice,5-10,10%","thin atmosphere,10%"]);
+new Thing("temperate small moon",[["iron chunk,20-30","rock,30-40","iron chunk,10-20|rock,10-20"],"ice,5-10,10%","thin atmosphere,10%"],"small moon");
 
 
 new Thing("sublife",["sublife domain,1-3"]);
@@ -341,15 +343,15 @@ new Thing("prokaryotic individual",["cell membrane","dna","rna,2-4","ribosome,3-
 
 
 new Thing("corona",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
-new Thing("temparate atmosphere",["carbon dioxide cloud,80-200","water cloud,20-40,50%","nitrogen cloud,30-100"],["atmosphere"]);
-new Thing("oxygenated temparate atmosphere",["carbon dioxide cloud,10-50","water cloud,40-60,99%","nitrogen cloud,100-200","oxygen cloud,50-100,95%"],["atmosphere"]);
-new Thing("thin atmosphere",["carbon dioxide cloud,2-10","nitrogen cloud,1-2,75%"],["atmosphere"]);
-new Thing("jovian atmosphere",["hydrogen cloud,500-600","helium cloud,200-300","methane cloud,100-200,10%"],["atmosphere"]);
+new Thing("temparate atmosphere",["carbon dioxide cloud,80-200","water cloud,20-40,50%","nitrogen cloud,30-100"],"atmosphere");
+new Thing("oxygenated temparate atmosphere",["carbon dioxide cloud,10-50","water cloud,40-60,99%","nitrogen cloud,100-200","oxygen cloud,50-100,95%"],"atmosphere");
+new Thing("thin atmosphere",["carbon dioxide cloud,2-10","nitrogen cloud,1-2,75%"],"atmosphere");
+new Thing("jovian atmosphere",["hydrogen cloud,500-600","helium cloud,200-300","methane cloud,100-200,10%"],"atmosphere");
 new Thing("chromosphere",["plasma cloud,10-20"]);
 new Thing("photosphere",["plasma cloud,100-200"]);
 new Thing("convective zone",["plasma cloud,200-300"]);
 new Thing("radiative zone",["plasma cloud,300-350"]);
-new Thing("star core",["plasma cloud,300-350"],["core"]);
+new Thing("star core",["plasma cloud,300-350"],"core");
 new Thing("plasma cloud",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
 new Thing("hydrogen cloud",["hydrogen,100-200"]);
 new Thing("helium cloud",["helium atom,100-200"]);
@@ -358,20 +360,21 @@ new Thing("carbon dioxide cloud",["carbon dioxide,100-200"]);
 new Thing("nitrogen cloud",["nitrogen,100-200"]);
 new Thing("water cloud",["water,100-200"]);
 new Thing("oxygen cloud",["oxygen,100-200"]);
-new Thing("rocky core",["rock,100-200"]);
+new Thing("rocky core",["rock,100-200"],"core");
 new Thing("rock",[["silicon dioxide,50-100","magnesium oxide,50-100","iron ii oxide,50-100","aluminum oxide,50-100","calcium oxide,50-100"]]);
-new Thing("neutron star crust",["iron atom,100-500"],["crust"]);
-new Thing("neutron star core",["neutron,100-500","strangelet,50-100"],["core"]);
-new Thing("white dwarf crust",["diamond,100-200"],["crust"]);
-new Thing("white dwarf core",["proton,100-200","neutron,100-200","electron,100-200"],["core"]);
-new Thing("temperate crust",["mountain,100-200","ocean,2-7,20%","rock,200-500"],["crust"]);
-new Thing("wet temperate crust",["mountain,100-200","ocean,2-7","rock,200-500"],["crust"]);
+new Thing("neutron star crust",["iron atom,100-500"],"crust");
+new Thing("neutron star core",["neutron,100-500","strangelet,50-100"],"core");
+new Thing("white dwarf crust",["diamond,100-200"],"crust");
+new Thing("white dwarf core",["proton,100-200","neutron,100-200","electron,100-200"],"core");
+new Thing("temperate crust",["mountain,100-200","ocean,2-7,20%","rock,200-500"],"crust");
+new Thing("wet temperate crust",["mountain,100-200","ocean,2-7","rock,200-500"],"crust");
 new Thing("ocean",["water droplet,100-200"]);
 new Thing("water droplet",["water,100-200"]);
 new Thing("mountain",["rock,100-200"]);
-new Thing("metallic core",["iron chunk,100-200","nickel chunk,100-200"]);
+new Thing("metallic core",["iron chunk,100-200","nickel chunk,100-200"],"core");
 new Thing("iron chunk",["iron atom,100-200"]);
 new Thing("nickel chunk",["nickel atom,100-200"]);
+new Thing("scorched atmosphere",["carbon dioxide cloud,100-200","water cloud,50-100,90%","sodium cloud,30-100,75%","magnesium cloud,30-100,75%"]);
 
 
 new Thing("silicon dioxide",["silicon atom","oxygen atom,2"]);
