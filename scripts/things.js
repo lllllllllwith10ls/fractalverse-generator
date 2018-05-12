@@ -283,9 +283,9 @@ new Thing("neutron star",["neutron star crust","neutron star core"]);
 new Thing("white dwarf",["white dwarf crust","white dwarf core"]);
 new Thing("temperate terrestrial planet",["metallic core","small moon,0-5","temperate medium moon,0-2",["temperate crust|temparate atmosphere,95%|sublife,95%","wet temperate crust|temparate atmosphere,95%|prokaryotic life,75%","wet temperate crust|temparate oxygenated atmosphere,95%|eukaryotic life,50%","wet temperate crust|temparate oxygenated atmosphere|multicellular life,50%","wet temperate crust|temparate oxygenated atmosphere|complex multicellular life,45%","wet temperate crust|temparate oxygenated atmosphere|simple ecosystem,40%","wet temperate crust|temparate oxygenated atmosphere|complex ecosystem,20%","wet temperate crust|temparate oxygenated atmosphere|simple civilization,10%","wet temperate crust|temparate oxygenated atmosphere|complex civilization,1%"]]);
 new Thing("temperate asteroid belt",["temperate asteroid,100-200",["sublife,20%","prokaryotic life,1%","eukaryotic life,.1%"]]);
-new Thing("temperate asteroid",[["iron,20-30","rock,30-40","iron,10-20|rock,10-20","ice,5-10,10%","thin atmosphere,10%"]]);
+new Thing("temperate asteroid",[["iron,20-30","rock,30-40","iron,10-20|rock,10-20"],"ice,5-10,10%","thin atmosphere,10%"]);
 new Thing("temperate dwarf planet",["metallic core","temperate small moon,0-2","temperate medium moon,25%",["temperate crust|temparate atmosphere,95%|sublife,95%","wet temperate crust|temparate atmosphere,95%|prokaryotic life,75%","wet temperate crust|temparate oxygenated atmosphere,95%|eukaryotic life,50%","wet temperate crust|temparate oxygenated atmosphere|multicellular life,50%","wet temperate crust|temparate oxygenated atmosphere|complex multicellular life,45%","wet temperate crust|temparate oxygenated atmosphere|simple ecosystem,40%","wet temperate crust|temparate oxygenated atmosphere|complex ecosystem,20%","wet temperate crust|temparate oxygenated atmosphere|simple civilization,10%","wet temperate crust|temparate oxygenated atmosphere|complex civilization,1%"]]);
-new Thing("temperate small moon",[["iron,20-30","rock,30-40","iron,10-20|rock,10-20","ice,5-10,10%","thin atmosphere,10%"]]);
+new Thing("temperate small moon",[["iron,20-30","rock,30-40","iron,10-20|rock,10-20"],"ice,5-10,10%","thin atmosphere,10%"]);
 
 
 new Thing("sublife",["sublife domain,1-3"]);
@@ -295,7 +295,7 @@ new Thing("sublife phylum",["sublife class,1-3"],"phylum |*RANDOM*,letters");
 new Thing("sublife class",["sublife order,1-3"],"class |*RANDOM*,letters");
 new Thing("sublife order",["sublife genus,1-3"],"order  |*RANDOM*,letters");
 new Thing("sublife genus",["sublife species,1-3"],"genus  |*RANDOM*,letters");
-new Thing("sublife species",["sublife individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
+new Thing("sublife species",["sublife individual,100-300"],"*PARENT*,genus|*RANDOM*,letters");
 new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*| individual");
 new Thing("cell membrane",["phospholipid,100-200"],"plasma membrane");
 new Thing("phospholipid",["phosphate","carbon atom,10-20","hydrogen atom, 20-40"]);
@@ -336,8 +336,8 @@ new Thing("prokaryotic phylum",["prokaryotic class,1-3"],"phylum |*RANDOM*,lette
 new Thing("prokaryotic class",["prokaryotic order,1-3"],"class |*RANDOM*,letters");
 new Thing("prokaryotic order",["prokaryotic genus,1-3"],"order  |*RANDOM*,letters");
 new Thing("prokaryotic genus",["prokaryotic species,1-3"],"genus  |*RANDOM*,letters");
-new Thing("prokaryotic species",["prokaryotic individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
-new Thing("sublife individual",["cell membrane","dna","rna,2-4","ribosome,3-6","protein,20-40","glucose,100-150"],"*PARENT*| individual");
+new Thing("prokaryotic species",["prokaryotic individual,100-300"],"*PARENT*,genus|*RANDOM*,letters");
+new Thing("prokaryotic individual",["cell membrane","dna","rna,2-4","ribosome,3-6","protein,20-40","glucose,100-150"],"*PARENT*| individual");
 
 
 new Thing("corona",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
