@@ -281,7 +281,7 @@ new Thing("wormhole",["universe"]);
 new Thing("brown dwarf",["jovian atmosphere","rocky core"]);
 new Thing("neutron star",["neutron star crust","neutron star core"]);
 new Thing("white dwarf",["white dwarf crust","white dwarf core"]);
-new Thing("scorched terrrestrial planet",["metallic core","scorched small moon,20%","scorched atmosphere,20%","scorched crust"]);
+new Thing("scorched terrestrial planet",["metallic core","scorched small moon,20%","scorched atmosphere,20%","scorched crust"]);
 new Thing("scorched small moon",[["iron chunk,20-30","rock,30-40","iron chunk,10-20|rock,10-20"]],"small moon");
 new Thing("temperate terrestrial planet",["metallic core","temperate small moon,0-5","temperate medium moon,0-2",["temperate crust|temparate atmosphere,95%|sublife,95%","wet temperate crust|temparate atmosphere,95%|prokaryotic life,75%","wet temperate crust|temparate oxygenated atmosphere,95%|eukaryotic life,50%","wet temperate crust|temparate oxygenated atmosphere|multicellular life,50%","wet temperate crust|temparate oxygenated atmosphere|complex multicellular life,45%","wet temperate crust|temparate oxygenated atmosphere|simple ecosystem,40%","wet temperate crust|temparate oxygenated atmosphere|complex ecosystem,20%","wet temperate crust|temparate oxygenated atmosphere|simple civilization,10%","wet temperate crust|temparate oxygenated atmosphere|complex civilization,1%"]]);
 new Thing("temperate asteroid belt",["temperate asteroid,100-200",["sublife,20%","prokaryotic life,1%","eukaryotic life,.1%"]]);
