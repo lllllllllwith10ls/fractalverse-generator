@@ -238,7 +238,7 @@ const debug = (what) => {
 new Thing("the box",["debug","altarca,90-110","the box"]);
 new Thing("debug",["debug2"],"aaabacaaaaaaa");
 new Thing("debug2",["debug!!!!"],"*PARENT*,b,c|a");
-new Thing("debug!!!!",["temperate terrestrial planet,300-500",["proton","proton|neutron"]],"*RANDOM*,letters");
+new Thing("debug!!!!",["solar system,300-500",["proton","proton|neutron"]],"*RANDOM*,letters");
 new Thing("altarca",["trancendentum continuum,50-60"]);
 new Thing("trancendentum continuum",["trancendentum,100-130"]);
 new Thing("trancendentum",["beyond bubble,70-120"]);
@@ -281,9 +281,12 @@ new Thing("wormhole",["universe"]);
 new Thing("brown dwarf",["jovian atmosphere","rocky core"]);
 new Thing("neutron star",["neutron star crust","neutron star core"]);
 new Thing("white dwarf",["white dwarf crust","white dwarf core"]);
-new Thing("temperate terrestrial planet",["metallic core","asteroid moon,0-5","temperate medium moon,0-2",["temperate crust|temparate atmosphere,95%|sublife,95%","wet temperate crust|temparate atmosphere,95%|prokaryotic life,75%","wet temperate crust|temparate oxygenated atmosphere,95%|eukaryotic life,50%","wet temperate crust|temparate oxygenated atmosphere|multicellular life,50%","wet temperate crust|temparate oxygenated atmosphere|complex multicellular life,45%","wet temperate crust|temparate oxygenated atmosphere|simple ecosystem,40%","wet temperate crust|temparate oxygenated atmosphere|complex ecosystem,20%","wet temperate crust|temparate oxygenated atmosphere|simple civilization,10%","wet temperate crust|temparate oxygenated atmosphere|complex civilization,1%"]]);
-new Thing("temperate asteroid belt",["asteroid,100-200",["sublife,20%","prokaryotic life,1%","eukaryotic life,.1%"]]);
-new Thing("asteroid",[["iron,20-30","rock,30-40","iron,10-20|rock,10-20","ice,5-10,10%","thin atmosphere,10%"]]);
+new Thing("temperate terrestrial planet",["metallic core","small moon,0-5","temperate medium moon,0-2",["temperate crust|temparate atmosphere,95%|sublife,95%","wet temperate crust|temparate atmosphere,95%|prokaryotic life,75%","wet temperate crust|temparate oxygenated atmosphere,95%|eukaryotic life,50%","wet temperate crust|temparate oxygenated atmosphere|multicellular life,50%","wet temperate crust|temparate oxygenated atmosphere|complex multicellular life,45%","wet temperate crust|temparate oxygenated atmosphere|simple ecosystem,40%","wet temperate crust|temparate oxygenated atmosphere|complex ecosystem,20%","wet temperate crust|temparate oxygenated atmosphere|simple civilization,10%","wet temperate crust|temparate oxygenated atmosphere|complex civilization,1%"]]);
+new Thing("temperate asteroid belt",["temperate asteroid,100-200",["sublife,20%","prokaryotic life,1%","eukaryotic life,.1%"]]);
+new Thing("temperate asteroid",[["iron,20-30","rock,30-40","iron,10-20|rock,10-20","ice,5-10,10%","thin atmosphere,10%"]]);
+new Thing("temperate dwarf planet",["metallic core","temperate small moon,0-2","temperate medium moon,25%",["temperate crust|temparate atmosphere,95%|sublife,95%","wet temperate crust|temparate atmosphere,95%|prokaryotic life,75%","wet temperate crust|temparate oxygenated atmosphere,95%|eukaryotic life,50%","wet temperate crust|temparate oxygenated atmosphere|multicellular life,50%","wet temperate crust|temparate oxygenated atmosphere|complex multicellular life,45%","wet temperate crust|temparate oxygenated atmosphere|simple ecosystem,40%","wet temperate crust|temparate oxygenated atmosphere|complex ecosystem,20%","wet temperate crust|temparate oxygenated atmosphere|simple civilization,10%","wet temperate crust|temparate oxygenated atmosphere|complex civilization,1%"]]);
+new Thing("temperate small moon",[["iron,20-30","rock,30-40","iron,10-20|rock,10-20","ice,5-10,10%","thin atmosphere,10%"]]);
+
 
 new Thing("sublife",["sublife domain,1-3"]);
 new Thing("sublife domain",["sublife kingdom,1-3"],"domain |*RANDOM*,letters");
@@ -334,6 +337,7 @@ new Thing("prokaryotic class",["prokaryotic order,1-3"],"class |*RANDOM*,letters
 new Thing("prokaryotic order",["prokaryotic genus,1-3"],"order  |*RANDOM*,letters");
 new Thing("prokaryotic genus",["prokaryotic species,1-3"],"genus  |*RANDOM*,letters");
 new Thing("prokaryotic species",["prokaryotic individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
+new Thing("sublife individual",["cell membrane","dna","rna,2-4","ribosome,3-6","protein,20-40","glucose,100-150"],"*PARENT*| individual");
 
 
 new Thing("corona",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
@@ -360,10 +364,15 @@ new Thing("neutron star crust",["iron atom,100-500"],["crust"]);
 new Thing("neutron star core",["neutron,100-500","strangelet,50-100"],["core"]);
 new Thing("white dwarf crust",["diamond,100-200"],["crust"]);
 new Thing("white dwarf core",["proton,100-200","neutron,100-200","electron,100-200"],["core"]);
-new Thing("temperate crust",["mountain,100-200","ocean,2-7,20%","rock,200-500"]);
+new Thing("temperate crust",["mountain,100-200","ocean,2-7,20%","rock,200-500"],["crust"]);
+new Thing("wet temperate crust",["mountain,100-200","ocean,2-7","rock,200-500"],["crust"]);
+new Thing("ocean",["water droplet,100-200"]);
+new Thing("water droplet",["water,100-200"]);
 new Thing("mountain",["rock,100-200"]);
-new Thing("metallic core",["iron,100-200","nickel,100-200"]);
-new Thing("iron",["iron atom,100-200"]);
+new Thing("metallic core",["iron chunk,100-200","nickel chunk,100-200"]);
+new Thing("iron chunk",["iron atom,100-200"]);
+new Thing("nickel chunk",["nickel atom,100-200"]);
+
 
 new Thing("silicon dioxide",["silicon atom","oxygen atom,2"]);
 new Thing("magnesium oxide",["magnesium atom","oxygen atom"]);
@@ -373,6 +382,9 @@ new Thing("calcium oxide",["calcium atom","oxygen atom"]);
 new Thing("methane",["hydrogen atom,4","carbon atom"]);
 new Thing("hydrogen",["hydrogen atom,2"]);
 new Thing("diamond",["carbon atom,100-200"]);
+new Thing("water",["oxygen atom","hydrogen atom,2"]);
+new Thing("nitrogen",["nitrogen atom,2"]);
+new Thing("carbon dioxide",["carbon atom","oxygen atom,2"]);
 
 
 new Thing("silicon atom",["proton,14","neutron,14","neutron,5%","neutron,2%","electron,14","electron,1%"]);
