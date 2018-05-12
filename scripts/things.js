@@ -236,9 +236,9 @@ const debug = (what) => {
 	document.getElementById("debug").innerHTML=document.getElementById("debug").innerHTML+'<br>'+what;
 }
 new Thing("the box",["debug","altarca,90-110","the box"]);
-/*new Thing("debug",["debug2"],"aaabacaaaaaaa");
+new Thing("debug",["debug2"],"aaabacaaaaaaa");
 new Thing("debug2",["debug!!!!"],"*PARENT*,b,c|a");
-new Thing("debug!!!!",["sublife",["proton","proton|neutron"]],"*RANDOM*,letters");*/
+new Thing("debug!!!!",["terrestrial planet,300-500",["proton","proton|neutron"]],"*RANDOM*,letters");
 new Thing("altarca",["trancendentum continuum,50-60"]);
 new Thing("trancendentum continuum",["trancendentum,100-130"]);
 new Thing("trancendentum",["beyond bubble,70-120"]);
@@ -281,9 +281,9 @@ new Thing("wormhole",["universe"]);
 new Thing("brown dwarf",["jovian atmosphere","rocky core"]);
 new Thing("neutron star",["neutron star crust","neutron star core"]);
 new Thing("white dwarf",["white dwarf crust","white dwarf core"]);
-new Thing("temperate terrestrial planet",["temperate crust","metallic core","asteroid moon,0-5","temperate medium moon,0-2",["atmosphere,95%|sublife,95%","atmosphere,95%|prokaryotic life,75%","oxygenated atmosphere,95%|eukaryotic life,50%","oxygenated atmosphere|multicellular life,50%","oxygenated atmosphere|complex multicellular life,45%","oxygenated atmosphere|simple ecosystem,40%","oxygenated atmosphere|complex ecosystem,20%","oxygenated atmosphere|simple civilization,10%","oxygenated atmosphere|complex civilization,1%"]]);
+new Thing("temperate terrestrial planet",["metallic core","asteroid moon,0-5","temperate medium moon,0-2",["temperate crust|temparate atmosphere,95%|sublife,95%","wet temperate crust|temparate atmosphere,95%|prokaryotic life,75%","wet temperate crust|temparate oxygenated atmosphere,95%|eukaryotic life,50%","wet temperate crust|temparate oxygenated atmosphere|multicellular life,50%","wet temperate crust|temparate oxygenated atmosphere|complex multicellular life,45%","wet temperate crust|temparate oxygenated atmosphere|simple ecosystem,40%","wet temperate crust|temparate oxygenated atmosphere|complex ecosystem,20%","wet temperate crust|temparate oxygenated atmosphere|simple civilization,10%","wet temperate crust|temparate oxygenated atmosphere|complex civilization,1%"]]);
 new Thing("temperate asteroid belt",["asteroid,100-200",["sublife,20%","prokaryotic life,1%","eukaryotic life,.1%"]]);
-new Thing("asteroid",[["iron,20-30","rock,30-40","iron,10-20|rock,10-20"]]);
+new Thing("asteroid",[["iron,20-30","rock,30-40","iron,10-20|rock,10-20","ice,5-10,10%","thin atmosphere,10%"]]);
 
 new Thing("sublife",["sublife domain,1-3"]);
 new Thing("sublife domain",["sublife kingdom,1-3"],"domain |*RANDOM*,letters");
@@ -294,7 +294,7 @@ new Thing("sublife order",["sublife genus,1-3"],"order  |*RANDOM*,letters");
 new Thing("sublife genus",["sublife species,1-3"],"genus  |*RANDOM*,letters");
 new Thing("sublife species",["sublife individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
 new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*| individual");
-new Thing("cell membrane",["phospholipid,100-200"],"membrane");
+new Thing("cell membrane",["phospholipid,100-200"],"plasma membrane");
 new Thing("phospholipid",["phosphate","carbon atom,10-20","hydrogen atom, 20-40"]);
 new Thing("rna",["rna nucleotide,200-400"]);
 new Thing("rna nucleotide",["phosphate","ribose",["adenine","guanine","cytosine","uracil"]]);
@@ -326,10 +326,21 @@ new Thing("threonine",["carbon atom,4","hydrogen atom,9","nitrogen atom","oxygen
 new Thing("tryptophan",["carbon atom,11","hydrogen atom,12","nitrogen atom,2","oxygen atom,2"]);
 new Thing("tyrosine",["carbon atom,9","hydrogen atom,11","nitrogen atom","oxygen atom,3"]);
 new Thing("valine",["carbon atom,5","hydrogen atom,11","nitrogen atom","oxygen atom,2"]);
+new Thing("prokaryotic life",["prokaryotic domain,1-3"]);
+new Thing("prokaryotic domain",["prokaryotic kingdom,1-3"],"domain |*RANDOM*,letters");
+new Thing("prokaryotic kingdom",["prokaryotic phylum,1-3"],"kingdom |*RANDOM*,letters");
+new Thing("prokaryotic phylum",["prokaryotic class,1-3"],"phylum |*RANDOM*,letters");
+new Thing("prokaryotic class",["prokaryotic order,1-3"],"class |*RANDOM*,letters");
+new Thing("prokaryotic order",["prokaryotic genus,1-3"],"order  |*RANDOM*,letters");
+new Thing("prokaryotic genus",["prokaryotic species,1-3"],"genus  |*RANDOM*,letters");
+new Thing("prokaryotic species",["prokaryotic individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
 
 
 new Thing("corona",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
-new Thing("jovian atmosphere",["hydrogen cloud,100-200","helium cloud,20-30","methane cloud,10-20,10%"],["atmosphere"]);
+new Thing("temparate atmosphere",["carbon dioxide cloud,80-200","water cloud,20-40,50%","nitrogen cloud,30-100"],["atmosphere"]);
+new Thing("oxygenated temparate atmosphere",["carbon dioxide cloud,10-50","water cloud,40-60,99%","nitrogen cloud,100-200","oxygen cloud,50-100,95%"],["atmosphere"]);
+new Thing("thin atmosphere",["carbon dioxide cloud,2-10","nitrogen cloud,1-2,75%"],["atmosphere"]);
+new Thing("jovian atmosphere",["hydrogen cloud,500-600","helium cloud,200-300","methane cloud,100-200,10%"],["atmosphere"]);
 new Thing("chromosphere",["plasma cloud,10-20"]);
 new Thing("photosphere",["plasma cloud,100-200"]);
 new Thing("convective zone",["plasma cloud,200-300"]);
@@ -339,6 +350,10 @@ new Thing("plasma cloud",["hydrogen atom,100-300","helium atom,50-60","electron,
 new Thing("hydrogen cloud",["hydrogen,100-200"]);
 new Thing("helium cloud",["helium atom,100-200"]);
 new Thing("methane cloud",["methane,100-200"]);
+new Thing("carbon dioxide cloud",["carbon dioxide,100-200"]);
+new Thing("nitrogen cloud",["nitrogen,100-200"]);
+new Thing("water cloud",["water,100-200"]);
+new Thing("oxygen cloud",["oxygen,100-200"]);
 new Thing("rocky core",["rock,100-200"]);
 new Thing("rock",[["silicon dioxide,50-100","magnesium oxide,50-100","iron ii oxide,50-100","aluminum oxide,50-100","calcium oxide,50-100"]]);
 new Thing("neutron star crust",["iron atom,100-500"],["crust"]);
