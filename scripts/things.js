@@ -301,8 +301,8 @@ new Thing("sublife species",["sublife individual,100-300"],"*PARENT*,genus| |*RA
 new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*| individual");
 new Thing("cell membrane",["phospholipid,100-200"],"plasma membrane");
 new Thing("phospholipid",["phosphate","carbon atom,10-20","hydrogen atom, 20-40"]);
-new Thing("rna",["rna nucleotide,200-400"],"nucleotide");
-new Thing("rna nucleotide",["phosphate","ribose",["adenine","guanine","cytosine","uracil"]]);
+new Thing("rna",["rna nucleotide,200-400"]);
+new Thing("rna nucleotide",["phosphate","ribose",["adenine","guanine","cytosine","uracil"]],"nucleotide");
 new Thing("ribose",["carbon atom,5","hydrogen atom,10","oxygen atom,5"]);
 new Thing("phosphate",["phosphorus atom","oxygen atom,4"]);
 new Thing("adenine",["carbon atom,5","hydrogen atom,5","nitrogen atom,5"]);
