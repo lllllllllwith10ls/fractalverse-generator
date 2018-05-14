@@ -381,7 +381,7 @@ new Thing("mountain",["rock,100-200"]);
 new Thing("metallic core",["iron chunk,100-200","nickel chunk,100-200"],"core");
 new Thing("iron chunk",["iron atom,100-200"]);
 new Thing("nickel chunk",["nickel atom,100-200"]);
-new Thing("scorched atmosphere",["carbon dioxide cloud,100-200","water cloud,50-100,90%","sodium cloud,30-100,75%","magnesium cloud,30-100,75%"]);
+new Thing("scorched atmosphere",["carbon dioxide cloud,100-200","water cloud,50-100,90%","sodium cloud,30-100,75%","magnesium cloud,30-100,75%"],"atmosphere");
 new Thing("scorched crust",["lava,100-200","volcano,50-75","rock,100-200"],"crust");
 new Thing("lava",[["silicon dioxide,50-100","magnesium oxide,50-100","iron ii oxide,50-100","aluminum oxide,50-100","calcium oxide,50-100"]]);
 new Thing("volcano",["rock,100-200","lava,20-50"]);
