@@ -366,7 +366,7 @@ new Thing("neutron star crust",["iron atom,100-500"],"crust");
 new Thing("neutron star core",["neutron,100-500","strangelet,50-100"],"core");
 new Thing("white dwarf crust",["diamond,100-200"],"crust");
 new Thing("white dwarf core",["proton,100-200","neutron,100-200","electron,100-200"],"core");
-new Thing("temperate crust",["mountain,100-200","ocean,2-7,20%","rock,200-500"],"crust");
+new Thing("temperate crust",["mountain,100-200","ocean,2-7,50%","rock,200-500"],"crust");
 new Thing("wet temperate crust",["mountain,100-200","ocean,2-7","rock,200-500"],"crust");
 new Thing("ocean",["salt water droplet,100-200"]);
 new Thing("salt water droplet",["water,100-200","salt,50-100"],"water droplet");
