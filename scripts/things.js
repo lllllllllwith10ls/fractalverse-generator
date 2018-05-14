@@ -368,13 +368,19 @@ new Thing("white dwarf crust",["diamond,100-200"],"crust");
 new Thing("white dwarf core",["proton,100-200","neutron,100-200","electron,100-200"],"core");
 new Thing("temperate crust",["mountain,100-200","ocean,2-7,20%","rock,200-500"],"crust");
 new Thing("wet temperate crust",["mountain,100-200","ocean,2-7","rock,200-500"],"crust");
-new Thing("ocean",["water droplet,100-200"]);
-new Thing("water droplet",["water,100-200"]);
+new Thing("ocean",["salt water droplet,100-200"]);
+new Thing("salt water droplet",["water,100-200","salt,50-100"],"water droplet");
 new Thing("mountain",["rock,100-200"]);
 new Thing("metallic core",["iron chunk,100-200","nickel chunk,100-200"],"core");
 new Thing("iron chunk",["iron atom,100-200"]);
 new Thing("nickel chunk",["nickel atom,100-200"]);
 new Thing("scorched atmosphere",["carbon dioxide cloud,100-200","water cloud,50-100,90%","sodium cloud,30-100,75%","magnesium cloud,30-100,75%"]);
+new Thing("scorched crust",["lava,100-200","volcano,50-75","rock,100-200"],"crust");
+new Thing("lava",[["silicon dioxide,50-100","magnesium oxide,50-100","iron ii oxide,50-100","aluminum oxide,50-100","calcium oxide,50-100"]]);
+new Thing("volcano",["rock,100-200","lava,20-50"]);
+new Thing("sodium cloud",["sodium atom,100-200"]);
+new Thing("salt",["chlorine atom","sodium atom"]);
+new Thing("magnesium cloud",["magnesium atom,100-200"]);
 
 
 new Thing("silicon dioxide",["silicon atom","oxygen atom,2"]);
@@ -402,6 +408,8 @@ new Thing("calcium atom",["proton,20","neutron,20",["neutron,1%,2","neutron,.5%,
 new Thing("iron atom",["proton,26","neutron,28",["neutron,2,95%","neutron,2,95%","neutron,2,95%","neutron,2,95%","neutron,2-3"],"electron,23",["electron","electron,3"]])
 new Thing("hydrogen atom",["proton","electron,80%","electron,10%","neutron,.2%"]);
 new Thing("helium atom",["proton,2","electron,2","neutron","neutron,99.998%"]);
+new Thing("chlorine atom",["proton,17","electron,17","electron,99%","neutron,18","neutron,2,20%"]);
+new Thing("sodium atom",["proton,11","electron,10","electron,1%","neutron,12"]);
 new Thing("proton",["up quark,2","down quark","gluon,1-5","strange quark,.01%"]);
 new Thing("neutron",["down quark,2","up quark","gluon,1-5","strange quark,.01%"]);
 new Thing("electron",["aaa"]);
