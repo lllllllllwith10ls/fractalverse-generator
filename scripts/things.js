@@ -339,12 +339,14 @@ new Thing("prokaryotic class",["prokaryotic order,1-3"],"class |*RANDOM*,letters
 new Thing("prokaryotic order",["prokaryotic genus,1-3"],"order  |*RANDOM*,letters");
 new Thing("prokaryotic genus",["prokaryotic species,1-3"],"genus  |*RANDOM*,letters");
 new Thing("prokaryotic species",["prokaryotic individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
-new Thing("prokaryotic individual",["cell membrane","dna","rna,2-4","bacterial ribosome,3-6","protein,20-40","glucose,100-150"],"*PARENT*| individual");
+new Thing("prokaryotic individual",["bacterial cell wall","cell membrane","dna","rna,2-4","bacterial ribosome,3-6","protein,20-40","glucose,100-150"],"*PARENT*| individual");
 new Thing("dna",["dna nucleotide,200-400"]);
 new Thing("dna nucleotide",["phosphate","deoxyrobose",["adenine","guanine","cytosine","thymine"]],"nucleotide");
 new Thing("thymine"["carbon atom,5","hydrogen atom,6","nitrogen atom,2","oxygen atom,2"]);
 new Thing("deoxyribose",["carbon atom,5","hydrogen atom,10","oxygen atom,4"]);
 new Thing("bacterial ribosome",["protein,4-5","rna,10-12"],"ribosome");
+new Thing("glucose",["carbon atom,6","hydrogen atom,12","oxygen atom,6"]);
+new Thing("bacterial cell wall",["glucose,50-100","peptide,25-50"],"cell wall");
 
 
 new Thing("corona",["hydrogen atom,100-300","helium atom,50-60","electron,200-300","proton,200-300"]);
