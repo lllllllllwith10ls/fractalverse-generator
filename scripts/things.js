@@ -356,6 +356,7 @@ new Thing("temperate atmosphere",["carbon dioxide cloud,80-200","water cloud,20-
 new Thing("oxygenated temperate atmosphere",["carbon dioxide cloud,10-50","water cloud,40-60,99%","nitrogen cloud,100-200","oxygen cloud,50-100,95%"],"atmosphere");
 new Thing("thin atmosphere",["carbon dioxide cloud,2-10","nitrogen cloud,1-2,75%"],"atmosphere");
 new Thing("jovian atmosphere",["hydrogen cloud,500-600","helium cloud,200-300","methane cloud,100-200,10%"],"atmosphere");
+new Thing("temperate superterrestrial atmosphere",["carbon dioxide cloud,100-300","water cloud,50-100,50%","nitrogen cloud,50-150","helium cloud,100-200"],"atmosphere");
 new Thing("chromosphere",["plasma cloud,10-20"]);
 new Thing("photosphere",["plasma cloud,100-200"]);
 new Thing("convective zone",["plasma cloud,200-300"]);
