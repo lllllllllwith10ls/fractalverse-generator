@@ -165,8 +165,7 @@ Instance.prototype.Grow = function(){
 					let makeProb=100;
 					if (toMakePart[1] === undefined) {
 						toMakePart[1]=1;
-					}
-					else{
+					} else{
 						makeAmount=toMakePart[1].split("-");
 						if (makeAmount[1] === undefined) makeAmount=makeAmount[0]; 
 						else{
@@ -175,7 +174,9 @@ Instance.prototype.Grow = function(){
 						makeProb=(toMakePart[1]+"?").split("%");
 						if (makeProb[1] != undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
 					}
-					
+					if (toMake.includes("*")) {
+						switch{
+					}
 					if (Things[toMakePart[0]] != undefined){
 						if (Math.random()*100 <= makeProb){
 							for (let ii=0; ii<makeAmount; ii++){
