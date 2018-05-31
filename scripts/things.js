@@ -175,7 +175,22 @@ Instance.prototype.Grow = function(){
 						if (makeProb[1] != undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
 					}
 					if (toMake.includes("*")) {
-						switch{
+						
+						switch (toMake) {
+							case "*sublife species":
+								let parent = this.parent.name;
+								let n = "*sublife individual,100-300";
+								let m = parent;
+								m.split("genus");
+								m = m[0];
+								sublives[sublivesN] = new Thing(sublivesN + "sublife species",n,m);
+								sublivesN++;
+								break;
+							case "*sublife individual":
+								
+								break;
+								
+						}
 					}
 					if (Things[toMakePart[0]] != undefined){
 						if (Math.random()*100 <= makeProb){
@@ -192,6 +207,9 @@ Instance.prototype.Grow = function(){
 		this.grown=true;
 	}
 }
+
+let sublives = [];
+let sublivesN = 0
 
 Instance.prototype.List = function(){
 	var str="";
