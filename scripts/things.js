@@ -174,9 +174,9 @@ Instance.prototype.Grow = function(){
 						makeProb=(toMakePart[1]+"?").split("%");
 						if (makeProb[1] != undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
 					}
-					if (toMake.includes("*")) {
+					if (toMakePart[0].includes("*")) {
 						
-						switch (toMake) {
+						switch (toMakePart[0]) {
 							case "*sublife species":
 								{
 									let contains2 = ["*sublife individual,100-300"];
@@ -190,18 +190,18 @@ Instance.prototype.Grow = function(){
 								break;
 							case "*sublife individual":
 								{
-									let contains3 = ["cell membrane","*sublife rna","protein," + Rand(2,4)];
+									let contains2 = ["cell membrane","*sublife rna","protein," + Rand(2,4)];
 									let uniqueName = this.parent.name + " individual";
 									let id = uniqueN + ",sublife species individual," + uniqueName;
-									uniqueThings[uniqueN] = new Thing(id,contains3,uniqueName);
+									uniqueThings[uniqueN] = new Thing(id,contains2,uniqueName);
 									uniqueN++;
 								}
 								break;
 							case "*sublife rna":
 								{
-									let contains4 = ["rna nucleotide,"+Rand(200-400)]
+									let contains2 = ["rna nucleotide,"+Rand(200-400)]
 									let id = uniqueN + ",rna," + this.parent.name;
-									uniqueThings[uniqueN] = new Thing(id,contains4,"rna");
+									uniqueThings[uniqueN] = new Thing(id,contains2,"rna");
 									uniqueN++;
 								}
 								break;
