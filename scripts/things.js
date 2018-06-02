@@ -239,10 +239,10 @@ Instance.prototype.Grow = function(){
 					}
 					if(this.emitter === true) {
 						let thisThing = this.parent;
-						while(thisThing[0].reciever = false) {
+						while(thisThing[0].reciever === false) {
 							thisThing = thisThing.parent;
 						}
-						if(thisThing.addEVERYTHING = true) {
+						if(thisThing.addEVERYTHING === true) {
 						
 							thisThing.children.push(this.type);	
 						} else{
