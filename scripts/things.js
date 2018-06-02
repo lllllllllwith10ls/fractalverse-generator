@@ -207,7 +207,7 @@ Instance.prototype.Grow = function(){
 									{
 										let contains2 = ["*sublife individual,100-300"];
 										let uniqueName = this.name;
-										uniqueName.replace(" genus","");
+										uniqueName.replace("genus ","");
 										let id = uniqueN + ",sublife species," + uniqueName;
 										uniqueThings[uniqueN] = new Thing(id, contains2, uniqueName);
 										this.children.push(uniqueThings[uniqueN]);
