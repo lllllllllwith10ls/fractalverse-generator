@@ -189,7 +189,7 @@ Instance.prototype.Grow = function(){
 								break;
 							case "*sublife individual":
 								let parent = this.parent.name;
-								let things = "cell membrane","*sublife rna","protein," + Rand(2,4);
+								let things = "cell membrane,*sublife rna","protein," + Rand(2,4);
 								let name = parent + "individual";
 								let id = uniqueN + ",sublife species individual," + name;
 								uniqueThings[uniqueN] = new Thing(id,name,things);
