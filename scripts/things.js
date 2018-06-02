@@ -202,7 +202,7 @@ Instance.prototype.Grow = function(){
 					
 					if (toMakePart[0].includes("*")) {
 						console.log(toMakePart[0]);
-						for(i = makeAmount; i>0; i--) {
+						for(let k = makeAmount; k>0; k--) {
 							switch (toMakePart[0]) {
 								case "*sublife species":
 									{
