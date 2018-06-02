@@ -175,7 +175,7 @@ Instance.prototype.Grow = function(){
 						if (makeProb[1] != undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
 					}
 					if (toMakePart[0].includes("*")) {
-						
+						console.log(toMakePart[0]);
 						switch (toMakePart[0]) {
 							case "*sublife species":
 								{
