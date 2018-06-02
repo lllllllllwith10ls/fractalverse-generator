@@ -210,7 +210,7 @@ Instance.prototype.Grow = function(){
 										let uniqueName = this.parent.name;
 										uniqueName.split("genus");
 										uniqueName = uniqueName[0];
-										let id = ">" + uniqueN + ",sublife species," + name;
+										let id = uniqueN + ",sublife species," + name;
 										uniqueThings[uniqueN] = new Thing(id,contains2,uniqueName);
 										this.children.push(uniqueThings[uniqueN]);
 										uniqueN++;
@@ -220,7 +220,7 @@ Instance.prototype.Grow = function(){
 									{
 										let contains2 = ["cell membrane","rna","protein," + Rand(2,4)];
 										let uniqueName = this.parent.name + " individual";
-										let id = ">" + uniqueN + ",sublife species individual," + uniqueName;
+										let id = uniqueN + ",sublife species individual," + uniqueName;
 										uniqueThings[uniqueN] = new Thing(id,contains2,uniqueName);
 										this.children.push(uniqueThings[uniqueN]);
 										uniqueN++;
