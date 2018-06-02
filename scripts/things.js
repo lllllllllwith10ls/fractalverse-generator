@@ -93,10 +93,31 @@ class Instance{
 		this.n = iN;
 		this.display = 0;
 		this.grown = false;
-		this.emitter = false;
+		this.transmitter = false;
 		this.reciever = false;
 		this.thingPool = [];
 		this.addEVERYTHING = false;
+		if (this.type.includes(">")) {
+			this.type.split(">");
+			this.type = this.type[0];
+			this.transmitter = true;
+		}
+		if (this.type.includes("<")) {
+			this.type.split("<");
+			this.type = this.type[0];
+			this.reciever = true;
+		}
+		if (this.type.includes("^")) {
+			this.type.split("^")
+			this.type = this.type[0]
+			this.addEVERYTHING = true;
+		}
+		if (this.type.includes("=")) {
+			this.type.split("=")
+			this.type = this.type[0]
+			this.transciever = true;
+		}
+		
 		
 		iN++;
 		Instances.push(this);
@@ -179,21 +200,7 @@ Instance.prototype.Grow = function(){
 						makeProb=(toMakePart[1]+"?").split("%");
 						if (makeProb[1] != undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
 					}
-					if (toMakePart[0].includes(">")) {
-						toMakePart[0].split(">");
-						toMakePart[0] = toMakePart[0][0];
-						this.emitter = true;
-					}
-					if (toMakePart[0].includes("<")) {
-						toMakePart[0].split("<");
-						toMakePart[0] = toMakePart[0][0];
-						this.reciever = true;
-					}
-					if (toMakePart[0].includes("^")) {
-						toMakePart[0].split("^")
-						toMakePart[0] = toMakePart[0][0]
-						this.addEVERYTHING = true;
-					}
+					
 					if (toMakePart[0].includes("*")) {
 						console.log(toMakePart[0]);
 						switch (toMakePart[0]) {
@@ -234,18 +241,26 @@ Instance.prototype.Grow = function(){
 								let New = make(Things[toMakePart[0]].name);
 								New.parent = this;
 								this.children.push(New);
-								if(this.emitter === true) {
-									let thisThing = this.parent;
-									while(thisThing[0].reciever === false) {
-										thisThing = thisThing.parent;
-									}
+								
+							}
+						}
+					} else {
+						if(this.transmitter === true) {
+							let thisThing = this.parent;
+							while(thisThing[0].reciever === false) {
+								thisThing = thisThing.parent;
+								if(thisThing.transciever === true) {
 									if(thisThing.addEVERYTHING === true) {
-
 										thisThing.children.push(this);	
-									} else{
+									} else {
 										thisThing.thingPool.push(this.type);
 									}
 								}
+							}
+							if(thisThing.addEVERYTHING === true) {
+								thisThing.children.push(this);	
+							} else {
+								thisThing.thingPool.push(this.type);
 							}
 						}
 					}
