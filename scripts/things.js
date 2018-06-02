@@ -190,7 +190,7 @@ Instance.prototype.Grow = function(){
 						this.reciever = true;
 					}
 					if (toMakePart[0].includes("^")) {
-						toMakePart[0].split(">")
+						toMakePart[0].split("^")
 						toMakePart[0] = toMakePart[0][0]
 						this.addEVERYTHING = true;
 					}
