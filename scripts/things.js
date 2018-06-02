@@ -178,26 +178,32 @@ Instance.prototype.Grow = function(){
 						
 						switch (toMake) {
 							case "*sublife species":
-								let contains2 = ["*sublife individual,100-300"];
-								let uniqueName = this.parent.name;
-								uniqueName.split("genus");
-								uniqueName = name[0];
-								let id = uniqueN + ",sublife species," + name;
-								uniqueThings[uniqueN] = new Thing(id,contains2,uniqueName);
-								uniqueN++;
+								{
+									let contains2 = ["*sublife individual,100-300"];
+									let uniqueName = this.parent.name;
+									uniqueName.split("genus");
+									uniqueName = name[0];
+									let id = uniqueN + ",sublife species," + name;
+									uniqueThings[uniqueN] = new Thing(id,contains2,uniqueName);
+									uniqueN++;
+								}
 								break;
 							case "*sublife individual":
-								let contains3 = ["cell membrane","*sublife rna","protein," + Rand(2,4)];
-								let uniqueName = this.parent.name + " individual";
-								let id = uniqueN + ",sublife species individual," + uniqueName;
-								uniqueThings[uniqueN] = new Thing(id,contains3,uniqueName);
-								uniqueN++;
+								{
+									let contains3 = ["cell membrane","*sublife rna","protein," + Rand(2,4)];
+									let uniqueName = this.parent.name + " individual";
+									let id = uniqueN + ",sublife species individual," + uniqueName;
+									uniqueThings[uniqueN] = new Thing(id,contains3,uniqueName);
+									uniqueN++;
+								}
 								break;
 							case "*sublife rna":
-								let contains4 = ["rna nucleotide,"+Rand(200-400)]
-								let id = uniqueN + ",rna," + this.parent.name;
-								uniqueThings[uniqueN] = new Thing(id,contains4,"rna");
-								uniqueN++;
+								{
+									let contains4 = ["rna nucleotide,"+Rand(200-400)]
+									let id = uniqueN + ",rna," + this.parent.name;
+									uniqueThings[uniqueN] = new Thing(id,contains4,"rna");
+									uniqueN++;
+								}
 								break;
 							default:
 						}
