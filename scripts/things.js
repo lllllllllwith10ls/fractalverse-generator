@@ -85,18 +85,23 @@ const CleanThings = () => {
 let iN=0;
 let Instances=[];
 class Instance{
-  constructor(what) {
-    this.name = "thing";
-    this.type = Things[what];
-    this.parent = 0;
-    this.children = [];
-    this.n = iN;
-    this.display = 0;
-    this.grown = false;
-    iN++;
-    Instances.push(this);
+	constructor(what) {
+		this.name = "thing";
+		this.type = Things[what];
+		this.parent = 0;
+		this.children = [];
+		this.n = iN;
+		this.display = 0;
+		this.grown = false;
+		this.emitter = false;
+		this.reciever = false;
+		this.thingPool = [];
+		this.addEVERYTHING = false;
+		
+		iN++;
+		Instances.push(this);
 
-    return this;
+		return this;
   }
 }
 Instance.prototype.Name=function(){
@@ -174,6 +179,21 @@ Instance.prototype.Grow = function(){
 						makeProb=(toMakePart[1]+"?").split("%");
 						if (makeProb[1] != undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
 					}
+					if (toMakePart[0].includes(">")) {
+						toMakePart[0].split(">");
+						toMakePart[0] = toMakePart[0][0];
+						this.emitter = true;
+					}
+					if (toMakePart[0].includes("<")) {
+						toMakePart[0].split("<");
+						toMakePart[0] = toMakePart[0][0];
+						this.reciever = true;
+					}
+					if (toMakePart[0].includes("^")) {
+						toMakePart[0].split(">")
+						toMakePart[0] = toMakePart[0][0]
+						this.addEVERYTHING = true;
+					}
 					if (toMakePart[0].includes("*")) {
 						console.log(toMakePart[0]);
 						switch (toMakePart[0]) {
@@ -183,7 +203,7 @@ Instance.prototype.Grow = function(){
 									let uniqueName = this.parent.name;
 									uniqueName.split("genus");
 									uniqueName = name[0];
-									let id = uniqueN + ",sublife species," + name;
+									let id = "><^" + uniqueN + ",sublife species," + name;
 									uniqueThings[uniqueN] = new Thing(id,contains2,uniqueName);
 									uniqueN++;
 								}
@@ -192,15 +212,15 @@ Instance.prototype.Grow = function(){
 								{
 									let contains2 = ["cell membrane","*sublife rna","protein," + Rand(2,4)];
 									let uniqueName = this.parent.name + " individual";
-									let id = uniqueN + ",sublife species individual," + uniqueName;
+									let id = "><^" + uniqueN + ",sublife species individual," + uniqueName;
 									uniqueThings[uniqueN] = new Thing(id,contains2,uniqueName);
 									uniqueN++;
 								}
 								break;
 							case "*sublife rna":
 								{
-									let contains2 = ["rna nucleotide,"+Rand(200-400)]
-									let id = uniqueN + ",rna," + this.parent.name;
+									let contains2 = ["rna nucleotide,"+Rand(200-400)];
+									let id = ">" + uniqueN + ",rna," + this.parent.name;
 									uniqueThings[uniqueN] = new Thing(id,contains2,"rna");
 									uniqueN++;
 								}
@@ -215,6 +235,18 @@ Instance.prototype.Grow = function(){
 								New.parent = this;
 								this.children.push(New);
 							}
+						}
+					}
+					if(this.emitter === true) {
+						let thisThing = this.parent;
+						while(thisThing[0].reciever = false) {
+							thisThing = thisThing.parent;
+						}
+						if(thisThing.addEVERYTHING = true) {
+						
+							thisThing.children.push(this.type);	
+						} else{
+							thisThing.thingPool.push(this.type);
 						}
 					}
 				}
@@ -336,7 +368,7 @@ new Thing("sublife kingdom",["sublife phylum,1-3"],"kingdom |*RANDOM*,letters");
 new Thing("sublife phylum",["sublife class,1-3"],"phylum |*RANDOM*,letters");
 new Thing("sublife class",["sublife order,1-3"],"class |*RANDOM*,letters");
 new Thing("sublife order",["sublife genus,1-3"],"order  |*RANDOM*,letters");
-new Thing("sublife genus",["*sublife species,1-3"],"genus  |*RANDOM*,letters");
+new Thing("<^sublife genus",["*sublife species,1-3"],"genus  |*RANDOM*,letters");
 /*new Thing("sublife species",["sublife individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
 new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*| individual");*/
 new Thing("cell membrane",["phospholipid,100-200"],"plasma membrane");
