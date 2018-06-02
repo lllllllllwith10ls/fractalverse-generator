@@ -234,19 +234,19 @@ Instance.prototype.Grow = function(){
 								let New = make(Things[toMakePart[0]].name);
 								New.parent = this;
 								this.children.push(New);
+								if(this.emitter === true) {
+									let thisThing = this.parent;
+									while(thisThing[0].reciever === false) {
+										thisThing = thisThing.parent;
+									}
+									if(thisThing.addEVERYTHING === true) {
+
+										thisThing.children.push(this);	
+									} else{
+										thisThing.thingPool.push(this.type);
+									}
+								}
 							}
-						}
-					}
-					if(this.emitter === true) {
-						let thisThing = this.parent;
-						while(thisThing[0].reciever === false) {
-							thisThing = thisThing.parent;
-						}
-						if(thisThing.addEVERYTHING === true) {
-						
-							thisThing.children.push(this.type);	
-						} else{
-							thisThing.thingPool.push(this.type);
 						}
 					}
 				}
