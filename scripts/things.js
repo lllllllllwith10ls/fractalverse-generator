@@ -87,7 +87,6 @@ let Instances=[];
 class Instance{
 	constructor(what) {
 		this.name = "thing";
-		this.type = Things[what];
 		this.parent = 0;
 		this.children = [];
 		this.n = iN;
@@ -97,27 +96,27 @@ class Instance{
 		this.reciever = false;
 		this.thingPool = [];
 		this.addEVERYTHING = false;
-		if (this.type.includes(">")) {
-			this.type.split(">");
-			this.type = this.type[0];
+		if (what.includes(">")) {
+			what.split(">");
+			what = what[0];
 			this.transmitter = true;
 		}
-		if (this.type.includes("<")) {
-			this.type.split("<");
-			this.type = this.type[0];
+		if (what.includes("<")) {
+			what.split("<");
+			what = what[0];
 			this.reciever = true;
 		}
-		if (this.type.includes("^")) {
-			this.type.split("^")
-			this.type = this.type[0]
+		if (what.includes("^")) {
+			what.split("^")
+			what = what[0]
 			this.addEVERYTHING = true;
 		}
-		if (this.type.includes("=")) {
-			this.type.split("=")
-			this.type = this.type[0]
+		if (what.includes("=")) {
+			what.split("=")
+			what = what[0]
 			this.transciever = true;
 		}
-		
+		this.type = Things[what];
 		
 		iN++;
 		Instances.push(this);
