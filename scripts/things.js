@@ -211,6 +211,7 @@ Instance.prototype.Grow = function(){
 									uniqueName = name[0];
 									let id = "><^" + uniqueN + ",sublife species," + name;
 									uniqueThings[uniqueN] = new Thing(id,contains2,uniqueName);
+									this.children.push(uniqueThings[uniqueN]);
 									uniqueN++;
 								}
 								break;
@@ -220,6 +221,7 @@ Instance.prototype.Grow = function(){
 									let uniqueName = this.parent.name + " individual";
 									let id = "><^" + uniqueN + ",sublife species individual," + uniqueName;
 									uniqueThings[uniqueN] = new Thing(id,contains2,uniqueName);
+									this.children.push(uniqueThings[uniqueN]);
 									uniqueN++;
 								}
 								break;
@@ -228,6 +230,7 @@ Instance.prototype.Grow = function(){
 									let contains2 = ["rna nucleotide,"+Rand(200-400)];
 									let id = ">" + uniqueN + ",rna," + this.parent.name;
 									uniqueThings[uniqueN] = new Thing(id,contains2,"rna");
+									this.children.push(uniqueThings[uniqueN]);
 									uniqueN++;
 								}
 								break;
@@ -249,11 +252,8 @@ Instance.prototype.Grow = function(){
 							while(thisThing[0].reciever === false) {
 								thisThing = thisThing.parent;
 								if(thisThing.transciever === true) {
-									if(thisThing.addEVERYTHING === true) {
-										thisThing.children.push(this);	
-									} else {
+									
 										thisThing.thingPool.push(this.type);
-									}
 								}
 							}
 							if(thisThing.addEVERYTHING === true) {
