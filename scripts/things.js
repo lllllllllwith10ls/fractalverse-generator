@@ -182,7 +182,7 @@ Instance.prototype.Grow = function(){
 								let things = ["*sublife individual,100-300"];
 								let uniqueName = parent;
 								uniqueName.split("genus");
-								let uniqueName = name[0];
+								uniqueName = name[0];
 								let id = uniqueN + ",sublife species," + name;
 								uniqueThings[uniqueN] = new Thing(id,things,uniqueName);
 								uniqueN++;
@@ -201,6 +201,7 @@ Instance.prototype.Grow = function(){
 								uniqueThings[uniqueN] = new Thing(id,things,"rna");
 								uniqueN++;
 								break;
+							default:
 						}
 					}
 					if (Things[toMakePart[0]] != undefined){
