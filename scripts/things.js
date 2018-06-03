@@ -224,7 +224,7 @@ Instance.prototype.Grow = function(){
 										let thisName = this.name + " individual";
 										let id = uniqueN + ",sublife species individual," + thisName;
 										uniqueThings[uniqueN] = new Thing(id, contains2, thisName);
-										this.children.push(uniqueThings[uniqueN]);
+										this.children.push(Things[uniqueThings[uniqueN]]);
 										uniqueN++;
 									}
 									break;
