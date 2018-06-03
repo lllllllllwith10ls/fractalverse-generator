@@ -206,21 +206,21 @@ Instance.prototype.Grow = function(){
 								case "*sublife species":
 									{
 										let contains2 = ["*sublife individual,100-300"];
-										let uniqueName = this.name;
-										uniqueName.replace("genus ","");
-										let id = uniqueN + ",sublife species," + uniqueName;
-										uniqueThings[uniqueN] = new Thing(id, contains2, uniqueName);
+										let thisName = this.name;
+										thisName.replace("genus ","");
+										let id = uniqueN + ",sublife species," + thisName;
+										uniqueThings[uniqueN] = new Thing(id, contains2, thisName);
 										this.children.push(uniqueThings[uniqueN]);
 										uniqueN++;	
-										console.log(uniqueName);
+										console.log(thisName);
 									}
 									break;
 								case "*sublife individual":
 									{
 										let contains2 = ["cell membrane","rna","protein," + Rand(2,4)];
-										let uniqueName = this.name + " individual";
-										let id = uniqueN + ",sublife species individual," + uniqueName;
-										uniqueThings[uniqueN] = new Thing(id, contains2, uniqueName);
+										let thisName = this.name + " individual";
+										let id = uniqueN + ",sublife species individual," + thisName;
+										uniqueThings[uniqueN] = new Thing(id, contains2, thisName);
 										this.children.push(uniqueThings[uniqueN]);
 										uniqueN++;
 									}
