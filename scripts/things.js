@@ -211,7 +211,7 @@ Instance.prototype.Grow = function(){
 										thisName += " " + RandName("letters")
 										let id = uniqueN + ",sublife species," + thisName;
 										uniqueThings[uniqueN] = new Thing(id, contains2, thisName);
-										let New = make(Things[uniqueThings[uniqueN]]);
+										let New = make(uniqueThings[uniqueN].name);
 										New.parent = this;
 										this.children.push(New);
 										uniqueN++;	
