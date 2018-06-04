@@ -201,36 +201,36 @@ Instance.prototype.Grow = function(){
 					}
 					
 					if (toMakePart[0].includes("*")) {
-						for(let k = makeAmount; k>0; k--) {
-							switch (toMakePart[0]) {
-								case "*sublife species":
-									{
-										let contains2 = ["*sublife individual,100-300"];
-										let thisName = this.name;
-										thisName = thisName.replace("genus ","");
-										thisName += " " + RandName("letters")
-										let id = uniqueN + ",sublife species," + thisName;
-										uniqueThings[uniqueN] = new Thing(id, contains2, thisName);
-										let New = make(uniqueThings[uniqueN].name);
-										New.parent = this;
+						switch (toMakePart[0]) {
+							case "*sublife species":
+								for(let k = makeAmount; k>0; k--) {
+									let contains2 = ["*sublife individual,100-300"];
+									let thisName = this.name;
+									thisName = thisName.replace("genus ","");
+									thisName += " " + RandName("letters")
+									let id = uniqueN + ",sublife species," + thisName;
+									uniqueThings[uniqueN] = new Thing(id, contains2, thisName);
+									let New = make(uniqueThings[uniqueN].name);
+									New.parent = this;
+									this.children.push(New);
+									uniqueN++;
+								}
+								break;
+							case "*sublife individual":
+								{
+									let contains2 = ["cell membrane","rna","protein," + Rand(2,4)];
+									let thisName = this.name + " individual";
+									let id = uniqueN + ",sublife species individual," + thisName;
+									uniqueThings[uniqueN] = new Thing(id, contains2, thisName);
+									let New = make(uniqueThings[uniqueN].name);
+									New.parent = this;
+									for(let k = makeAmount; k>0; k--) {
 										this.children.push(New);
-										uniqueN++;
 									}
-									break;
-								case "*sublife individual":
-									{
-										let contains2 = ["cell membrane","rna","protein," + Rand(2,4)];
-										let thisName = this.name + " individual";
-										let id = uniqueN + ",sublife species individual," + thisName;
-										uniqueThings[uniqueN] = new Thing(id, contains2, thisName);
-										let New = make(uniqueThings[uniqueN].name);
-										New.parent = this;
-										this.children.push(New);
-										uniqueN++;
-									}
-									break;
-								default:
-							}
+									uniqueN++;
+								}
+								break;
+							default:
 						}
 					}
 					if (Things[toMakePart[0]] != undefined){
