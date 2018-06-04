@@ -214,8 +214,7 @@ Instance.prototype.Grow = function(){
 										let New = make(uniqueThings[uniqueN].name);
 										New.parent = this;
 										this.children.push(New);
-										uniqueN++;	
-										console.log(thisName);
+										uniqueN++;
 									}
 									break;
 								case "*sublife individual":
@@ -225,6 +224,9 @@ Instance.prototype.Grow = function(){
 										let id = uniqueN + ",sublife species individual," + thisName;
 										uniqueThings[uniqueN] = new Thing(id, contains2, thisName);
 										this.children.push(uniqueThings[uniqueN]);
+										let New = make(uniqueThings[uniqueN].name);
+										New.parent = this;
+										this.children.push(New);
 										uniqueN++;
 									}
 									break;
