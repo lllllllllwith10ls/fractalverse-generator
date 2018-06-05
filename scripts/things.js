@@ -88,7 +88,6 @@ class Instance{
 	constructor(what) {
 		this.name = "thing";
 		this.parent = 0;
-		this.type = Things[what];
 		this.children = [];
 		this.n = iN;
 		this.display = 0;
@@ -124,6 +123,7 @@ class Instance{
 		}
 		
 		
+		this.type = Things[what];
 		iN++;
 		Instances.push(this);
 
