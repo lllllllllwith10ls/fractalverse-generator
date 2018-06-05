@@ -241,8 +241,13 @@ Instance.prototype.Grow = function(){
 								let New = make(Things[toMakePart[0]].name, transmitter, reciever, transciever, openEVERYTHING);
 								New.parent = this;
 								this.children.push(New);
+								console.log(openEVERYTHING);
+								console.log(New.openEVERYTHING);
+								
 								if (New.openEVERYTHING === true) {
-									toggle(this.n)
+									if(this.display === 0) {
+										toggle(this.n);
+									}
 									toggle(New.n);
 									console.log(New);
 								}
