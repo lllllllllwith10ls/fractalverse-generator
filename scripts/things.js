@@ -242,9 +242,19 @@ Instance.prototype.Grow = function(){
 								New.parent = this;
 								this.children.push(New);
 								if (New.openEVERYTHING === true) {
-									if (New.grown === false) {
-										New.Grow();
-										New.List();
+									if (this.display==0) {
+											for (var i in Instances[what].children) {
+												if (Instances[what].children[i].grown==false) {
+													Instances[what].children[i].Grow(0);
+													Instances[what].children[i].List(0);
+												}
+											}
+
+
+											Instances[what].display=1;
+											document.getElementById("container"+what).style.display="block";
+											document.getElementById("arrow"+what).innerHTML="-";
+										}
 									}
 								}
 							}
