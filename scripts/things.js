@@ -245,7 +245,7 @@ Instance.prototype.Grow = function(){
 								if (New.openEVERYTHING === true) {
 									this.List();
 									New.Grow();
-									
+									toggle(New.n);
 									console.log(New);
 								}
 							}
