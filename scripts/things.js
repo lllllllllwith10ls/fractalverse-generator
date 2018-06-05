@@ -243,7 +243,7 @@ Instance.prototype.Grow = function(){
 								this.children.push(New);
 								
 								if (New.openEVERYTHING === true) {
-									this.List;
+									this.List();
 									console.log(New);
 								}
 							}
