@@ -97,27 +97,21 @@ class Instance{
 		this.thingPool = [];
 		this.openEVERYTHING = false;
 		if (what.includes(">")) {
-			what.split(">");
-			what = what[0];
+			what = what.replace(">","");
 			this.transmitter = true;
 		}
 		if (what.includes("<")) {
-			what.split("<");
+			what = what.replace("<","");
 			what = what[0];
 			this.reciever = true;
 		}
-		if (what.includes("^")) {
-			what.split("^")
-			what = what[0]
-			this.addEVERYTHING = true;
-		}
 		if (what.includes("=")) {
-			what.split("=")
+			what = what.replace("=","");
 			what = what[0]
 			this.transciever = true;
 		}
 		if (what.includes("!")) {
-			what.split("!")
+			what = what.replace("!","");
 			what = what[0]
 			this.openEVERYTHING = true;
 		}
