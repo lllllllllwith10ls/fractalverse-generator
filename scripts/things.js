@@ -243,10 +243,10 @@ Instance.prototype.Grow = function(){
 								this.children.push(New);
 								if (New.openEVERYTHING === true) {
 								if (this.display==0) {
-										for (var i in Instances[what].children) {
-											if (Instances[what].children[i].grown==false) {
-												Instances[what].children[i].Grow(0);
-												Instances[what].children[i].List(0);
+										for (var iii in Instances[what].children) {
+											if (Instances[what].children[iii].grown==false) {
+												Instances[what].children[iii].Grow(0);
+												Instances[what].children[iii].List(0);
 											}
 										}
 
