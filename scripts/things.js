@@ -230,24 +230,26 @@ Instance.prototype.Grow = function(){
 							default:
 						}
 					}
-					if (Math.random()*100 <= makeProb){
-						for (let ii=0; ii<makeAmount; ii++){
-							let New = make(Things[toMakePart[0]].name);
-							New.parent = this;
-							this.children.push(New);
-							if (New.openEVERYTHING === true) {
-								toggle(this.n)
-								toggle(New.n);
-								console.log(New);
+					if(Things[toMake[0]] != undefined) {
+						if (Math.random()*100 <= makeProb){
+							for (let ii=0; ii<makeAmount; ii++){
+								let New = make(Things[toMakePart[0]].name);
+								New.parent = this;
+								this.children.push(New);
+								if (New.openEVERYTHING === true) {
+									toggle(this.n)
+									toggle(New.n);
+									console.log(New);
+								}
 							}
 						}
-					}
-					if(this.transmitter === true) {
-						let thisThing = this.parent;
-						while(thisThing[0].reciever === false) {
-							thisThing = thisThing.parent;
-							if(thisThing.transciever === true) {
-								thisThing.thingPool.push(this.type);
+						if(this.transmitter === true) {
+							let thisThing = this.parent;
+							while(thisThing[0].reciever === false) {
+								thisThing = thisThing.parent;
+								if(thisThing.transciever === true) {
+									thisThing.thingPool.push(this.type);
+								}
 							}
 						}
 					}
@@ -365,12 +367,19 @@ new Thing("temperate medium moon",["metallic core","mantle",["temperate crust|te
 
 
 new Thing("sublife",["!sublife domain,1-3"]);
+new Thing("!sublife",["!sublife domain,1-3"]);
 new Thing("sublife domain",["!sublife kingdom,1-3"],"domain |*RANDOM*,letters");
+new Thing("!sublife domain",["!sublife kingdom,1-3"],"domain |*RANDOM*,letters");
 new Thing("sublife kingdom",["!sublife phylum,1-3"],"kingdom |*RANDOM*,letters");
+new Thing("!sublife kingdom",["!sublife phylum,1-3"],"kingdom |*RANDOM*,letters");
 new Thing("sublife phylum",["!sublife class,1-3"],"phylum |*RANDOM*,letters");
+new Thing("!sublife phylum",["!sublife class,1-3"],"phylum |*RANDOM*,letters");
 new Thing("sublife class",["!sublife order,1-3"],"class |*RANDOM*,letters");
+new Thing("!sublife class",["!sublife order,1-3"],"class |*RANDOM*,letters");
 new Thing("sublife order",["!sublife genus,1-3"],"order  |*RANDOM*,letters");
+new Thing("!sublife order",["!sublife genus,1-3"],"order  |*RANDOM*,letters");
 new Thing("sublife genus",["*sublife species,1-3"],"genus  |*RANDOM*,letters");
+new Thing("!sublife genus",["*sublife species,1-3"],"genus  |*RANDOM*,letters");
 /*new Thing("sublife species",["sublife individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
 new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*| individual");*/
 new Thing("cell membrane",["phospholipid,100-200"],"plasma membrane");
