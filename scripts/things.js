@@ -242,7 +242,8 @@ Instance.prototype.Grow = function(){
 								New.parent = this;
 								this.children.push(New);
 								if (New.openEVERYTHING === true) {
-									New.Grow();
+									Instances[New.n].Grow();
+									toggle(this.n)
 									toggle(New.n);
 								}
 							}
