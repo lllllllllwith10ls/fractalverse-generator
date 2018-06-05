@@ -236,10 +236,10 @@ Instance.prototype.Grow = function(){
 								let New = make(Things[toMakePart[0]].name);
 								New.parent = this;
 								this.children.push(New);
-								if (New.openEVERYTHING === true) {
+								/*if (New.openEVERYTHING === true) {
 									toggle(New.n);
 									console.log(New);
-								}
+								}*/
 							}
 						}
 						if(this.transmitter === true) {
