@@ -222,6 +222,17 @@ Instance.prototype.Grow = function(){
 									let New = make(uniqueThings[uniqueN].name);
 									New.parent = this;
 									this.children.push(New);
+									if(New.transmitter === true) {
+										let thisThing = this.parent;
+											while(thisThing[0].reciever === false) {
+												thisThing = thisThing.parent;
+												if(thisThing.transciever === true) {
+													thisThing.thingPool.push(New.type);
+												}
+											}
+											thisThing.thingPool.push(New.type);
+											console.log(thisThing.thingPool);
+										}
 									uniqueN++;
 								}
 								break;
