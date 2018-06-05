@@ -285,8 +285,8 @@ Instance.prototype.List = function(){
 	else document.getElementById("div"+this.n).innerHTML='<span class="emptyThing">'+this.name+'</span>';
 }
 
-const make = (what) => {
-	return new Instance(what);
+const make = (what, transmitter, reciever, transciever, openEVERYTHING) => {
+	return new Instance(what, transmitter, reciever, transciever, openEVERYTHING);
 }
 const toggle = (what) => {
 	
