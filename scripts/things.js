@@ -115,6 +115,7 @@ class Instance{
 		
 		
 		this.type = Things[what];
+		console.log(this.type);
 		iN++;
 		Instances.push(this);
 
