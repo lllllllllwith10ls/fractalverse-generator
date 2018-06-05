@@ -235,7 +235,7 @@ Instance.prototype.Grow = function(){
 							default:
 						}
 					}
-					if(Things[toMake[0]] != undefined) {
+					if(Things[toMakePart[0]] != undefined) {
 						if (Math.random()*100 <= makeProb){
 							console.log(makeAmount);
 							for (let ii=0; ii<makeAmount; ii++){
