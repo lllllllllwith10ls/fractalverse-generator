@@ -244,11 +244,6 @@ Instance.prototype.Grow = function(){
 								
 								if (New.openEVERYTHING === true) {
 									New.Grow();
-									if (this.display != 1) {
-										New.Grow()!;
-										toggle(this.n);
-									}
-									console.log(New);
 								}
 							}
 						}
