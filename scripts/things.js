@@ -336,9 +336,10 @@ const debug = (what) => {
 }
 new Thing("the box",["debug","altarca,90-110","the box"]);
 new Thing("debug",["debug2"],"aaabacaaaaaaa");
-new Thing("debug2",["<debug22"],"*PARENT*,b,c|a");
-new Thing("debug22",["!sublife","test",["proton","proton|neutron"]],"*RANDOM*,letters");
-new Thing("test",["thingPool,100-200"]);
+new Thing("debug2",["!<debug22"],"*PARENT*,b,c|a");
+new Thing("debug22",["sublife","?test",["?proton","?proton|?neutron"]],"*RANDOM*,letters");
+new Thing("test",["test2"]);
+new Thing("test2",["thingPool,100-200"]);
 new Thing("altarca",["trancendentum continuum,50-60"]);
 new Thing("trancendentum continuum",["trancendentum,100-130"]);
 new Thing("trancendentum",["beyond bubble,70-120"]);
