@@ -253,8 +253,6 @@ Instance.prototype.Grow = function(){
 									toggle(this.n)
 									toggle(Instances[New.n]);
 									expand(New.children);
-										
-									}
 								}
 							}
 						}
