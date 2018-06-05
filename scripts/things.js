@@ -85,35 +85,18 @@ const CleanThings = () => {
 let iN=0;
 let Instances=[];
 class Instance{
-	constructor(what) {
+	constructor(what, transmitter, reciever, transciever, openEVERYTHING) {
 		this.name = "thing";
 		this.parent = 0;
 		this.children = [];
 		this.n = iN;
 		this.display = 0;
 		this.grown = false;
-		this.transmitter = false;
-		this.reciever = false;
+		this.transmitter = transmitter;
+		this.reciever = reciever;
+		this.transciever = transciever;
 		this.thingPool = [];
-		this.openEVERYTHING = false;
-		if (what.includes(">")) {
-			what = what.replace(">","");
-			this.transmitter = true;
-		}
-		if (what.includes("<")) {
-			what = what.replace("<","");
-			this.reciever = true;
-		}
-		if (what.includes("=")) {
-			what = what.replace("=","");
-			this.transciever = true;
-		}
-		if (what.includes("!")) {
-			what = what.replace("!","");
-			this.openEVERYTHING = true;
-			console.log(what);
-		}
-		
+		this.openEVERYTHING = openEVERYTHING;
 		this.type = Things[what];
 		iN++;
 		Instances.push(this);
@@ -185,6 +168,11 @@ Instance.prototype.Grow = function(){
 					let toMakePart=toMake[j].split(",");
 					let makeAmount=1;
 					let makeProb=100;
+					let transmitter = false;
+					let reciever = false;
+					let transciever = false;
+					let openEVERYTHING = false;
+					
 					if (toMakePart[1] === undefined) {
 						toMakePart[1]=1;
 					} else{
@@ -196,7 +184,24 @@ Instance.prototype.Grow = function(){
 						makeProb=(toMakePart[1]+"?").split("%");
 						if (makeProb[1] != undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
 					}
-					
+					if (toMakePart[0].includes(">")) {
+						toMakePart[0] = toMakePart[0].replace(">","");
+						transmitter = true;
+					}
+					if (toMakePart[0].includes("<")) {
+						toMakePart[0] = toMakePart[0].replace("<","");
+						reciever = true;
+					}
+					if (toMakePart[0].includes("=")) {
+						toMakePart[0] = toMakePart[0].replace("=","");
+						transciever = true;
+					}
+					if (toMakePart[0].includes("!")) {
+						toMakePart[0] = toMakePart[0].replace("!","");
+						openEVERYTHING = true;
+						console.log(toMakePart[0]);
+					}
+
 					if (toMakePart[0].includes("*")) {
 						switch (toMakePart[0]) {
 							case "*sublife species":
@@ -233,7 +238,7 @@ Instance.prototype.Grow = function(){
 					if(Things[toMake[0]] != undefined) {
 						if (Math.random()*100 <= makeProb){
 							for (let ii=0; ii<makeAmount; ii++){
-								let New = make(Things[toMakePart[0]].name);
+								let New = make(Things[toMakePart[0]].name, transmitter, reciever, transciever, openEVERYTHING);
 								New.parent = this;
 								this.children.push(New);
 								if (New.openEVERYTHING === true) {
@@ -367,19 +372,12 @@ new Thing("temperate medium moon",["metallic core","mantle",["temperate crust|te
 
 
 new Thing("sublife",["!sublife domain,1-3"]);
-new Thing("!sublife",["!sublife domain,1-3"]);
 new Thing("sublife domain",["!sublife kingdom,1-3"],"domain |*RANDOM*,letters");
-new Thing("!sublife domain",["!sublife kingdom,1-3"],"domain |*RANDOM*,letters");
 new Thing("sublife kingdom",["!sublife phylum,1-3"],"kingdom |*RANDOM*,letters");
-new Thing("!sublife kingdom",["!sublife phylum,1-3"],"kingdom |*RANDOM*,letters");
 new Thing("sublife phylum",["!sublife class,1-3"],"phylum |*RANDOM*,letters");
-new Thing("!sublife phylum",["!sublife class,1-3"],"phylum |*RANDOM*,letters");
 new Thing("sublife class",["!sublife order,1-3"],"class |*RANDOM*,letters");
-new Thing("!sublife class",["!sublife order,1-3"],"class |*RANDOM*,letters");
 new Thing("sublife order",["!sublife genus,1-3"],"order  |*RANDOM*,letters");
-new Thing("!sublife order",["!sublife genus,1-3"],"order  |*RANDOM*,letters");
 new Thing("sublife genus",["*sublife species,1-3"],"genus  |*RANDOM*,letters");
-new Thing("!sublife genus",["*sublife species,1-3"],"genus  |*RANDOM*,letters");
 /*new Thing("sublife species",["sublife individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
 new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*| individual");*/
 new Thing("cell membrane",["phospholipid,100-200"],"plasma membrane");
