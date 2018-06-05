@@ -224,7 +224,7 @@ Instance.prototype.Grow = function(){
 									this.children.push(New);
 									if(New.transmitter === true) {
 										let thisThing = this.parent;
-											while(thisThing[0].reciever === false) {
+											while(thisThing.reciever === false) {
 												thisThing = thisThing.parent;
 												if(thisThing.transciever === true) {
 													thisThing.thingPool.push(New.type);
@@ -261,7 +261,7 @@ Instance.prototype.Grow = function(){
 								this.children.push(New);
 								if(New.transmitter === true) {
 									let thisThing = this.parent;
-									while(thisThing[0].reciever === false) {
+									while(thisThing.reciever === false) {
 										thisThing = thisThing.parent;
 										if(thisThing.transciever === true) {
 											thisThing.thingPool.push(New.type);
