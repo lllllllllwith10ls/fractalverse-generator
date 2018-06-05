@@ -85,7 +85,7 @@ const CleanThings = () => {
 let iN=0;
 let Instances=[];
 class Instance{
-	constructor(what, transmitter, reciever, transciever, openEVERYTHING) {
+	constructor(what, transmitter, reciever, transciever, openEVERYTHING, breakOpen) {
 		this.name = "thing";
 		this.parent = 0;
 		this.children = [];
@@ -97,6 +97,7 @@ class Instance{
 		this.transciever = transciever;
 		this.thingPool = [];
 		this.openEVERYTHING = openEVERYTHING;
+		this.breakOpen = breakOpen;
 		this.type = Things[what];
 		iN++;
 		Instances.push(this);
@@ -172,6 +173,7 @@ Instance.prototype.Grow = function(){
 					let reciever = false;
 					let transciever = false;
 					let openEVERYTHING = false;
+					let breakOpen = false;
 					
 					if (toMakePart[1] === undefined) {
 						toMakePart[1]=1;
@@ -199,6 +201,11 @@ Instance.prototype.Grow = function(){
 					if (toMakePart[0].includes("!")) {
 						toMakePart[0] = toMakePart[0].replace("!","");
 						openEVERYTHING = true;
+						console.log(toMakePart[0]);
+					}
+					if (toMakePart[0].includes("?")) {
+						toMakePart[0] = toMakePart[0].replace("?","");
+						breakOpen = true;
 						console.log(toMakePart[0]);
 					}
 
@@ -238,13 +245,16 @@ Instance.prototype.Grow = function(){
 					if(Things[toMakePart[0]] != undefined) {
 						if (Math.random()*100 <= makeProb){
 							for (let ii=0; ii<makeAmount; ii++){
-								let New = make(Things[toMakePart[0]].name, transmitter, reciever, transciever, openEVERYTHING);
+								let New = make(Things[toMakePart[0]].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
 								New.parent = this;
 								this.children.push(New);
 								if (New.openEVERYTHING === true) {
 									Instances[New.n].Grow();
 									toggle(this.n)
-									toggle(New.n);
+									toggle(Instances[New.n]);
+									expand(New.children);
+										
+									}
 								}
 							}
 						}
@@ -281,14 +291,14 @@ Instance.prototype.List = function(){
 	else document.getElementById("div"+this.n).innerHTML='<span class="emptyThing">'+this.name+'</span>';
 }
 
-const make = (what, transmitter, reciever, transciever, openEVERYTHING) => {
-	return new Instance(what, transmitter, reciever, transciever, openEVERYTHING);
+const make = (what, transmitter, reciever, transciever, openEVERYTHING, breakOpen) => {
+	return new Instance(what, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
 }
 const toggle = (what) => {
 	
 	if (Instances[what].display==0) {
 
-		for (var i in Instances[what].children) {
+		for (let i in Instances[what].children) {
 			if (Instances[what].children[i].grown==false) {
 				Instances[what].children[i].Grow(0);
 				Instances[what].children[i].List(0);
@@ -304,6 +314,16 @@ const toggle = (what) => {
 		Instances[what].display=0;
 		document.getElementById("container"+what).style.display="none";
 		document.getElementById("arrow"+what).innerHTML="+";
+	}
+}
+const expand = (what) => {
+	for (var i = 0; i < what.length; i++)
+        if (what[i].breakOpen === false) {
+		toggle(what[i]);
+		what[i].Grow();
+		expand(what[i].children)
+	} else{
+		return null;
 	}
 }
 const debug = (what) => {
@@ -370,12 +390,12 @@ new Thing("temperate medium moon",["metallic core","mantle",["temperate crust|te
 
 
 new Thing("sublife",["!sublife domain,1-3"]);
-new Thing("sublife domain",["!sublife kingdom,1-3"],"domain |*RANDOM*,letters");
-new Thing("sublife kingdom",["!sublife phylum,1-3"],"kingdom |*RANDOM*,letters");
-new Thing("sublife phylum",["!sublife class,1-3"],"phylum |*RANDOM*,letters");
-new Thing("sublife class",["!sublife order,1-3"],"class |*RANDOM*,letters");
-new Thing("sublife order",["!sublife genus,1-3"],"order  |*RANDOM*,letters");
-new Thing("sublife genus",["*sublife species,1-3"],"genus  |*RANDOM*,letters");
+new Thing("sublife domain",["sublife kingdom,1-3"],"domain |*RANDOM*,letters");
+new Thing("sublife kingdom",["sublife phylum,1-3"],"kingdom |*RANDOM*,letters");
+new Thing("sublife phylum",["sublife class,1-3"],"phylum |*RANDOM*,letters");
+new Thing("sublife class",["sublife order,1-3"],"class |*RANDOM*,letters");
+new Thing("sublife order",["sublife genus,1-3"],"order  |*RANDOM*,letters");
+new Thing("sublife genus",["?*sublife species,1-3"],"genus  |*RANDOM*,letters");
 /*new Thing("sublife species",["sublife individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
 new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*| individual");*/
 new Thing("cell membrane",["phospholipid,100-200"],"plasma membrane");
