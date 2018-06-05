@@ -242,6 +242,7 @@ Instance.prototype.Grow = function(){
 								New.parent = this;
 								if (New.openEVERYTHING === true) {
 									Instances[New.n].Grow();
+									Instances[New.n].List();
 									this.children.push(Instances[New.n]);
 								} else {
 									this.children.push(Instances[New.n]);
