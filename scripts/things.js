@@ -240,12 +240,9 @@ Instance.prototype.Grow = function(){
 							for (let ii=0; ii<makeAmount; ii++){
 								let New = make(Things[toMakePart[0]].name, transmitter, reciever, transciever, openEVERYTHING);
 								New.parent = this;
+								this.children.push(New);
 								if (New.openEVERYTHING === true) {
-									Instances[New.n].Grow();
-									Instances[New.n].List();
-									this.children.push(Instances[New.n]);
-								} else {
-									this.children.push(Instances[New.n]);
+									toggle(this.n);
 								}
 							}
 						}
