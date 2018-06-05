@@ -336,7 +336,7 @@ const debug = (what) => {
 }
 new Thing("the box",["debug","altarca,90-110","the box"]);
 new Thing("debug",["debug2"],"aaabacaaaaaaa");
-new Thing("debug2",["!<debug22"],"*PARENT*,b,c|a");
+new Thing("debug2",["<!debug22"],"*PARENT*,b,c|a");
 new Thing("debug22",["sublife","?test",["?proton","?proton|?neutron"]],"*RANDOM*,letters");
 new Thing("test",["test2"]);
 new Thing("test2",["thingPool,100-200"]);
