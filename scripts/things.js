@@ -265,7 +265,7 @@ Instance.prototype.Grow = function(){
 						if (Math.random()*100 <= makeProb){
 							for (let ii=0; ii<makeAmount; ii++){
 								let thisThing = this.parent;
-								while(thisThing.thingPool[0] === undefined) {
+								while(thisThing.thingPool.length === 0) {
 									thisThing = thisThing.parent;
 								}
 								let New = make(Things[Choose(thisThing.itemPool)].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
