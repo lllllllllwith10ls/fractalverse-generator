@@ -250,6 +250,7 @@ Instance.prototype.Grow = function(){
 								this.children.push(New);
 								if (New.openEVERYTHING === true) {
 									Instances[New.n].Grow();
+									toggle(this.parent.n);
 									toggle(this.n)
 									toggle(Instances[New.n]);
 									expand(New.children);
