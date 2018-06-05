@@ -227,6 +227,7 @@ Instance.prototype.Grow = function(){
 									for(let k = makeAmount; k>0; k--) {
 										let New = make(uniqueThings[uniqueN].name);
 										New.parent = this;
+										CleanThings();
 										this.children.push(New);
 									}
 									uniqueN++;
