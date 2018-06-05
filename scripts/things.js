@@ -230,7 +230,7 @@ Instance.prototype.Grow = function(){
 							default:
 						}
 					}
-					if (Things[toMakePart[0]] != undefined){
+					if (Things[toMakePart[0]] != undefined || toMakePart[0].includes(">") || toMakePart[0].includes("<") || toMakePart[0].includes("=") || toMakePart[0].includes("!") ){
 						if (Math.random()*100 <= makeProb){
 							for (let ii=0; ii<makeAmount; ii++){
 								let New = make(Things[toMakePart[0]].name);
