@@ -252,6 +252,7 @@ Instance.prototype.Grow = function(){
 								}
 							}
 						}
+						
 						if(this.transmitter === true) {
 							let thisThing = this.parent;
 							while(thisThing[0].reciever === false) {
