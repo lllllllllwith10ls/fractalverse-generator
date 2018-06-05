@@ -237,7 +237,6 @@ Instance.prototype.Grow = function(){
 					}
 					if(Things[toMakePart[0]] != undefined) {
 						if (Math.random()*100 <= makeProb){
-							console.log(makeAmount);
 							for (let ii=0; ii<makeAmount; ii++){
 								let New = make(Things[toMakePart[0]].name, transmitter, reciever, transciever, openEVERYTHING);
 								New.parent = this;
