@@ -257,6 +257,7 @@ Instance.prototype.Grow = function(){
 										}
 									}
 									thisThing.thingPool.push(New.type);
+									console.log(thisThing.thingPool);
 								}
 							}
 						}
