@@ -245,6 +245,7 @@ Instance.prototype.Grow = function(){
 									toggle(this.parent.parent.n);
 									if(this.parent.display === 0) {
 										toggle(this.parent.n);
+										this.parent.display = 1;
 									}
 									if(this.display === 0) {
 										toggle(this.n);
