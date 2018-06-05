@@ -242,13 +242,10 @@ Instance.prototype.Grow = function(){
 								New.parent = this;
 								
 								if (New.openEVERYTHING === true) {
-									this.parent.list;
-									this.list;
+									this.children.push(New);
 									if (New.grown === false) {
 										New.Grow();
 									}
-									CleanThings();
-									this.children.push(New);
 								} else {
 									this.children.push(New);
 								}
@@ -292,11 +289,9 @@ const make = (what, transmitter, reciever, transciever, openEVERYTHING) => {
 }
 const toggle = (what) => {
 	
-	if (Instances[what].display==0)
-	{
+	if (Instances[what].display==0) {
 
-		for (var i in Instances[what].children)
-		{
+		for (var i in Instances[what].children) {
 			if (Instances[what].children[i].grown==false) {
 				Instances[what].children[i].Grow(0);
 				Instances[what].children[i].List(0);
@@ -308,8 +303,7 @@ const toggle = (what) => {
 		document.getElementById("container"+what).style.display="block";
 		document.getElementById("arrow"+what).innerHTML="-";
 	}
-	else if (Instances[what].display==1)
-	{
+	else if (Instances[what].display==1) {
 		Instances[what].display=0;
 		document.getElementById("container"+what).style.display="none";
 		document.getElementById("arrow"+what).innerHTML="+";
