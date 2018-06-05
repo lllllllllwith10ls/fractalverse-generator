@@ -248,22 +248,28 @@ Instance.prototype.Grow = function(){
 								let New = make(Things[toMakePart[0]].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
 								New.parent = this;
 								this.children.push(New);
-								/*if (New.openEVERYTHING === true) {
-									toggle(this.parent.n);
-									toggle(this.n)
-									toggle(New.n);
-									expand(New.children);
-								}*/
+								if(New.transmitter === true) {
+									let thisThing = this.parent;
+									while(thisThing[0].reciever === false) {
+										thisThing = thisThing.parent;
+										if(thisThing.transciever === true) {
+											thisThing.thingPool.push(New.type);
+										}
+									}
+									thisThing.thingPool.push(New.type);
+								}
 							}
 						}
-						
-						if(this.transmitter === true) {
-							let thisThing = this.parent;
-							while(thisThing[0].reciever === false) {
-								thisThing = thisThing.parent;
-								if(thisThing.transciever === true) {
-									thisThing.thingPool.push(this.type);
+					}
+					if(toMakePart[0] === "thingPool") {
+						if (Math.random()*100 <= makeProb){
+							for (let ii=0; ii<makeAmount; ii++){
+								let thisThing = this.parent;
+								while(thisThing.thingPool[0] === undefined) {
+									thisThing = thisThing.parent;
 								}
+								let New = make(Things[Choose(thisThing.itemPool)].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
+								
 							}
 						}
 					}
@@ -330,8 +336,9 @@ const debug = (what) => {
 }
 new Thing("the box",["debug","altarca,90-110","the box"]);
 new Thing("debug",["debug2"],"aaabacaaaaaaa");
-new Thing("debug2",["debug22"],"*PARENT*,b,c|a");
-new Thing("debug22",["!sublife,2",["proton","proton|neutron"]],"*RANDOM*,letters");
+new Thing("debug2",["<debug22"],"*PARENT*,b,c|a");
+new Thing("debug22",["!sublife","test",["proton","proton|neutron"]],"*RANDOM*,letters");
+new Thing("test",["thingPool,100-200"]);
 new Thing("altarca",["trancendentum continuum,50-60"]);
 new Thing("trancendentum continuum",["trancendentum,100-130"]);
 new Thing("trancendentum",["beyond bubble,70-120"]);
@@ -394,7 +401,7 @@ new Thing("sublife kingdom",["sublife phylum,1-3"],"kingdom |*RANDOM*,letters");
 new Thing("sublife phylum",["sublife class,1-3"],"phylum |*RANDOM*,letters");
 new Thing("sublife class",["sublife order,1-3"],"class |*RANDOM*,letters");
 new Thing("sublife order",["sublife genus,1-3"],"order  |*RANDOM*,letters");
-new Thing("sublife genus",["?*sublife species,1-3"],"genus  |*RANDOM*,letters");
+new Thing("sublife genus",[">?*sublife species,1-3"],"genus  |*RANDOM*,letters");
 /*new Thing("sublife species",["sublife individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
 new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*| individual");*/
 new Thing("cell membrane",["phospholipid,100-200"],"plasma membrane");
