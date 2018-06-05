@@ -243,7 +243,9 @@ Instance.prototype.Grow = function(){
 								this.children.push(New);
 								
 								if (New.openEVERYTHING === true) {
-									toggle(this.parent.n);
+									if (this.parent.display = 0) {
+										toggle(this.parent.n);
+									}
 									toggle(this.n);
 									console.log(New);
 								}
