@@ -241,8 +241,6 @@ Instance.prototype.Grow = function(){
 								let New = make(Things[toMakePart[0]].name, transmitter, reciever, transciever, openEVERYTHING);
 								New.parent = this;
 								this.children.push(New);
-								console.log(openEVERYTHING);
-								console.log(New.openEVERYTHING);
 								
 								if (New.openEVERYTHING === true) {
 									if(this.display === 0) {
