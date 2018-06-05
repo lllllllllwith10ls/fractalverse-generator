@@ -102,17 +102,14 @@ class Instance{
 		}
 		if (what.includes("<")) {
 			what = what.replace("<","");
-			what = what[0];
 			this.reciever = true;
 		}
 		if (what.includes("=")) {
 			what = what.replace("=","");
-			what = what[0]
 			this.transciever = true;
 		}
 		if (what.includes("!")) {
 			what = what.replace("!","");
-			what = what[0]
 			this.openEVERYTHING = true;
 		}
 		
