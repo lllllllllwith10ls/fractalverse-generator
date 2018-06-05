@@ -244,6 +244,7 @@ Instance.prototype.Grow = function(){
 								
 								if (New.openEVERYTHING === true) {
 									New.Grow();
+									this.children.push(New);
 								}
 							}
 						}
