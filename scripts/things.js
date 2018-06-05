@@ -244,7 +244,9 @@ Instance.prototype.Grow = function(){
 								if (New.openEVERYTHING === true) {
 									this.parent.list;
 									this.list;
-									New.Grow();
+									if (New.grown === false) {
+										New.Grow();
+									}
 									CleanThings();
 									this.children.push(New);
 								} else {
