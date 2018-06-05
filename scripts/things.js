@@ -248,13 +248,12 @@ Instance.prototype.Grow = function(){
 								let New = make(Things[toMakePart[0]].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
 								New.parent = this;
 								this.children.push(New);
-								if (New.openEVERYTHING === true) {
-									Instances[New.n].Grow();
+								/*if (New.openEVERYTHING === true) {
 									toggle(this.parent.n);
 									toggle(this.n)
-									toggle(Instances[New.n]);
+									toggle(New.n);
 									expand(New.children);
-								}
+								}*/
 							}
 						}
 						
@@ -304,7 +303,9 @@ const toggle = (what) => {
 			}
 		}
 
-
+		if(Instances[what].openEVERYTHING === true) {
+			expand(Instances[what].children);
+		}
 		Instances[what].display=1;
 		document.getElementById("container"+what).style.display="block";
 		document.getElementById("arrow"+what).innerHTML="-";
