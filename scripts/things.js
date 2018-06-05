@@ -318,7 +318,6 @@ const expand = (what) => {
 	for (var i = 0; i < what.length; i++)
         if (what[i].breakOpen === false) {
 		toggle(what[i]);
-		what[i].Grow();
 		expand(what[i].children)
 	} else{
 		return null;
@@ -387,7 +386,7 @@ new Thing("temperate small moon",[["iron chunk,20-30","rock,30-40","iron chunk,1
 new Thing("temperate medium moon",["metallic core","mantle",["temperate crust|temperate atmosphere,95%|!sublife,95%","wet temperate crust|temperate atmosphere,95%|prokaryotic life,75%","wet temperate crust|temperate oxygenated atmosphere,95%|eukaryotic life,50%","wet temperate crust|temperate oxygenated atmosphere|multicellular life,50%","wet temperate crust|temperate oxygenated atmosphere|complex multicellular life,45%","wet temperate crust|temperate oxygenated atmosphere|simple ecosystem,40%","wet temperate crust|temperate oxygenated atmosphere|complex ecosystem,20%","wet temperate crust|temperate oxygenated atmosphere|simple civilization,10%","wet temperate crust|temperate oxygenated atmosphere|complex civilization,1%"]]);
 
 
-new Thing("sublife",["!sublife domain,1-3"]);
+new Thing("sublife",["sublife domain,1-3"]);
 new Thing("sublife domain",["sublife kingdom,1-3"],"domain |*RANDOM*,letters");
 new Thing("sublife kingdom",["sublife phylum,1-3"],"kingdom |*RANDOM*,letters");
 new Thing("sublife phylum",["sublife class,1-3"],"phylum |*RANDOM*,letters");
