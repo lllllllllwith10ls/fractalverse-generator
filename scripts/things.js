@@ -227,7 +227,6 @@ Instance.prototype.Grow = function(){
 									for(let k = makeAmount; k>0; k--) {
 										let New = make(uniqueThings[uniqueN].name);
 										New.parent = this;
-										CleanThings();
 										this.children.push(New);
 									}
 									uniqueN++;
@@ -246,6 +245,7 @@ Instance.prototype.Grow = function(){
 									this.parent.list;
 									this.list;
 									New.Grow();
+									CleanThings();
 									this.children.push(New);
 								} else {
 									this.children.push(New);
