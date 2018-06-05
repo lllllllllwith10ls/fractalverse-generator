@@ -319,7 +319,7 @@ const toggle = (what) => {
 const expand = (what) => {
 	for (var i = 0; i < what.length; i++)
         if (what[i].breakOpen === false) {
-		toggle(what[i]);
+		toggle(what[i].n);
 		expand(what[i].children)
 	} else{
 		return null;
