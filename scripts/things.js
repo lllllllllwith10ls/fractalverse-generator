@@ -230,27 +230,24 @@ Instance.prototype.Grow = function(){
 							default:
 						}
 					}
-					if (Things[toMakePart[0]] != undefined || toMakePart[0].includes(">") || toMakePart[0].includes("<") || toMakePart[0].includes("=") || toMakePart[0].includes("!") ){
-						if (Math.random()*100 <= makeProb){
-							for (let ii=0; ii<makeAmount; ii++){
-								let New = make(Things[toMakePart[0]].name);
-								New.parent = this;
-								this.children.push(New);
-								if (New.openEVERYTHING === true) {
-									toggle(this.n)
-									toggle(New.n);
-									console.log(New);
-								}
+					if (Math.random()*100 <= makeProb){
+						for (let ii=0; ii<makeAmount; ii++){
+							let New = make(Things[toMakePart[0]].name);
+							New.parent = this;
+							this.children.push(New);
+							if (New.openEVERYTHING === true) {
+								toggle(this.n)
+								toggle(New.n);
+								console.log(New);
 							}
 						}
-						if(this.transmitter === true) {
-							let thisThing = this.parent;
-							while(thisThing[0].reciever === false) {
-								thisThing = thisThing.parent;
-								if(thisThing.transciever === true) {
-									
-										thisThing.thingPool.push(this.type);
-								}
+					}
+					if(this.transmitter === true) {
+						let thisThing = this.parent;
+						while(thisThing[0].reciever === false) {
+							thisThing = thisThing.parent;
+							if(thisThing.transciever === true) {
+								thisThing.thingPool.push(this.type);
 							}
 						}
 					}
