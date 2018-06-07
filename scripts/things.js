@@ -276,11 +276,12 @@ Instance.prototype.Grow = function(){
 					if(toMakePart[0] === "thingPool") {
 						if (Math.random()*100 <= makeProb){
 							for (let ii=0; ii<makeAmount; ii++){
-								let thisThing = this.parent;
+								let thisThing = this;
 								while(thisThing.thingPool[0] === undefined) {
 									thisThing = thisThing.parent;
+									console.log(thisThing.thingPool);
 								}
-								let New = make(Things[Choose(thisThing.itemPool)].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
+								let New = make(Things[Choose(thisThing.thingPool)].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
 							}
 						}
 					}
