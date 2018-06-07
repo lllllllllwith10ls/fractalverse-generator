@@ -233,11 +233,11 @@ Instance.prototype.Grow = function(){
 									let id = uniqueN + ",sublife species individual," + thisName;
 									uniqueThings[uniqueN] = new Thing(id, contains2, thisName);
 									for(let k = makeAmount; k>0; k--) {
-										let New = make(uniqueThings[uniqueN].name);
+										let New = make(uniqueThings[uniqueN].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
 										New.parent = this;
 										this.children.push(New);
 											if(New.transmitter === true) {
-											let thisThing = this.parent;
+											let thisThing = this;
 											while(thisThing.reciever === false) {
 												thisThing = thisThing.parent;
 												if(thisThing.transciever === true) {
@@ -246,7 +246,7 @@ Instance.prototype.Grow = function(){
 													}
 												}
 											}
-											if(thisThing.thingPool.includes(New.type) === false) {
+											if(!thisThing.thingPool.includes(New.type)) {
 												thisThing.thingPool.push(New.type);
 											}
 										}
