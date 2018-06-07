@@ -281,7 +281,7 @@ Instance.prototype.Grow = function(){
 									thisThing = thisThing.parent;
 									console.log(thisThing.thingPool);
 								}
-								let New = make(Things[Choose(thisThing.thingPool)].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
+								let New = make(Things[Choose(thisThing.thingPool).name].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
 							}
 						}
 					}
