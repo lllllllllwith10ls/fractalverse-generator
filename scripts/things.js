@@ -28,6 +28,7 @@ const RandName = (type) => {
 		
 	}
 };
+
 let Things = {};
 
 let ThingsN = 0;
