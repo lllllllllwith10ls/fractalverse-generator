@@ -236,21 +236,22 @@ Instance.prototype.Grow = function(){
 										let New = make(uniqueThings[uniqueN].name);
 										New.parent = this;
 										this.children.push(New);
-									}
-									if(New.transmitter === true) {
-										let thisThing = this.parent;
-										while(thisThing.reciever === false) {
-											thisThing = thisThing.parent;
-											if(thisThing.transciever === true) {
-												if(thisThing.thingPool.includes(New.type) === false) {
-													thisThing.thingPool.push(New.type);
+											if(New.transmitter === true) {
+											let thisThing = this.parent;
+											while(thisThing.reciever === false) {
+												thisThing = thisThing.parent;
+												if(thisThing.transciever === true) {
+													if(thisThing.thingPool.includes(New.type) === false) {
+														thisThing.thingPool.push(New.type);
+													}
 												}
 											}
-										}
-										if(thisThing.thingPool.includes(New.type) === false) {
-											thisThing.thingPool.push(New.type);
+											if(thisThing.thingPool.includes(New.type) === false) {
+												thisThing.thingPool.push(New.type);
+											}
 										}
 									}
+									
 									uniqueN++;
 								}
 								break;
