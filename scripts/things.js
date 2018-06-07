@@ -222,17 +222,7 @@ Instance.prototype.Grow = function(){
 									let New = make(uniqueThings[uniqueN].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
 									New.parent = this;
 									this.children.push(New);
-									if(New.transmitter === true) {
-										let thisThing = this.parent;
-											while(thisThing.reciever === false) {
-												thisThing = thisThing.parent;
-												if(thisThing.transciever === true) {
-													thisThing.thingPool.push(New.type);
-												}
-											}
-											thisThing.thingPool.push(New.type);
-											console.log(thisThing.thingPool);
-										}
+									
 									uniqueN++;
 								}
 								break;
@@ -246,6 +236,17 @@ Instance.prototype.Grow = function(){
 										let New = make(uniqueThings[uniqueN].name);
 										New.parent = this;
 										this.children.push(New);
+									}
+									if(New.transmitter === true) {
+										let thisThing = this.parent;
+										while(thisThing.reciever === false) {
+											thisThing = thisThing.parent;
+											if(thisThing.transciever === true) {
+												thisThing.thingPool.push(New.type);
+											}
+										}
+										thisThing.thingPool.push(New.type);
+										console.log(thisThing.thingPool);
 									}
 									uniqueN++;
 								}
