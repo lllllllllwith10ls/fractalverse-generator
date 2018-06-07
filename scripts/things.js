@@ -213,7 +213,7 @@ Instance.prototype.Grow = function(){
 						switch (toMakePart[0]) {
 							case "*sublife species":
 								for(let k = makeAmount; k>0; k--) {
-									let contains2 = ["*sublife individual,100-300"];
+									let contains2 = [">?*sublife individual,100-300"];
 									let thisName = this.name;
 									thisName = thisName.replace("genus ","");
 									thisName += " " + RandName("letters")
@@ -255,7 +255,7 @@ Instance.prototype.Grow = function(){
 					}
 					if(Things[toMakePart[0]] != undefined) {
 						if (Math.random()*100 <= makeProb){
-							for (let ii=0; ii<makeAmount; ii++){
+							for(let ii=0; ii<makeAmount; ii++) {
 								let New = make(Things[toMakePart[0]].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
 								New.parent = this;
 								this.children.push(New);
@@ -267,19 +267,19 @@ Instance.prototype.Grow = function(){
 											thisThing.thingPool.push(New.type);
 										}
 									}
-									thisThing.thingPool.push(New.type);
-									console.log(thisThing.thingPool);
+									if(thisThing.thingPool.includes(New.type) === false) {
+										thisThing.thingPool.push(New.type);
+									}
 								}
 							}
 						}
 					}
 					if(toMakePart[0] === "thingPool") {
 						if (Math.random()*100 <= makeProb){
-							for (let ii=0; ii<makeAmount; ii++){
+							for(let ii=0; ii<makeAmount; ii++) {
 								let thisThing = this;
 								while(thisThing.thingPool[0] === undefined) {
 									thisThing = thisThing.parent;
-									console.log(thisThing.thingPool);
 								}
 								let New = make(Things[Choose(thisThing.thingPool).name].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
 								New.parent = this;
@@ -418,7 +418,7 @@ new Thing("sublife kingdom",["sublife phylum,1-3"],"kingdom |*RANDOM*,letters");
 new Thing("sublife phylum",["sublife class,1-3"],"phylum |*RANDOM*,letters");
 new Thing("sublife class",["sublife order,1-3"],"class |*RANDOM*,letters");
 new Thing("sublife order",["sublife genus,1-3"],"order  |*RANDOM*,letters");
-new Thing("sublife genus",[">?*sublife species,1-3"],"genus  |*RANDOM*,letters");
+new Thing("sublife genus",[">*sublife species,1-3"],"genus  |*RANDOM*,letters");
 /*new Thing("sublife species",["sublife individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
 new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*| individual");*/
 new Thing("cell membrane",["phospholipid,100-200"],"plasma membrane");
