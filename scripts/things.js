@@ -242,11 +242,14 @@ Instance.prototype.Grow = function(){
 										while(thisThing.reciever === false) {
 											thisThing = thisThing.parent;
 											if(thisThing.transciever === true) {
-												thisThing.thingPool.push(New.type);
+												if(thisThing.thingPool.includes(New.type) === false) {
+													thisThing.thingPool.push(New.type);
+												}
 											}
 										}
-										thisThing.thingPool.push(New.type);
-										console.log(thisThing.thingPool);
+										if(thisThing.thingPool.includes(New.type) === false) {
+											thisThing.thingPool.push(New.type);
+										}
 									}
 									uniqueN++;
 								}
@@ -265,7 +268,9 @@ Instance.prototype.Grow = function(){
 									while(thisThing.reciever === false) {
 										thisThing = thisThing.parent;
 										if(thisThing.transciever === true) {
-											thisThing.thingPool.push(New.type);
+											if(thisThing.thingPool.includes(New.type) === false) {
+												thisThing.thingPool.push(New.type);
+											}
 										}
 									}
 									if(thisThing.thingPool.includes(New.type) === false) {
