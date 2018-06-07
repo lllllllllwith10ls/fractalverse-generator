@@ -187,111 +187,14 @@ Instance.prototype.Grow = function(){
 						makeProb=(toMakePart[1]+"?").split("%");
 						if (makeProb[1] != undefined) {makeProb=makeProb[0];makeAmount=1;} else makeProb=100;
 					}
-					if (toMakePart[0].includes(">")) {
-						toMakePart[0] = toMakePart[0].replace(">","");
-						transmitter = true;
-					}
-					if (toMakePart[0].includes("<")) {
-						toMakePart[0] = toMakePart[0].replace("<","");
-						reciever = true;
-					}
-					if (toMakePart[0].includes("=")) {
-						toMakePart[0] = toMakePart[0].replace("=","");
-						transciever = true;
-					}
-					if (toMakePart[0].includes("!")) {
-						toMakePart[0] = toMakePart[0].replace("!","");
-						openEVERYTHING = true;
-						console.log(toMakePart[0]);
-					}
-					if (toMakePart[0].includes("?")) {
-						toMakePart[0] = toMakePart[0].replace("?","");
-						breakOpen = true;
-						console.log(toMakePart[0]);
-					}
-
-					if (toMakePart[0].includes("*")) {
-						switch (toMakePart[0]) {
-							case "*sublife species":
-								for(let k = makeAmount; k>0; k--) {
-									let contains2 = [">?*sublife individual,100-300"];
-									let thisName = this.name;
-									thisName = thisName.replace("genus ","");
-									thisName += " " + RandName("letters")
-									let id = uniqueN + ",sublife species," + thisName;
-									uniqueThings[uniqueN] = new Thing(id, contains2, thisName);
-									let New = make(uniqueThings[uniqueN].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
-									New.parent = this;
-									this.children.push(New);
-									
-									uniqueN++;
-								}
-								break;
-							case "*sublife individual":
-								{
-									let contains2 = ["cell membrane","rna","protein," + Rand(2,4)];
-									let thisName = this.name + " individual";
-									let id = uniqueN + ",sublife species individual," + thisName;
-									uniqueThings[uniqueN] = new Thing(id, contains2, thisName);
-									for(let k = makeAmount; k>0; k--) {
-										let New = make(uniqueThings[uniqueN].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
-										New.parent = this;
-										this.children.push(New);
-											if(New.transmitter === true) {
-											let thisThing = this;
-											while(thisThing.reciever === false) {
-												thisThing = thisThing.parent;
-												if(thisThing.transciever === true) {
-													if(thisThing.thingPool.includes(New.type) === false) {
-														thisThing.thingPool.push(New.type);
-													}
-												}
-											}
-											if(!thisThing.thingPool.includes(New.type)) {
-												thisThing.thingPool.push(New.type);
-											}
-										}
-									}
-									
-									uniqueN++;
-								}
-								break;
-							default:
-						}
-					}
+					
 					if(Things[toMakePart[0]] != undefined) {
 						if (Math.random()*100 <= makeProb){
 							for(let ii=0; ii<makeAmount; ii++) {
 								let New = make(Things[toMakePart[0]].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
 								New.parent = this;
 								this.children.push(New);
-								if(New.transmitter === true) {
-									let thisThing = this.parent;
-									while(thisThing.reciever === false) {
-										thisThing = thisThing.parent;
-										if(thisThing.transciever === true) {
-											if(thisThing.thingPool.includes(New.type) === false) {
-												thisThing.thingPool.push(New.type);
-											}
-										}
-									}
-									if(thisThing.thingPool.includes(New.type) === false) {
-										thisThing.thingPool.push(New.type);
-									}
-								}
-							}
-						}
-					}
-					if(toMakePart[0] === "thingPool") {
-						if (Math.random()*100 <= makeProb){
-							for(let ii=0; ii<makeAmount; ii++) {
-								let thisThing = this;
-								while(thisThing.thingPool[0] === undefined) {
-									thisThing = thisThing.parent;
-								}
-								let New = make(Things[Choose(thisThing.thingPool).name].name, transmitter, reciever, transciever, openEVERYTHING, breakOpen);
-								New.parent = this;
-								this.children.push(New)
+								
 							}
 						}
 					}
@@ -331,9 +234,7 @@ const toggle = (what) => {
 			}
 		}
 
-		if(Instances[what].openEVERYTHING === true) {
-			expand(Instances[what].children);
-		}
+		
 		Instances[what].display=1;
 		document.getElementById("container"+what).style.display="block";
 		document.getElementById("arrow"+what).innerHTML="-";
@@ -344,15 +245,7 @@ const toggle = (what) => {
 		document.getElementById("arrow"+what).innerHTML="+";
 	}
 }
-const expand = (what) => {
-	for (var i = 0; i < what.length; i++) {
-		if (what[i].breakOpen === false) {
-			toggle(what[i].n);
-			expand(what[i].children)
-			toggle(what[i].n);
-		}
-	}
-}
+
 const debug = (what) => {
 	document.getElementById("debug").innerHTML=document.getElementById("debug").innerHTML+'<br>'+what;
 }
@@ -409,13 +302,13 @@ new Thing("scorched terrestrial planet",["metallic core","scorched small moon,20
 new Thing("scorched asteroid belt",["scorched asteroid,100-200"]);
 new Thing("scorched asteroid",[["iron chunk,20-30","lava,30-40","iron chunk,10-20|lava,10-20"]],"asteroid");
 new Thing("scorched small moon",[["iron chunk,20-30","rock,30-40","iron chunk,10-20|rock,10-20"]],"small moon");
-new Thing("temperate terrestrial planet",["?metallic core","?mantle","?temperate small moon,0-5","temperate medium moon,0-2,50%",["?temperate crust|?temperate atmosphere","?sublife temperate crust|?temperate atmosphere,95%|sublife,95%","?wet temperate crust|?temperate atmosphere,95%|?prokaryotic life,75%","?wet temperate crust|?temperate oxygenated atmosphere,95%|?eukaryotic life,50%","?wet temperate crust|?temperate oxygenated atmosphere|?multicellular life,50%","?wet temperate crust|?temperate oxygenated atmosphere|?complex multicellular life,45%","?wet temperate crust|?temperate oxygenated atmosphere|?simple ecosystem,40%","?wet temperate crust|?temperate oxygenated atmosphere|?complex ecosystem,20%","?wet temperate crust|?temperate oxygenated atmosphere|?simple civilization,10%","?wet temperate crust|?temperate oxygenated atmosphere|?complex civilization,1%"]]);
-new Thing("temperate superterrestrial planet",["?metallic core","?mantle","?temperate small moon,0-15","temperate medium moon,0-5",["?temperate crust|?temperate atmosphere","?sublife temperate crust|?temperate superterrestrial atmosphere|sublife,95%","?wet temperate crust|?temperate superterrestrial atmosphere|?prokaryotic life,75%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?eukaryotic life,50%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?multicellular life,50%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?complex multicellular life,45%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?simple ecosystem,40%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?complex ecosystem,20%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?simple civilization,10%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?complex civilization,1%"]]);
-new Thing("temperate asteroid belt",["?temperate asteroid,100-200",["sublife,20%","?prokaryotic life,1%","?eukaryotic life,.1%"]]);
+new Thing("temperate terrestrial planet",["metallic core","mantle","temperate small moon,0-5","temperate medium moon,0-2,50%",["temperate crust|temperate atmosphere","sublife temperate crust|temperate atmosphere,95%|sublife,95%","wet temperate crust|temperate atmosphere,95%|prokaryotic life,75%","wet temperate crust|temperate oxygenated atmosphere,95%|eukaryotic life,50%","wet temperate crust|temperate oxygenated atmosphere|multicellular lie,50%","wet temperate crust|temperate oxygenated atmosphere|complex multicellular life,45%","wet temperate crust|temperate oxygenated atmosphere|simple ecosystem,40%","wet temperate crust|temperate oxygenated atmosphere|complex ecosystem,20%","wet temperate crust|temperate oxygenated atmosphere|simple civilization,10%","wet temperate crust|temperate oxygenated atmosphere|complex civilization,1%"]]);
+new Thing("temperate superterrestrial planet",["metallic core","mantle","temperate small moon,0-15","temperate medium moon,0-5",["temperate crust|temperate atmosphere","sublife temperate crust|temperate superterrestrial atmosphere|sublife,95%","wet temperate crust|temperate superterrestrial atmosphere|prokaryotic life,75%","wet temperate crust|temperate superterrestrial oxygenated atmosphere|eukaryotic life,50%","wet temperate crust|temperate superterrestrial oxygenated atmosphere|multicellular life,50%","wet temperate crust|temperate superterrestrial oxygenated atmosphere|complex multicellular life,45%","wet temperate crust|temperate superterrestrial oxygenated atmosphere|simple ecosystem,40%","wet temperate crust|temperate superterrestrial oxygenated atmosphere|complex ecosystem,20%","wet temperate crust|temperate superterrestrial oxygenated atmosphere|simple civilization,10%","wet temperate crust|temperate superterrestrial oxygenated atmosphere|complex civilization,1%"]]);
+new Thing("temperate asteroid belt",["temperate asteroid,100-200",["sublife,20%","prokaryotic life,1%","eukaryotic life,.1%"]])
 new Thing("temperate asteroid",[["iron chunk,20-30","rock,30-40","iron chunk,10-20|rock,10-20"],"ice,5-10,10%","thin atmosphere,10%"],"asteroid");
-new Thing("temperate dwarf planet",["?metallic core","?mantle","?temperate small moon,0-2","temperate medium moon,25%",["?temperate crust|?temperate atmosphere","?sublife temperate crust|?temperate atmosphere,95%|!sublife,95%","?wet temperate crust|?temperate atmosphere,95%|?prokaryotic life,75%","?wet temperate crust|?temperate oxygenated atmosphere,95%|?eukaryotic life,50%","?wet temperate crust|?temperate oxygenated atmosphere|?multicellular life,50%","?wet temperate crust|?temperate oxygenated atmosphere|?complex multicellular life,45%","?wet temperate crust|?temperate oxygenated atmosphere|?simple ecosystem,40%","?wet temperate crust|?temperate oxygenated atmosphere|?complex ecosystem,20%","?wet temperate crust|?temperate oxygenated atmosphere|?simple civilization,10%","?wet temperate crust|?temperate oxygenated atmosphere|?complex civilization,1%"]]);
+new Thing("temperate dwarf planet",["metallic core","mantle","temperate small moon,0-2","temperate medium moon,25%",["temperate crust|temperate atmosphere","sublife temperate crust|temperate atmosphere,95%|!sublife,95%","wet temperate crust|temperate atmosphere,95%|prokaryotic life,75%","wet temperate crust|temperate oxygenated atmosphere,95%|eukaryotic life,50%","wet temperate crust|temperate oxygenated atmosphere|multicellular life,50%","wet temperate crust|temperate oxygenated atmosphere|complex multicellular life,45%","wet temperate crust|temperate oxygenated atmosphere|simple ecosystem,40%","wet temperate crust|temperate oxygenated atmosphere|complex ecosystem,20%","wet temperate crust|temperate oxygenated atmosphere|simple civilization,10%","wet temperate crust|temperate oxygenated atmosphere|complex civilization,1%"]]);
 new Thing("temperate small moon",[["iron chunk,20-30","rock,30-40","iron chunk,10-20|rock,10-20"],"ice,5-10,10%","thin atmosphere,10%"],"small moon");
-new Thing("temperate medium moon",["?metallic core","?mantle",["?temperate crust|?temperate atmosphere","?sublife temperate crust|?temperate atmosphere,95%|sublife,95%","?wet temperate crust|?temperate atmosphere,95%|?prokaryotic life,75%","?wet temperate crust|?temperate oxygenated atmosphere,95%|?eukaryotic life,50%","?wet temperate crust|?temperate oxygenated atmosphere|?multicellular life,50%","?wet temperate crust|?temperate oxygenated atmosphere|?complex multicellular life,45%","?wet temperate crust|?temperate oxygenated atmosphere|?simple ecosystem,40%","?wet temperate crust|?temperate oxygenated atmosphere|?complex ecosystem,20%","?wet temperate crust|?temperate oxygenated atmosphere|?simple civilization,10%","?wet temperate crust|?temperate oxygenated atmosphere|?complex civilization,1%"]]);
+new Thing("temperate medium moon",["metallic core","mantle",["temperate crust|temperate atmosphere","sublife temperate crust|temperate atmosphere,95%|sublife,95%","wet temperate crust|temperate atmosphere,95%|prokaryotic life,75%","wet temperate crust|temperate oxygenated atmosphere,95%|eukaryotic life,50%","wet temperate crust|temperate oxygenated atmosphere|multicellular life,50%","wet temperate crust|temperate oxygenated atmosphere|complex multicellular life,45%","wet temperate crust|temperate oxygenated atmosphere|simple ecosystem,40%","wet temperate crust|temperate oxygenated atmosphere|complex ecosystem,20%","wet temperate crust|temperate oxygenated atmosphere|simple civilization,10%","wet temperate crust|temperate oxygenated atmosphere|complex civilization,1%"]]);
 
 
 new Thing("sublife",["sublife domain,1-3"]);
@@ -424,9 +317,9 @@ new Thing("sublife kingdom",["sublife phylum,1-3"],"kingdom |*RANDOM*,letters");
 new Thing("sublife phylum",["sublife class,1-3"],"phylum |*RANDOM*,letters");
 new Thing("sublife class",["sublife order,1-3"],"class |*RANDOM*,letters");
 new Thing("sublife order",["sublife genus,1-3"],"order  |*RANDOM*,letters");
-new Thing("sublife genus",["*sublife species,1-3"],"genus  |*RANDOM*,letters");
-/*new Thing("sublife species",["sublife individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
-new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*| individual");*/
+new Thing("sublife genus",["sublife species,1-3"],"genus  |*RANDOM*,letters");
+new Thing("sublife species",["sublife individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
+new Thing("sublife individual",["cell membrane","rna","protein,2-4"],"*PARENT*| individual");
 new Thing("cell membrane",["phospholipid,100-200"],"plasma membrane");
 new Thing("phospholipid",["phosphate","carbon atom,10-20","hydrogen atom, 20-40"]);
 new Thing("rna",["rna nucleotide,200-400"]);
