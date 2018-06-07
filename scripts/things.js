@@ -337,12 +337,14 @@ const toggle = (what) => {
 	}
 }
 const expand = (what) => {
-	for (var i = 0; i < what.length; i++)
-        if (what[i].breakOpen === false) {
-		toggle(what[i].n);
-		expand(what[i].children)
-	} else{
-		return null;
+	for (var i = 0; i < what.length; i++) {
+		if (what[i].breakOpen === false) {
+			toggle(what[i].n);
+			expand(what[i].children)
+			toggle(what[i].n);
+		} else{
+			return null;
+		}
 	}
 }
 const debug = (what) => {
