@@ -350,8 +350,6 @@ const expand = (what) => {
 			toggle(what[i].n);
 			expand(what[i].children)
 			toggle(what[i].n);
-		} else{
-			return null;
 		}
 	}
 }
@@ -412,7 +410,7 @@ new Thing("scorched asteroid belt",["scorched asteroid,100-200"]);
 new Thing("scorched asteroid",[["iron chunk,20-30","lava,30-40","iron chunk,10-20|lava,10-20"]],"asteroid");
 new Thing("scorched small moon",[["iron chunk,20-30","rock,30-40","iron chunk,10-20|rock,10-20"]],"small moon");
 new Thing("temperate terrestrial planet",["?metallic core","?mantle","?temperate small moon,0-5","!temperate medium moon,0-2,50%",["?temperate crust|?temperate atmosphere","?sublife temperate crust|?temperate atmosphere,95%|sublife,95%","?wet temperate crust|?temperate atmosphere,95%|?prokaryotic life,75%","?wet temperate crust|?temperate oxygenated atmosphere,95%|?eukaryotic life,50%","?wet temperate crust|?temperate oxygenated atmosphere|?multicellular life,50%","?wet temperate crust|?temperate oxygenated atmosphere|?complex multicellular life,45%","?wet temperate crust|?temperate oxygenated atmosphere|?simple ecosystem,40%","?wet temperate crust|?temperate oxygenated atmosphere|?complex ecosystem,20%","?wet temperate crust|?temperate oxygenated atmosphere|?simple civilization,10%","?wet temperate crust|?temperate oxygenated atmosphere|?complex civilization,1%"]]);
-new Thing("temperate superterrestrial planet",["?metallic core","?mantle","temperate small moon,0-15","!temperate medium moon,0-5",["?temperate crust|?temperate atmosphere","?sublife temperate crust|?temperate superterrestrial atmosphere|sublife,95%","?wet temperate crust|?temperate superterrestrial atmosphere|?prokaryotic life,75%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?eukaryotic life,50%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?multicellular life,50%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?complex multicellular life,45%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?simple ecosystem,40%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?complex ecosystem,20%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?simple civilization,10%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?complex civilization,1%"]]);
+new Thing("temperate superterrestrial planet",["?metallic core","?mantle","?temperate small moon,0-15","temperate medium moon,0-5",["?temperate crust|?temperate atmosphere","?sublife temperate crust|?temperate superterrestrial atmosphere|sublife,95%","?wet temperate crust|?temperate superterrestrial atmosphere|?prokaryotic life,75%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?eukaryotic life,50%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?multicellular life,50%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?complex multicellular life,45%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?simple ecosystem,40%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?complex ecosystem,20%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?simple civilization,10%","?wet temperate crust|?temperate superterrestrial oxygenated atmosphere|?complex civilization,1%"]]);
 new Thing("temperate asteroid belt",["?temperate asteroid,100-200",["sublife,20%","?prokaryotic life,1%","?eukaryotic life,.1%"]]);
 new Thing("temperate asteroid",[["iron chunk,20-30","rock,30-40","iron chunk,10-20|rock,10-20"],"ice,5-10,10%","thin atmosphere,10%"],"asteroid");
 new Thing("temperate dwarf planet",["?metallic core","?mantle","temperate small moon,0-2","!temperate medium moon,25%",["?temperate crust|?temperate atmosphere","?sublife temperate crust|?temperate atmosphere,95%|!sublife,95%","?wet temperate crust|?temperate atmosphere,95%|?prokaryotic life,75%","?wet temperate crust|?temperate oxygenated atmosphere,95%|?eukaryotic life,50%","?wet temperate crust|?temperate oxygenated atmosphere|?multicellular life,50%","?wet temperate crust|?temperate oxygenated atmosphere|?complex multicellular life,45%","?wet temperate crust|?temperate oxygenated atmosphere|?simple ecosystem,40%","?wet temperate crust|?temperate oxygenated atmosphere|?complex ecosystem,20%","?wet temperate crust|?temperate oxygenated atmosphere|?simple civilization,10%","?wet temperate crust|?temperate oxygenated atmosphere|?complex civilization,1%"]]);
@@ -508,8 +506,11 @@ new Thing("temperate crust",["temperate continent,5-10"],"crust");
 new Thing("wet temperate crust",["wet temperate continent,5-10","ocean,2-7"],"crust");
 new Thing("sublife temperate crust",["sublife temperate continent,5-10","sublife ocean,2-7"],"crust");
 new Thing("temperate continent",["mountain,25-50","rock,100-200"],"continent");
+new Thing("wet temperate continent",["mountain,25-50","rock,100-200","lake,25-50"],"continent");
 new Thing("wet temperate continent",["mountain,25-50","rock,100-200","sublife lake,25-50"],"continent");
+new Thing("lake",["water droplet,50-100"],"lake");
 new Thing("sublife lake",["sublife water droplet,50-100"],"lake");
+new Thing("ocean",["salt water droplet,100-200"],"ocean");
 new Thing("sublife ocean",["sublife salt water droplet,100-200"],"ocean");
 new Thing("salt water droplet",["water,100-200","salt,50-100"],"water droplet");
 new Thing("water droplet",["water,100-200"],"water droplet");
