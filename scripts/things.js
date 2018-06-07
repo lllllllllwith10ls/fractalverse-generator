@@ -507,7 +507,7 @@ new Thing("wet temperate crust",["wet temperate continent,5-10","ocean,2-7"],"cr
 new Thing("sublife temperate crust",["sublife temperate continent,5-10","sublife ocean,2-7"],"crust");
 new Thing("temperate continent",["mountain,25-50","rock,100-200"],"continent");
 new Thing("wet temperate continent",["mountain,25-50","rock,100-200","lake,25-50"],"continent");
-new Thing("wet temperate continent",["mountain,25-50","rock,100-200","sublife lake,25-50"],"continent");
+new Thing("sublife temperate continent",["mountain,25-50","rock,100-200","sublife lake,25-50"],"continent");
 new Thing("lake",["water droplet,50-100"],"lake");
 new Thing("sublife lake",["sublife water droplet,50-100"],"lake");
 new Thing("ocean",["salt water droplet,100-200"],"ocean");
