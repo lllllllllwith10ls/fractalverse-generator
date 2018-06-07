@@ -397,7 +397,7 @@ new Thing("globular cluster",["solar system,250-500","cold solar system,100-200"
 new Thing("belt",["bubble,10-20","star cloud,50-100"],"stellar belt");
 new Thing("bubble",["star cloud,20-30","solar system,200-300","cold solar system,50-100"],"stellar bubble");
 new Thing("star cloud",["solar system,20-30","cold solar system,10-20"],"stellar cloud");
-new Thing("solar system",["star",["star","brown dwarf,50%","white dwarf,25%","black hole,10%","neutron star,10%"],["scorched asteroid belt,50%","scorched dwarf planet,50%","scorched terrestrial planet,50%","scorched superterrestrial planet,50%","scorched jovian planet,50%"],["hot asteroid belt,50%","hot dwarf planet,50%","hot terrestrial planet,50%","hot superterrestrial planet,50%","hot jovian planet,50%"],["warm asteroid belt,50%","warm dwarf planet,50%","warm terrestrial planet,50%","warm superterrestrial planet,50%","warm jovian planet,50%"],["temperate asteroid belt,50%","temperate dwarf planet,50%","temperate terrestrial planet,50%","temperate superterrestrial planet,50%","temperate jovian planet,50%"],["cool asteroid belt,50%","cool dwarf planet,50%","cool terrestrial planet,50%","cool superterrestrial planet,50%","cool jovian planet,50%"],["cold asteroid belt,50%","cold dwarf planet,50%","cold terrestrial planet,50%","cold superterrestrial planet,50%","cold jovian planet,50%"],["frozen asteroid belt,50%","frozen dwarf planet,50%","frozen terrestrial planet,50%","frozen superterrestrial planet,50%","frozen jovian planet,50%"]]);
+new Thing("solar system",["star",["star","brown dwarf,50%","white dwarf,25%","black hole,10%","neutron star,10%"],["scorched asteroid belt,50%","scorched dwarf planet,50%","scorched terrestrial planet,50%","scorched superterrestrial planet,50%","scorched jovian planet,50%"],["hot asteroid belt,50%","hot dwarf planet,50%","hot terrestrial planet,50%","hot superterrestrial planet,50%","hot jovian planet,50%"],["warm asteroid belt,50%","warm dwarf planet,50%","warm terrestrial planet,50%","warm superterrestrial planet,50%","warm jovian planet,50%"],["<temperate asteroid belt,50%","<temperate dwarf planet,50%","<temperate terrestrial planet,50%","<temperate superterrestrial planet,50%","<temperate jovian planet,50%"],["cool asteroid belt,50%","cool dwarf planet,50%","cool terrestrial planet,50%","cool superterrestrial planet,50%","cool jovian planet,50%"],["cold asteroid belt,50%","cold dwarf planet,50%","cold terrestrial planet,50%","cold superterrestrial planet,50%","cold jovian planet,50%"],["frozen asteroid belt,50%","frozen dwarf planet,50%","frozen terrestrial planet,50%","frozen superterrestrial planet,50%","frozen jovian planet,50%"]]);
 new Thing("cold solar system",[["brown dwarf","brown dwarf","brown dwarf","white dwarf","white dwarf","black hole","neutron star"],["brown dwarf,50%","white dwarf,25%","black hole,10%","neutron star,10%"],["cold asteroid belt,50%","cold dwarf planet,50%","cold terrestrial planet,50%","cold superterrestrial planet,50%","cold jovian planet,50%"],["frozen asteroid belt,50%","frozen dwarf planet,50%","frozen terrestrial planet,50%","frozen superterrestrial planet,50%","frozen jovian planet,50%"]],["solar system"]);
 new Thing("star",["corona","chromosphere","photosphere","convective zone","radiative zone","star core"],[["o-type","a-type","b-type","f-type","f-type","g-type","g-type","g-type","k-type","k-type","k-type","k-type","k-type","m-type","m-type","m-type","m-type","m-type","m-type","m-type"],[" star"]]);
 new Thing("black hole",["singularity"]);
@@ -507,13 +507,14 @@ new Thing("white dwarf core",["proton,100-200","neutron,100-200","electron,100-2
 new Thing("temperate crust",["temperate continent,5-10"],"crust");
 new Thing("wet temperate crust",["wet temperate continent,5-10","ocean,2-7"],"crust");
 new Thing("sublife temperate crust",["sublife temperate continent,5-10","sublife ocean,2-7"],"crust");
-new Thing("temperate continent",["mountain,25-50","rock,100-200","lake,25-50,50%"],"continent");
+new Thing("temperate continent",["mountain,25-50","rock,100-200"],"continent");
 new Thing("wet temperate continent",["mountain,25-50","rock,100-200","sublife lake,25-50"],"continent");
-new Thing("sublife lake",["sublife water droplet,50-100"]);
-new Thing("sublife ocean",["sublife salt water droplet,100-200"]);
+new Thing("sublife lake",["sublife water droplet,50-100"],"lake");
+new Thing("sublife ocean",["sublife salt water droplet,100-200"],"ocean");
 new Thing("salt water droplet",["water,100-200","salt,50-100"],"water droplet");
 new Thing("water droplet",["water,100-200"],"water droplet");
-new Thing("sublife salt water droplet",["water,100-200"],"water droplet");
+new Thing("sublife salt water droplet",["water,100-200","salt,50-100","thingPool,20-30"],"water droplet");
+new Thing("sublife water droplet",["water,100-200","thingPool,20-30"],"water droplet");
 new Thing("mountain",["rock,100-200"]);
 new Thing("metallic core",["iron chunk,100-200","nickel chunk,100-200"],"core");
 new Thing("iron chunk",["iron atom,100-200"]);
