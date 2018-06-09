@@ -273,7 +273,7 @@ Instance.prototype.Grow = function(){
 								break;
 							case "*prokaryotic individual":
 								{
-									let contains2 = "[bacterial cell wall","cell membrane","dna","rna,2-4","bacterial ribosome,3-6","protein,20-40","glucose,100-150"];
+									let contains2 = ["bacterial cell wall","cell membrane","dna","rna,2-4","bacterial ribosome,3-6","protein,20-40","glucose,100-150"];
 									let thisName = this.name + " individual";
 									let id = uniqueN + ",prokaryotic species individual," + thisName;
 									uniqueThings[uniqueN] = new Thing(id, contains2, thisName);
@@ -509,7 +509,7 @@ new Thing("prokaryotic kingdom",["prokaryotic phylum,1-3"],"kingdom |*RANDOM*,le
 new Thing("prokaryotic phylum",["prokaryotic class,1-3"],"phylum |*RANDOM*,letters");
 new Thing("prokaryotic class",["prokaryotic order,1-3"],"class |*RANDOM*,letters");
 new Thing("prokaryotic order",["prokaryotic genus,1-3"],"order  |*RANDOM*,letters");
-new Thing("prokaryotic genus",["prokaryotic species,1-3"],"genus  |*RANDOM*,letters");
+new Thing("prokaryotic genus",["*prokaryotic species,1-3"],"genus  |*RANDOM*,letters");
 /*new Thing("prokaryotic species",["prokaryotic individual,100-300"],"*PARENT*,genus| |*RANDOM*,letters");
 new Thing("prokaryotic individual",["bacterial cell wall","cell membrane","dna","rna,2-4","bacterial ribosome,3-6","protein,20-40","glucose,100-150"],"*PARENT*| individual");*/
 new Thing("dna",["dna nucleotide,200-400"]);
